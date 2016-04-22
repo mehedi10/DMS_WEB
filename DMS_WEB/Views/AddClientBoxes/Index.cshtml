@@ -1,0 +1,191 @@
+﻿@model DMS_WEB.Models.AddClientBoxViewModel
+
+@{
+    ViewBag.Title = "Add Client Boxes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    Model.recall_box_dept_info.RECALL_BOX_NO = Model.recall_box_info.RECALL_BOX_NO;
+    Model.recall_box_dept_info.BOX_NO = Model.recall_box_info.BOX_NO;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<script type="text/javascript">
+    var setup_info = @Html.Raw(@ViewBag.setup_info);
+</script>
+
+<div class="entryform">
+    @Html.Partial("RecallBoxInfo", Model.recall_box_info)
+</div>
+
+<div class="entryform save">
+    @Html.Partial("Save", Model.recall_box_dept_info)
+</div>
+
+<div class="result">
+    @Html.Partial("List", Model.recall_box_dept_list)
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+            $(document).on("click", '#btnSave', btnSave_Click);
+            $(document).on("click", '#btnCancel', btnCancel_Click);
+            $(document).on("change", '#CLIENT_BOX_ID', CLIENT_BOX_ID_Click);
+
+            $(document).on("click", '.delete', delete_info);
+        });
+
+        function delete_info(e) {
+            if (confirm('Do want to delete?')) {
+                var url = $(this).attr("href");
+                var data = { id: $(this).attr("tag"), };
+                $.post(url, data, function(res) {
+                    if (res.is_success == true) {
+                        alert('Record deleted successfully');
+                        var list_url = '../AddClientBoxes/List?RECALL_BOX_NO=' + @Model.recall_box_info.RECALL_BOX_NO + '&CLIENT_NO=' + @Model.recall_box_info.CLIENT_NO;
+                            $.get(list_url, function(list_res) {
+                                //console.log(list_res);
+                                $('.result').html(list_res);
+                            });
+
+                    } else {
+                        alert(res.msg);
+                    }
+                });
+            }
+            e.preventDefault();
+            return false;
+        }
+
+
+        function is_valid_entry() {
+            var ret_val = true;
+            var msg = '';
+
+            var CLIENT_BOX_ID = $.trim($('#CLIENT_BOX_ID').val());
+
+            if (CLIENT_BOX_ID == undefined || CLIENT_BOX_ID == null || CLIENT_BOX_ID == '') {
+                ret_val = ret_val && false;
+                msg += 'CLIENT BOX ID is required \n';
+            }
+
+            if (ret_val == false) {
+                alert(msg);
+            }
+
+            return ret_val;
+        }
+
+        function btnSave_Click() {
+            if (is_valid_entry()) {
+                if (confirm('Do you want to Save?')) {
+                    var url = $('#frmEntry').attr("action");
+                    var data = { 
+                    CLIENT_NO : $('#CLIENT_NO').val(), 
+                    DEPT_NO : $('#DEPT_NO').val(), 
+                    CLIENT_BOX_ID : $('#CLIENT_BOX_ID').val(), 
+                    RECALL_BOX_NO : $('#RECALL_BOX_NO').val(), 
+                };
+
+                var RECALL_BOX_ID = $.trim($('#RECALL_BOX_ID').val());
+
+                    if (RECALL_BOX_ID == undefined || RECALL_BOX_ID == null || RECALL_BOX_ID == '') 
+                    {
+
+                           $.post(url, data, function(res) {
+                        if (res.is_success == true) {
+                            alert('Saved Successfully');
+                            $('#CLIENT_BOX_ID').val('');
+                            $('#RECALL_BOX_ID').val('');
+
+                            var list_url = '../AddClientBoxes/List?RECALL_BOX_NO=' + @Model.recall_box_info.RECALL_BOX_NO + '&CLIENT_NO=' + @Model.recall_box_info.CLIENT_NO;
+                            $.get(list_url, function(list_res) {
+                                //console.log(list_res);
+                                $('.result').html(list_res);
+                            });
+                        } else {
+                            alert(res.msg);
+                        }
+                    });
+                    return false;
+                        
+                    } else {
+                        if (confirm('Client Box Id already exists in another Recall Box ! Do you want to continue ?')) {
+
+                        var url = $('#frmEntry').attr("action");
+                        var data = {
+                            CLIENT_NO: $('#CLIENT_NO').val(),
+                            DEPT_NO: $('#DEPT_NO').val(),
+                            CLIENT_BOX_ID: $('#CLIENT_BOX_ID').val(),
+                            RECALL_BOX_NO: $('#RECALL_BOX_NO').val(),
+                        };
+
+                        $.post(url, data, function(res) {
+                            if (res.is_success == true) {
+                                alert('Saved Successfully');
+                                $('#CLIENT_BOX_ID').val('');
+                                $('#RECALL_BOX_ID').val('');
+
+                                var list_url = '../AddClientBoxes/List?RECALL_BOX_NO=' + @Model.recall_box_info.RECALL_BOX_NO + '&CLIENT_NO=' + @Model.recall_box_info.CLIENT_NO;
+                                $.get(list_url, function(list_res) {
+                                    $('.result').html(list_res);
+                                });
+                            } else {
+                                alert(res.msg);
+                            }
+                        });
+                        return false;
+                        } else {
+                            return false;
+                        }
+                    }
+
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+
+
+        function btnCancel_Click() {
+            $('#CLIENT_BOX_ID').val('');
+            $('#RECALL_BOX_ID').val('');
+        }
+
+
+        function CLIENT_BOX_ID_Click() {
+            var CLIENT_BOX_ID = $.trim($('#CLIENT_BOX_ID').val());
+
+            if (CLIENT_BOX_ID != null && CLIENT_BOX_ID != undefined && CLIENT_BOX_ID != ""
+            ) {
+                var url = '../ReferenceLoader/GetRecallBoxIDByClientBoxId';
+                var data = {
+                    CLIENT_NO: $('#CLIENT_NO').val(),
+                    CLIENT_BOX_ID: $('#CLIENT_BOX_ID').val(),
+                };
+
+                $.post(url, data, function(res) {
+                    console.log(res);
+                    var info = null;
+                    if (res != null) {
+                        info = res[0];
+                    }
+                    if (info != null && info.CLIENT_BOX_ID != null) {
+                        $('#CLIENT_BOX_ID').val(info.CLIENT_BOX_ID);
+                        $('#RECALL_BOX_ID').val(info.RECALL_BOX_ID);
+                    } else {
+                        $('#RECALL_BOX_ID').val('');
+                    }
+                });
+            } else {
+                $('#RECALL_BOX_ID').val('');
+            }
+        }
+
+    </script>
+}

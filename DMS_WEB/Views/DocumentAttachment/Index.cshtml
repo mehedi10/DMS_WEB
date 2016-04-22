@@ -1,0 +1,151 @@
+﻿@model DMS_WEB.Models.AccountAttachmentViewModel
+
+@{
+    ViewBag.Title = "Account Document Attachment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    Model.document_info.ACC_NO = Model.account_info.ACC_NO;
+    
+    string THUMB_HEIGHT = System.Configuration.ConfigurationManager.AppSettings["THUMB_HEIGHT"].Trim();
+    string THUMB_WIDTH = System.Configuration.ConfigurationManager.AppSettings["THUMB_WIDTH"].Trim();
+    string FULL_HEIGHT = System.Configuration.ConfigurationManager.AppSettings["FULL_HEIGHT"].Trim();
+    string FULL_WIDTH = System.Configuration.ConfigurationManager.AppSettings["FULL_WIDTH"].Trim();
+
+}
+
+<h2>@ViewBag.Title</h2>
+
+<script type="text/javascript">
+    var setup_info = @Html.Raw(@ViewBag.setup_info);
+</script>
+
+<div class="editor-label">
+    <div class="entryform">
+        @Html.Partial("AccountInfo", Model.account_info)
+    </div> 
+</div>
+
+<div class="editor-label">
+    <div class="entryform">
+        @Html.Partial("AccountDocumentInfo", Model.document_info)
+    </div>
+</div>
+
+
+<div class="entryform save">
+    @Html.Partial("Save", Model.attach_info)
+</div>
+
+<div class="result">
+    @Html.Partial("List", Model.attach_list)
+</div>
+
+
+@section Scripts {
+
+    <script type="text/javascript">
+        var setup_info = @Html.Raw(@ViewBag.setup_info);
+
+        $(document).ready(function () {
+            $(document).on("click", '.delete', delete_info);    
+            $(document).on("click", '.image', image_click);                 
+        });   
+        
+        $(document).on("click", '#btnSave', btnSave_Click);
+        $(document).on("click", '#btnCancel', btnCancel_Click);
+
+
+        function is_valid_entry() {
+            var ret_val = true;
+	        var msg = '';
+
+            var ATTACH_NAME = $.trim($('#ATTACH_NAME').val()); 
+                                    
+            if (ATTACH_NAME == undefined || ATTACH_NAME == null || ATTACH_NAME == '') {
+		        ret_val = ret_val && false;
+		        msg += 'File is required \n' ;
+	        } 
+
+            if (ret_val == false) { 
+		        alert(msg);
+	        }
+
+	        return ret_val;
+        }
+
+        function btnSave_Click() { 
+        }
+
+        $( '#frmEntry' ).submit(function ( e ) {
+            if (is_valid_entry()) {
+                if (confirm('Do you want to Save?')) {
+                    var url = $('#frmEntry').attr("action");
+                    var data, xhr;
+                    data = new FormData(this);
+                    data.append( 'ATTACH_NAME', $( '#ATTACH_NAME' )[0].files[0] );
+
+                    xhr = new XMLHttpRequest();
+
+                    xhr.open( 'POST', url, true );
+                    xhr.onreadystatechange = function ( response ) {};
+                    xhr.send( data );
+
+                    alert('Saved successfully');
+
+                    $('#ATTACH_NAME').val('');
+
+                    var list_url = '../DocumentAttachment/List?DOC_NO=' + @Model.document_info.DOC_NO;
+                    $.get(list_url, function(list_res) {
+                        //console.log(list_res);
+                        $('.result').html(list_res);
+                    });
+
+                } else {
+                    return false;
+                }
+            } else {  
+                return false;
+            }
+
+            e.preventDefault();
+        });
+
+        function delete_info(e) {            
+            if (confirm('Do want to delete?')) {
+                var url = $(this).attr("href");     
+                var data = {id : $(this).attr("tag"), };
+                $.post(url, data, function(res) {
+                    if (res.is_success == true) {
+                        
+                        //btnSearch_Click();
+                        
+                        alert('Record deleted successfully');
+
+                        var list_url = '../DocumentAttachment/List?DOC_NO=' + @Model.document_info.DOC_NO;
+                        $.get(list_url, function(list_res) {
+                            //console.log(list_res);
+                            $('.result').html(list_res);
+                        });
+
+                    } else {
+                        alert(res.msg);
+                    }
+                });
+            }
+            e.preventDefault();
+            return false;
+        }
+
+        function image_click(e) { 
+            var img_url = $(this).attr("src");
+            window.open(img_url, '_blank');           
+        }
+
+        function btnCancel_Click() {
+
+        }
+
+           
+    </script>
+
+}

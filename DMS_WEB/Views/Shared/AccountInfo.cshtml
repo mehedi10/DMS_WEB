@@ -1,0 +1,67 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_ACCOUNTS_GET_DETAILS_Result
+
+<fieldset>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Account ID", new { @for = "ACC_ID" })
+        </div>
+        <div class="editor-label">
+            @Html.DisplayFor(model => model.ACC_ID)
+        </div>
+        <div class="editor-label">
+            @Html.Label("Account Name", new { @for = "ACC_NAME" })
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.ACC_NAME)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Account Details", new { @for = "ACC_DETAILS" })
+        </div>
+        <div class="editor-label">
+            @Html.DisplayFor(model => model.ACC_DETAILS)
+        </div>
+        <div class="editor-label">
+            @Html.Label("Department", new { @for = "DEPT_NAME" })
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.DEPT_NAME)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Box ID", new { @for = "CLIENT_BOX_ID" })
+        </div>
+        <div class="editor-label">
+            @Html.DisplayFor(model => model.CLIENT_BOX_ID)
+        </div>
+        <div class="editor-label">
+            @Html.Label("Batch ID", new { @for = "ACC_NAME" })
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.BATCH_ID)
+        </div>
+        </div>
+
+        
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Transmittal Type", new { @for = "TRN_TYPE_NAME" })
+        </div>
+        <div class="editor-label">            
+            @Html.DisplayFor(model => model.TRN_TYPE_NAME)
+        </div>
+        <div class="editor-label">
+            
+        </div>
+        <div class="editor-field">
+            @Html.ActionLink("Back to Account", "Index", "ClientAccount", new { @id = Model.ACC_NO }, new { @class = "btn btn-primary" })
+        </div>
+        </div>
+    
+</fieldset>

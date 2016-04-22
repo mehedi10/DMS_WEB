@@ -1,0 +1,176 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_DEPARTMENTS
+
+@{
+    ViewBag.Title = "Client Department Delete";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Are you sure you want to delete this department?</h3>
+@using (Html.BeginForm()) {
+<fieldset>
+    <legend>@ViewBag.Title</legend>
+
+    <div class="entry_form">
+        <div class="display-label">
+            @Html.DisplayName("Client")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.SET_CLIENTS.CLIENT_NAME)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-field">
+            @Html.DisplayName("Department Name")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DEPT_NAME, new { @required = "required" })
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-field">
+            @Html.DisplayName("Address")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DEPT_ADDR)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-field">
+            @Html.DisplayName("Contact")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DEPT_CONTACT)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-label">
+            @Html.DisplayName("Department Email")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DEPT_EMAIL)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-label">
+            @Html.DisplayName("Delivery Location")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DELIVERY_LOCATION)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-label">
+            @Html.DisplayName("Contat Person")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CONTACT_PERSON)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-label">
+            @Html.DisplayName("Contct Address")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.CONTACT_ADDR)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-label">
+            @Html.DisplayName("Designation")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DESIGNATION)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-label">
+            @Html.DisplayName("Attention")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ATTENTION)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-label">
+            @Html.DisplayName("Start with New Transmittal")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.IS_NEW_TRANSMIT)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-label">
+            @Html.DisplayName("Starts with Auto ID")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.IS_AUTO_ID)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-label">
+            @Html.DisplayName("Next ID")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NEXT_ID)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-label">
+            @Html.DisplayName("ID Length")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ID_LENGHT)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="display-label">
+            @Html.DisplayName("ID Prefix")
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.ID_PREFIX)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">@Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })</div>
+        <div class="editor-field">
+            <button type="submit" id="btnSave" name="btnSave" class="btn btn-warning">Delete</button>                 
+        </div>
+        </div> 
+</fieldset>
+
+}
+
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+
+        $(document).on("click", '#btnSave', btnSave_Click);
+
+        function btnSave_Click() {
+            if (confirm('Do you want to Save?')) {
+                $('form').submit();
+            } else {
+                return false;
+            }
+        }
+    </script>
+}

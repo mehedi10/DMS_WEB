@@ -1,0 +1,51 @@
+﻿@model IEnumerable<DMS_WEB.Models.SET_CLIENTS>
+
+@{
+    ViewBag.Title = "Client";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("New Client", "Create",null,  new { @class = "btn btn-success" })
+</p>
+
+<div class="div_row">
+    <div class="div_cell div_caption">Select</div>
+    <div class="div_cell div_caption">Client</div>
+    <div class="div_cell div_caption">Alias</div>
+    <div class="div_cell div_caption">Contact</div>
+    <div class="div_cell div_caption">Status</div>
+    <div class="div_cell div_caption">Delete</div>
+</div>
+
+@foreach (var item in Model) {
+    <div class="div_row">
+        <div class="div_cell">@Html.ActionLink("Edit", "Edit", new { id = item.CLIENT_NO }, new { @class = "btn btn-success" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.CLIENT_NO }, new { @class = "btn btn-primary" }) </div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_ALIAS)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_CONTACT)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.IS_ACIVE)</div>
+        <div class="div_cell">@Html.ActionLink("Delete", "Delete", new { id = item.CLIENT_NO }, new {@class="confirm btn btn-warning" })</div>
+    </div>
+}
+
+@section Scripts {
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+
+        $(document).on("click", '.confirm', confirm_Click);
+
+        function confirm_Click() {
+            if (confirm('Do you want to continue?')) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+}

@@ -1,0 +1,65 @@
+﻿@using (Html.BeginForm("Search", "Challan", FormMethod.Post, new {@id="frmSearch" })) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        @*<legend>Search</legend>*@
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Client", new { @for = "sr_CLIENT_NO" })
+        </div>
+        <div class="editor-field">
+            <select id="sr_CLIENT_NO" name="sr_CLIENT_NO" required="required">                
+            </select>
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Department", new { @for = "sr_DEPT_NO" })
+        </div>
+        <div class="editor-field">
+            <select id="sr_DEPT_NO" name="sr_DEPT_NO" required="required">                
+            </select>
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Challan ID", new { @for = "sr_CHALLAN_ID" })
+        </div>
+        <div class="editor-field">
+            @Html.Editor("sr_CHALLAN_ID")
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Transmittal Type", new { @for = "sr_TRN_TYPE_NO" })
+        </div>
+        <div class="editor-field">
+            <select id="sr_TRN_TYPE_NO" name="sr_TRN_TYPE_NO" required="required">                
+            </select>
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Request Type", new { @for = "sr_REQ_TYPE_NO" })
+        </div>
+        <div class="editor-field">
+            <select id="sr_REQ_TYPE_NO" name="sr_REQ_TYPE_NO" required="required">                
+            </select>
+        </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">                
+            </div>
+            <div class="editor-field">
+                <button type="button" id="btnSearch" name="btnSearch" class="btn btn-success">Search</button> 
+                <button type="button" id="btnClear" name="btnClear" class="btn btn-warning">Clear</button> 
+            </div>
+        </div>
+    </fieldset>
+    
+}

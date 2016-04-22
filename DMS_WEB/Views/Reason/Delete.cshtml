@@ -1,0 +1,74 @@
+﻿@model DMS_WEB.Models.SET_REASONS
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>SET_REASONS</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SET_CLIENTS.CLIENT_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SET_CLIENTS.CLIENT_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.REASON)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.REASON)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CREATE_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CREATE_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CREATE_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CREATE_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CREATE_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CREATE_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_TIME)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

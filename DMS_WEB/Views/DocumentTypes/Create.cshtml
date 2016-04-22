@@ -1,0 +1,40 @@
+﻿@model DMS_WEB.Models.SET_DOCS_TYPES
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SET_DOCS_TYPES</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DOC_TYPE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DOC_TYPE)
+            @Html.ValidationMessageFor(model => model.DOC_TYPE)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DOC_TYPE_CODE)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DOC_TYPE_CODE)
+            @Html.ValidationMessageFor(model => model.DOC_TYPE_CODE)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+

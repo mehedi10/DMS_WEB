@@ -1,0 +1,51 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_DEPT_BOXES_GET_Result
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("Save", "AddClientBoxes", FormMethod.Post, new { @id = "frmEntry" }))
+{
+    @Html.ValidationSummary(true)
+     
+    <fieldset>
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Client Box ID", new { @for = "CLIENT_BOX_ID" })
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.CLIENT_BOX_ID, new { @required = "required" })
+                @Html.ValidationMessageFor(model => model.CLIENT_BOX_ID)
+            </div>
+
+            <div class="display-field">
+                @Html.Label("", new { @for = "RECALL_BOX_ID"})
+            </div>
+            <div class="display-field">
+                @Html.HiddenFor(model => model.RECALL_BOX_NO)
+                @Html.TextBox("RECALL_BOX_ID")
+            </div>
+        </div>
+        <div class="entry_form">
+            <div class="editor-label">
+            </div>
+            <div class="editor-field">
+                <button type="submit" id="btnSave" name="btnSave" class="confirm btn btn-primary">
+                    Add</button>
+                <button type="button" id="btnCancel" name="btnCancel" class="btn btn-warning">
+                    Cancel</button>
+            </div>
+        </div>
+    </fieldset>
+}
+@section Scripts {
+}
+<script type="text/javascript">
+
+    var CLIENT_NO = '@Model.CLIENT_NO';
+    var DEPT_NO = '@Model.DEPT_NO';
+    var RECALL_BOX_NO = '@Model.RECALL_BOX_NO';
+
+    $(document).ready(function () {
+        //load_default();
+    });     
+    
+</script>

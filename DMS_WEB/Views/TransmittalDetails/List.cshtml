@@ -1,0 +1,120 @@
+﻿@*@model  IEnumerable<DMS_WEB.Models.GET_CLIENT_BOX_TRANSMIT_DETAIL_BY_TRANSMIT_ID_Result>
+
+@{
+    Layout = null;
+}
+
+<div class="div_row">
+    <div class="div_cell div_caption">Client</div>
+    <div class="div_cell div_caption">Box NO</div>
+    <div class="div_cell div_caption">Client Box ID</div>
+    <div class="div_cell div_caption">Transmit ID</div>
+    <div class="div_cell div_caption">Transmittal Type</div>
+     <div class="div_cell div_caption">Archive Date</div>
+    <div class="div_cell div_caption">Create Date</div>
+</div>
+
+@foreach (var item in Model) {
+    <div class="div_row">
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.BOX_NO)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_BOX_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.TRANSMIT_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.TRN_TYPE_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.ARCHIVE_DATE)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CREATE_TIME)</div>
+
+    </div>    
+}
+*@
+
+@using DMS_WEB.Models
+@model  DMS_WEB.Models.TransmitalDetailsViewModel
+
+@{
+    Layout = null;
+}
+<div class="div_row">
+    <div class="div_cell div_caption">Box Information</div>
+</div>
+
+<div class="div_row">
+    <div class="div_cell div_caption">Client</div>
+    <div class="div_cell div_caption">Department</div>
+    <div class="div_cell div_caption">Client Box ID</div>
+    <div class="div_cell div_caption">Transmit ID</div>
+    <div class="div_cell div_caption">Transmittal Type</div>
+</div>
+
+@foreach (var item in Model.client_box_transmit_history_details)
+{
+    <div class="div_row">
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.DEPT_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_BOX_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.TRANSMIT_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.TRN_TYPE_NAME)</div>
+    </div>    
+}
+
+<div class="div_row">
+    <div class="div_cell div_caption"></div>
+</div>
+<div class="div_row">
+    <div class="div_cell div_caption">Account Information</div>
+</div>
+
+<div class="div_row">
+    <div class="div_cell div_caption">Client</div>
+    <div class="div_cell div_caption">Department</div>
+    <div class="div_cell div_caption">Account ID</div>
+    <div class="div_cell div_caption">Client Box ID</div>
+    <div class="div_cell div_caption">Transmit ID</div>
+    <div class="div_cell div_caption">Transmittal Type</div>
+</div>
+
+@foreach (var item in Model.client_account_transmit_history_details)
+{
+    <div class="div_row">
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.DEPT_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.ACC_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_BOX_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.TRANSMIT_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.TRN_TYPE_NAME)</div>
+    </div>    
+}
+
+
+
+<div class="div_row">
+    <div class="div_cell div_caption"></div>
+</div>
+<div class="div_row">
+    <div class="div_cell div_caption">Document Information</div>
+</div>
+
+<div class="div_row">
+    <div class="div_cell div_caption">Client</div>
+    <div class="div_cell div_caption">Department</div>
+     <div class="div_cell div_caption">Document Type</div>
+    <div class="div_cell div_caption">Account ID</div>
+    <div class="div_cell div_caption">Client Box ID</div>
+    <div class="div_cell div_caption">Transmit ID</div>
+    <div class="div_cell div_caption">Transmittal Type</div>
+</div>
+
+@foreach (var item in Model.client_account_document_transmit_history_details)
+{
+     <div class="div_row">
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_NAME)</div>
+         <div class="div_cell">@Html.DisplayFor(modelItem => item.DEPT_NAME)</div>
+         <div class="div_cell">@Html.DisplayFor(modelItem => item.DOC_TYPE)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.ACC_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_BOX_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.TRANSMIT_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.TRN_TYPE_NAME)</div>
+    </div>    
+}
+
+

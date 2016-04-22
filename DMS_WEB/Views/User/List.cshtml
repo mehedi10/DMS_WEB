@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DMS_WEB.Models.SEC_USERS_GET_Result>
+
+@{
+    Layout = null;
+}
+
+
+<div class="div_row">
+    <div class="div_cell div_caption">Select</div>
+    <div class="div_cell div_caption">Login ID</div>
+    <div class="div_cell div_caption">User Type</div>
+     <div class="div_cell div_caption">User Name</div>
+    <div class="div_cell div_caption">Status</div>
+    <div class="div_cell div_caption">Client</div>
+    <div class="div_cell div_caption">Delete</div>
+</div>
+
+@foreach (var item in Model) {
+ 
+    string FUll_Name = item.FIRST_NAME + " " + item.MID_NAME + " " + item.LAST_NAME;
+    <div class="div_row">
+        <div class="div_cell">@Html.ActionLink("Edit", "Edit", new { id = item.USER_NO}, new { @class = "btn btn-info edit" }) </div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.LOGIN_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.USER_TYPE)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => FUll_Name)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.IS_ACTIVE)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_NAME)</div>
+        <div class="div_cell">@Html.ActionLink("Delete", "Delete", new { id = item.USER_NO }, new { @class = "confirm btn btn-danger delete", @tag = item.USER_NO })</div>
+    </div>    
+}
+

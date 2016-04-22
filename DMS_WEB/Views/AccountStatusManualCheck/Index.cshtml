@@ -1,0 +1,114 @@
+﻿@{
+    ViewBag.Title = "Account Status Manual Check";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<script type="text/javascript">
+    var setup_info = @Html.Raw(@ViewBag.setup_info);
+</script>
+
+<div class="entryform search">
+    @Html.Partial("Search")
+</div>
+
+<div class="result">
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            load_default();
+            
+            $(document).on("click", '#btnSearch', btnSearch_Click);
+            $(document).on("click", '#btnClear', btnClear_Click);
+        });  
+
+        function load_default() {
+            $(document).on("live", '#sr_CLIENT_NO', setTimeout( load_sr_clients, 10));
+//            $(document).on("live", '#sr_REQ_TYPE_NO', setTimeout( load_sr_req_type, 10));      
+        }
+
+        function is_valid_entry() {
+            var ret_val = true;
+            var msg = '';
+
+            var CLIENT_NO = $.trim($('#sr_CLIENT_NO').val());
+//            var REQ_TYPE_NO = $.trim($('#sr_REQ_TYPE_NO').val());
+            var ACC_ID = $.trim($('#ACC_ID').val());
+
+
+            if (CLIENT_NO == undefined || CLIENT_NO == null || CLIENT_NO == '' || CLIENT_NO == 0) {
+                ret_val = ret_val && false;
+                msg += 'Client is required \n';
+            }
+//            if (REQ_TYPE_NO == undefined || REQ_TYPE_NO == null || REQ_TYPE_NO == '') {
+//                ret_val = ret_val && false;
+//                msg += 'Request Type is required \n';
+//            }
+            if (ACC_ID == undefined || ACC_ID == null || ACC_ID == '') {
+                ret_val = ret_val && false;
+                msg += 'Account List are required \n';
+            }
+
+            if (ret_val == false) {
+                alert(msg);
+            }
+
+            return ret_val;
+        }
+
+
+        function btnSearch_Click() {
+            if (is_valid_entry()) {
+                var url = $('#frmSearch').attr("action");
+                var data = {
+                    CLIENT_NO: $('#sr_CLIENT_NO').val(),
+//                    REQ_TYPE_NO: $('#sr_REQ_TYPE_NO').val(),
+                    ACC_ID: $('#ACC_ID').val()
+
+                };
+
+                $.post(url, data, function (res) {
+                    $('.result').html(res);
+                });
+            } else {
+                return false;
+            }  
+        }
+
+        function btnClear_Click() {
+            $('.result').html('');
+
+            $('#sr_CLIENT_NO').val('');
+//            $('#sr_REQ_TYPE_NO').val('');
+             $('#ACC_ID').val('');
+        }
+
+        function load_sr_clients() {  
+            $('#sr_CLIENT_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#sr_CLIENT_NO').append(empty_data);		
+            $.each(setup_info.client_list, function(i, item) {
+			    var html_data = '';
+			    html_data += '<option value="' + item.CLIENT_NO  + '">' + item.CLIENT_NAME + '</option>';
+			    $('#sr_CLIENT_NO').append(html_data);	
+		    });
+        }
+
+//        function load_sr_req_type() {
+//            $('#sr_REQ_TYPE_NO').empty();
+//            var empty_data = '<option value="">-- Select --</option>';
+//            $('#sr_REQ_TYPE_NO').append(empty_data);		
+//            $.each(setup_info.req_type_list, function(i, item) {
+//			    var html_data = '';
+//			    html_data += '<option value="' + item.REQ_TYPE_NO  + '">' + item.REQ_TYPE_NAME + '</option>';
+//			    $('#sr_REQ_TYPE_NO').append(html_data);	
+//		    });
+//        }
+
+    </script>
+}

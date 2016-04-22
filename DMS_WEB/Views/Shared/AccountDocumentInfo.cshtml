@@ -1,0 +1,38 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_ACC_DOCS_GET_Result
+
+<fieldset>
+    <legend>@*SET_CLIENT_ACC_DOCS_GET_Result*@</legend>
+
+    <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Document Type", new { @for = "DOC_TYPE_CODE" })
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.DOC_TYPE_CODE) - @Html.DisplayFor(model => model.DOC_TYPE)
+        </div>
+    </div>
+
+    <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Document Details", new { @for = "DOC_DETAILS" })
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.DOC_DETAILS) 
+        </div>
+    </div>
+
+    <div class="entry_form">
+        <div class="editor-label">
+            
+        </div>
+        <div class="editor-field">
+            @Html.ActionLink("Back to Document", "Index", "AccountDocument", new { @ACC_NO = Model.ACC_NO, @DOC_NO = Model.DOC_NO}, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+
+    <div class="entry_form">
+        <div class="editor-label">&nbsp;</div>
+        <div class="editor-field">&nbsp;</div>
+    </div>
+    
+</fieldset>

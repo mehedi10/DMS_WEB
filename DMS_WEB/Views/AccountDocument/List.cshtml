@@ -1,0 +1,45 @@
+﻿@model IEnumerable<DMS_WEB.Models.SET_CLIENT_ACC_DOCS_GET_Result>
+@{
+    Layout = null;
+}
+
+<div class="div_row tab_header">
+    <div class="div_cell div_caption">Select</div>    
+    <div class="div_cell div_caption"></div>
+     <div class="div_cell div_caption"></div>
+    <div class="div_cell div_caption">Document Type</div>
+    <div class="div_cell div_caption">Details</div>
+    <div class="div_cell div_caption">Archieve Date</div>
+    <div class="div_cell div_caption">Transmittal Type</div>
+    <div class="div_cell div_caption">Delete</div>
+</div>
+
+@foreach (var item in Model) {
+    string str_tran_type = string.Empty;
+    if (item.TRN_TYPE_NO == (byte?)DMS_WEB.Models.TransmittalTypes.IN) {
+        str_tran_type = "IN";
+    }
+    if (item.TRN_TYPE_NO == (byte?)DMS_WEB.Models.TransmittalTypes.OUT) {
+        str_tran_type = "OUT";
+    }
+    
+    <div class="div_row">
+        <div class="div_cell">
+            @Html.ActionLink("Edit", "Edit", new { id = item.DOC_NO}, new { @class = "btn btn-info edit" })  
+        </div>
+        <div class="div_cell">
+            @Html.ActionLink("Attachment", "Index", "DocumentAttachment", new { @ACC_NO = item.ACC_NO, @DOC_NO = item.DOC_NO, @ATTACH_NO = 0 }, new { @class = "btn btn-success" })            
+        </div>
+        
+        <div class="div_cell">
+            @Html.ActionLink("Transmital", "Index","ClientAccountDocumentTransmitalHistory", new { @DOC_NO = item.DOC_NO, @ACC_NO = item.ACC_NO }, new { @class = "btn btn-success" })
+        </div>
+
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.DOC_TYPE)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.DOC_DETAILS)</div>        
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.ARCHIVE_DATE)</div>
+        <div class="div_cell">@str_tran_type</div>
+        <div class="div_cell">@Html.ActionLink("Delete", "Delete", new { id = item.ACC_NO }, new { @class = "confirm btn btn-danger delete", @tag = item.DOC_NO})</div>
+    </div>    
+
+}

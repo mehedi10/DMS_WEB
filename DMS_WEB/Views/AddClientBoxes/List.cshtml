@@ -1,0 +1,27 @@
+﻿@model IEnumerable<DMS_WEB.Models.SET_CLIENT_DEPT_BOXES_GET_Result>
+
+@{
+    Layout = null;
+}
+
+<div class="div_row">
+    <div class="div_cell div_caption">Client</div>
+    <div class="div_cell div_caption">Department</div>
+    <div class="div_cell div_caption">Recall Box No</div>
+    <div class="div_cell div_caption">Client Box ID</div>
+    <div class="div_cell div_caption">Remove</div>
+</div>
+
+@foreach (var item in Model) {
+    
+    <div class="div_row">
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.DEPT_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.RECALL_BOX_NO)</div>
+         <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_BOX_ID)</div>
+        <div class="div_cell">@Html.ActionLink("Delete", "Delete", new { id = item.RECALL_BOX_NO, client_no = item.CLIENT_NO, dept_no = item.DEPT_NO, client_box_id = item.CLIENT_BOX_ID }, new { @class = "confirm btn btn-danger delete", @tag=item.RECALL_BOX_NO })</div>
+    </div>    
+
+}
+
+

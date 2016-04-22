@@ -1,0 +1,71 @@
+﻿@model DMS_WEB.Models.SET_PRODUCT_TYPES
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SET_PRODUCT_TYPES</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.PRODUCT_TYPE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PRODUCT_TYPE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SHORT_CODE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SHORT_CODE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CREATE_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CREATE_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CREATE_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CREATE_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CREATE_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CREATE_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_TIME)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.PROD_TYPE_NO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

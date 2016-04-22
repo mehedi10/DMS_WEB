@@ -1,0 +1,44 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_DEPT_RECALL_BOXES_GET_DETAILS_Result
+<fieldset>
+    <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Client", new { @for = "CLIENT_NAME" })
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.CLIENT_NO)
+            @Html.DisplayFor(model => model.CLIENT_NAME)
+        </div>
+    </div>
+    <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Department", new { @for = "DEPT_NAME" })
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.DEPT_NO)
+            @Html.DisplayFor(model => model.DEPT_NAME)
+        </div>
+    </div>
+
+    <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Recall Box ID", new { @for = "RECALL_BOX_ID" })
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.RECALL_BOX_NO)
+            @Html.DisplayFor(model => model.RECALL_BOX_ID)
+        </div>
+    </div>
+    <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Recall Location", new { @for = "RECALL_LOCATION" })
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.RECALL_LOCATION)
+            @Html.DisplayFor(model => model.RECALL_LOCATION)
+        </div>
+        
+         <div class="editor-field">
+            @Html.ActionLink("Back to Recall Box", "Index", "RecallBox", new { @id = Model.RECALL_BOX_NO }, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</fieldset>

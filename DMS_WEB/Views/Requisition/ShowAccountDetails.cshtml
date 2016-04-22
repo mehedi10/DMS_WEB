@@ -1,0 +1,48 @@
+﻿@model IEnumerable<DMS_WEB.Models.GET_ACCOUNT_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result>
+
+@{
+    ViewBag.Title = "All Accounts";
+    var SrNo = 1;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="div_row tab_header">
+            <div class="div_cell div_caption">Sr.No</div>
+            <div class="div_cell div_caption">Account ID</div>
+             <div class="div_cell div_caption">Transmital Type</div>
+ </div>
+
+            @foreach (var item in Model)
+            {
+                string str_tran_type = string.Empty;
+
+                if (item.TRN_TYPE_NO == 1)
+                {
+                    str_tran_type = "IN";
+                }
+                else if (item.TRN_TYPE_NO == 2)
+                {
+                    str_tran_type = "OUT";
+                }
+                else
+                {
+                    str_tran_type = "Not Recieved";
+                }
+
+
+                <div class="div_row">
+                    @if (item != null)
+                    {
+                        <div class="div_cell">@SrNo</div>
+                        SrNo++;
+                    }
+        
+                    <div class="div_cell">@Html.DisplayFor(modelItem => item.ACC_ID)</div> 
+                    <div class="div_cell">@str_tran_type</div>                      
+                </div>
+            }
+
+            <div class="div_cell div_caption">
+                @Html.ActionLink("Back", "StatusList", "Requisition", new { @class = "btn btn-primary" })
+            </div>

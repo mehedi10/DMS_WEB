@@ -1,0 +1,71 @@
+﻿@model IEnumerable<DMS_WEB.Models.SET_CLIENT_ACCOUNTS_BULK_GET_Result>
+@{
+    Layout = null;
+    int PageNumber = (int)ViewBag.PageNumber;
+    int? TotalRecords = (int)ViewBag.TotalRecords;
+    int PAGE_SIZE = (int)ViewBag.PAGE_SIZE;
+}
+
+<div class="div_row tab_header">
+    <div class="div_cell div_caption">Select</div>        
+    <div class="div_cell div_caption">Account ID</div>
+    <div class="div_cell div_caption">Account Name</div>
+    <div class="div_cell div_caption">Department</div>
+    <div class="div_cell div_caption">Client Box ID</div>
+    <div class="div_cell div_caption">Batch ID</div>
+    <div class="div_cell div_caption">Transmittal Type</div>
+</div>
+
+@foreach (var item in Model) {
+    string str_tran_type = string.Empty;
+    if (item.TRN_TYPE_NO == (byte?)DMS_WEB.Models.TransmittalTypes.IN) {
+        str_tran_type = "IN";
+    }
+    if (item.TRN_TYPE_NO == (byte?)DMS_WEB.Models.TransmittalTypes.OUT) {
+        str_tran_type = "OUT";
+    }
+    
+    <div class="div_row">
+        <div class="div_cell">
+            @Html.ActionLink("View", "ViewDetails", "PrivateAccountSearch", new { ACC_NO = item.ACC_NO }, new { @class = "btn btn-info edit" })  
+        </div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.ACC_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.ACC_NAME)</div>        
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.DEPT_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_BOX_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.BATCH_ID)</div>
+
+        <div class="div_cell div_caption">@str_tran_type</div>
+    </div>    
+
+}
+
+
+<div class="div_row">
+@{
+    if (TotalRecords.HasValue) {
+        int limit = (int)Math.Ceiling((decimal)(TotalRecords.Value / PAGE_SIZE));
+        if (limit < 1) {
+            limit = 1;
+        }
+        <div class="div_cell div_caption">Goto Page</div>
+    <div class="div_cell div_caption">
+        <select id="selPager" name="selPager" class="selPager" title="../PrivateBulkAccountSearch/GetPaged" onchange="Navigate()">
+        @for (int i = 1; i <= limit; i++) {
+            string selected = string.Empty;
+            if (PageNumber == i) { selected = "selected"; }
+            <option value="@i" @selected >@i</option>
+        }
+        </select>
+    </div>
+    }
+}
+</div>
+<script type="text/javascript">
+    function Navigate() {
+        var url = $('#selPager').attr('title') + "?PageNumber=" + $('#selPager').val();
+        $.get(url, function (res) {
+            $('.result').html(res);
+        });
+    }
+</script>

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<DMS_WEB.Models.GET_ACCOUNT_DOC_TRANSMIT_HISTORY_Result>
+
+@{
+    ViewBag.Title = "Client Account Document Transmital History";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="div_row">
+    <div class="div_cell div_caption">Client</div>
+    <div class="div_cell div_caption">Department</div>
+    <div class="div_cell div_caption">Client Box ID</div>
+    <div class="div_cell div_caption">Account ID</div>
+    <div class="div_cell div_caption">Dcoument Type</div>
+    <div class="div_cell div_caption">Transmital ID</div>
+    <div class="div_cell div_caption">Transmittal Type</div>
+    <div class="div_cell div_caption">Archieve Date</div>
+</div>
+
+@foreach (var item in Model) {
+    <div class="div_row">
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.DEPT_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_BOX_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.ACC_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.DOC_TYPE)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.TRANSMIT_ID)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.TRN_TYPE_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.ARCHIVE_DATE)</div>
+    </div>    
+
+}
+

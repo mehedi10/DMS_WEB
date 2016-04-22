@@ -1,0 +1,85 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_DEPT_RECALL_BOXES_GET_DETAILS_Result
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("Save", "RecallBox", FormMethod.Post, new { @id = "frmEntry" }))
+{
+    @Html.ValidationSummary(true)
+
+      @Html.HiddenFor(model => model.RECALL_BOX_NO)
+
+    <fieldset>
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Client", new { @for = "CLIENT_NO" })
+            </div>
+            <div class="editor-field">
+                <select id="CLIENT_NO" name="CLIENT_NO">
+                </select>
+                @Html.ValidationMessageFor(model => model.CLIENT_NO)
+            </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Department", new { @for = "DEPT_NO" })
+            </div>
+            <div class="editor-field">
+                <select id="DEPT_NO" name="DEPT_NO">
+                </select>
+                @Html.ValidationMessageFor(model => model.DEPT_NO)
+            </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Recall Box ID", new { @for = "RECALL_BOX_ID" })
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("RECALL_BOX_ID")
+                @Html.ValidationMessage("RECALL_BOX_ID")
+            </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Recall Location", new { @for = "RECALL_LOCATION" })
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("RECALL_LOCATION")
+                @Html.ValidationMessage("RECALL_LOCATION")
+            </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">
+            </div>
+            <div class="editor-field">
+                <button type="submit" id="btnSave" name="btnSave" class="confirm btn btn-primary">
+                    Save</button>
+                <button type="button" id="btnCancel" name="btnCancel" class="btn btn-warning">
+                    Cancel</button>
+                    
+                     <span id="div_add_client_box_link">
+                @if (Model.RECALL_BOX_NO.HasValue && Model.RECALL_BOX_NO.Value > 0)
+                {
+                    @Html.ActionLink("Add Client Box", "Index", "AddClientBoxes", new { @RECALL_BOX_NO = Model.RECALL_BOX_NO, @BOX_NO = 0}, new { @class = "btn btn-success" })
+                }
+                </span>
+            </div>
+        </div>
+    </fieldset>
+}
+@section Scripts {
+}
+<script type="text/javascript">
+
+    var CLIENT_NO = '@Model.CLIENT_NO';
+    var DEPT_NO = '@Model.DEPT_NO';
+
+    $(document).ready(function () {
+        //load_default();
+    }); 
+</script>
+

@@ -1,0 +1,130 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_ACC_DOCS_GET_Result
+@{
+    Layout = null;
+
+    //Model.ACC_NO = (long?) ViewBag.ACC_NO;
+}
+
+@using (Html.BeginForm("Save", "AccountDocument", FormMethod.Post, new { @id = "frmEntry" })) {
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.DOC_NO)
+
+    @Html.HiddenFor(model => model.ACC_NO)
+
+    <fieldset>
+        <legend>@*SET_CLIENT_ACC_DOCS_GET_Result*@</legend>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Document Type", new { @for = "DOC_TYPE_NO" })
+        </div>
+        <div class="editor-field">
+            <select id="DOC_TYPE_NO" name="DOC_TYPE_NO" required="required">                
+            </select>
+            @Html.ValidationMessageFor(model => model.DOC_TYPE_NO)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Details", new { @for = "DOC_DETAILS" })
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.DOC_DETAILS)
+            @Html.ValidationMessageFor(model => model.DOC_DETAILS)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Transmittal Type", new { @for = "TRN_TYPE_NO" })
+        </div>
+        <div class="editor-field">
+            <select id="TRN_TYPE_NO" name="TRN_TYPE_NO" required="required">                
+            </select>
+            @Html.ValidationMessageFor(model => model.TRN_TYPE_NO)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Request Type", new { @for = "REQ_TYPE_NO" })
+        </div>
+        <div class="editor-field">
+            <select id="REQ_TYPE_NO" name="REQ_TYPE_NO" required="required">                
+            </select>
+            @Html.ValidationMessageFor(model => model.REQ_TYPE_NO)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Archieve Date", new { @for = "ARCHIVE_DATE" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.ARCHIVE_DATE, new { @required = "required" })
+            @Html.ValidationMessageFor(model => model.ARCHIVE_DATE)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Transmittal ID", new { @for = "TRANSMIT_ID" })
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.TRANSMIT_NO)
+            @Html.TextBox("TRANSMIT_ID")
+            @Html.ValidationMessage("TRANSMIT_ID")
+            @Html.TextBox("TRN_DATE")
+        </div>
+        </div>
+
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Old Data Entry", new { @for = "IS_OLD_DATA" })
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_OLD_DATA)
+            @Html.ValidationMessageFor(model => model.IS_OLD_DATA)
+        </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">                
+            </div>
+            <div class="editor-field">
+                
+                <button type="submit" id="btnSave" name="btnSave" class="confirm btn btn-primary">Save</button> 
+                <button type="button" id="btnCancel" name="btnCancel" class="btn btn-warning">Cancel</button> 
+                
+                @*<button type="button" id="btnDelete" name="btnDelete" class="btn btn-danger">Delete</button> *@
+                <span id="div_attach_link"> 
+                @if ((Model.ACC_NO.HasValue && Model.ACC_NO.Value > 0) && (Model.DOC_NO.HasValue && Model.DOC_NO.Value > 0)) {
+                    @Html.ActionLink("Attachment", "Index", "DocumentAttachment", new { @ACC_NO = Model.ACC_NO, @DOC_NO = Model.DOC_NO, @ATTACH_NO = 0 }, new { @class = "btn btn-success" })
+                }
+                </span>
+            </div>
+        </div>
+
+    </fieldset>
+}
+
+@section Scripts {
+
+    
+}
+
+<script type="text/javascript">
+    
+    var TRN_TYPE_NO = '@Model.TRN_TYPE_NO';
+    var REQ_TYPE_NO = '@Model.REQ_TYPE_NO';
+    var DOC_TYPE_NO = '@Model.DOC_TYPE_NO';
+
+
+    $(document).ready(function () {
+        //load_default();
+    });     
+    
+</script>

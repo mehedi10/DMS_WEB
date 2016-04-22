@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - DMS</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        @*<meta name="viewport" content="width=device-width" />*@
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes">
+
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <link rel="stylesheet" href="../../Content/themes/base/jquery.timepicker.css" />       
+        
+        <link rel="stylesheet" href="../../Content/bootstrap.css" />  
+        <link rel="stylesheet" href="../../Content/responsive.css" /> 
+
+        @Scripts.Render("~/bundles/jquery")
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+                            
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "btn btn-default" })</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    @Html.Partial("_MenuPartial")
+                    @*<nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </nav>*@
+                </div>
+            </div>
+            
+            
+
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                <div class="col-12">
+                @RenderBody()
+                </div>
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - </p>
+                </div>
+            </div>
+        </footer>
+
+        @{
+            string email_reg_ex = @"/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i";
+        }
+
+
+        @*@Scripts.Render("~/bundles/jquery")*@
+        @Scripts.Render("~/bundles/jqueryui")
+        @Scripts.Render("~/bundles/jqueryval")
+
+        <script type="text/javascript" src="../../Scripts/jquery.timepicker.min.js"></script>
+        <script type="text/javascript" src="../../Scripts/jquery.maskedinput-1.2.2.js"></script>
+
+        @RenderSection("scripts", required: false)
+        
+        <script type="text/javascript">
+            //jQuery.noConflict();
+            $(document).ready(function () {
+                
+            });
+
+            function isDate(date_val) {
+                //console.log(date_val);
+                var date_regex = /^\d{2}\/\d{2}\/\d{4}$/ ;
+                if ( date_regex.test(date_val)) {
+                    var from = date_val.split("/");
+                    try {
+                        var f = new Date(from[2], from[1] - 1, from[0]);
+                        //console.log(f);
+                        return true;
+                    } catch(err) { 
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            }
+
+            function converDate(str_val) {
+                var date_regex = /^\d{2}\/\d{2}\/\d{4}$/ ;
+                if ( date_regex.test(str_val)) {
+                    var from = str_val.split("/");
+                    return new Date(from[2], from[1] - 1, from[0]);
+                } else {
+                    return  null;
+                }
+            }
+
+            function isEmail(email) {
+                var re = @email_reg_ex;
+                return re.test(email);
+            }
+        </script>
+
+        
+    </body>
+</html>

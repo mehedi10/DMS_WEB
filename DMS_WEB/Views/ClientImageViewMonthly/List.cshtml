@@ -1,0 +1,25 @@
+﻿@model IEnumerable<DMS_WEB.Models.GET_IMAGE_COMPILATION_HISTORY_Result>
+
+@{
+    Layout = null;
+}
+
+<div class="div_row">
+    <div class="div_cell div_caption">Client</div>
+    <div class="div_cell div_caption">Year</div>
+    <div class="div_cell div_caption">Month</div>
+    <div class="div_cell div_caption">Total View</div>
+    <div class="div_cell div_caption">Compilation Date</div>
+</div>
+
+@foreach (var item in Model)
+{
+    <div class="div_row">
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.RPT_YEAR)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.RPT_MONTH)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.VIEW_QTY)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.COMPILE_DATE)</div>
+    </div>    
+
+}

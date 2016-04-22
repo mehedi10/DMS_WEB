@@ -1,0 +1,43 @@
+﻿@using (Html.BeginForm("Search", "AccountStatusManualCheck", FormMethod.Post, new { @id = "frmSearch" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <div class="search_row">
+            <div class="search_cell">
+                @Html.Label("Client", new { @for = "sr_CLIENT_NO" })
+            </div>
+            <div class="search_cell">
+                <select id="sr_CLIENT_NO" name="sr_CLIENT_NO" required="required">
+                </select>
+            </div>
+            @* <div class="search_cell">
+                @Html.Label("Request Type", new { @for = "sr_REQ_TYPE_NO" })
+            </div>
+            <div class="search_cell">
+                <select id="sr_REQ_TYPE_NO" name="sr_REQ_TYPE_NO" required="required">
+                </select>
+            </div>*@
+        </div>
+        <div class="search_row">        
+            <div class="search_cell">
+                @Html.Label("Account List", new { @for = "ACC_ID" })
+            </div>
+            <div class="search_cell">
+                @Html.TextArea("ACC_ID", new { @required = "required" })
+            </div>
+        </div>
+        
+        <div class="search_row">
+             <div class="search_cell">
+            </div> 
+            <div class="search_cell">
+                <button type="button" id="btnSearch" name="btnSearch" class="btn btn-success">
+                    Search</button>
+                <button type="button" id="btnClear" name="btnClear" class="btn btn-warning">
+                    Clear</button>
+            </div>
+        </div>
+    </fieldset>
+    
+}

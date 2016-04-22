@@ -1,0 +1,246 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_DEPT_RECALL_BOXES_GET_DETAILS_Result
+
+@{
+    ViewBag.Title = "Recall Boxes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<script type="text/javascript">
+    var setup_info = @Html.Raw(@ViewBag.setup_info);
+</script>
+
+<div class="entryform save">
+    @Html.Partial("Save", Model)
+</div>
+
+<div class="entryform search">
+    @Html.Partial("Search")
+</div>
+
+<div class="result">
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+//        var setup_info = @Html.Raw(@ViewBag.setup_info);
+
+        $(document).ready(function () {
+            load_default();
+
+            $(document).on("click", '#btnSave', btnSave_Click);
+            $(document).on("click", '#btnCancel', btnCancel_Click);
+            $(document).on("change", '#CLIENT_NO', CLIENT_NO_Click);           
+
+            $(document).on("click", '#btnSearch', btnSearch_Click);
+            $(document).on("click", '#btnClear', btnClear_Click);
+            $(document).on("change", '#sr_CLIENT_NO', sr_CLIENT_NO_Click);     
+
+            $(document).on("click", '.edit', edit_info);
+            $(document).on("click", '.delete', delete_info);
+        });  
+
+        function load_default() {
+            $(document).on("live", '#CLIENT_NO', setTimeout( load_clients, 10));
+            $(document).on("live", '#DEPT_NO', setTimeout( CLIENT_NO_Click, 10));
+
+            $(document).on("live", '#sr_CLIENT_NO', setTimeout( load_sr_clients, 10));
+            $(document).on("live", '#sr_DEPT_NO', setTimeout( sr_CLIENT_NO_Click, 10));                   
+        }
+        
+
+        function edit_info(e) {            
+            var url = $(this).attr("href");            
+            $.get(url, function(res) {
+                $('.save').html(res);
+                load_default();
+            });
+            e.preventDefault();
+            return false;
+        }
+
+        function delete_info(e) {            
+            if (confirm('Do want to delete?')) {
+                var url = $(this).attr("href");     
+                var data = {id : $(this).attr("tag"), };
+                $.post(url, data, function(res) {
+                    if (res.is_success == true) {
+                        btnSearch_Click();
+                        alert('Record deleted successfully');
+
+                    } else {
+                        alert(res.msg);
+                    }
+                });
+            }
+            e.preventDefault();
+            return false;
+        }
+        
+
+        function is_valid_entry() {
+            var ret_val = true;
+	        var msg = '';
+
+            var CLIENT_NO = $.trim($('#CLIENT_NO').val()); 
+            var DEPT_NO = $.trim($('#DEPT_NO').val()); 
+            var RECALL_BOX_ID = $.trim($('#RECALL_BOX_ID').val()); 
+            var RECALL_LOCATION = $.trim($('#RECALL_LOCATION').val()); 
+                        
+
+            if (CLIENT_NO == undefined || CLIENT_NO == null || CLIENT_NO == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Client is required \n' ;
+	        } 
+            if (DEPT_NO == undefined || DEPT_NO == null || DEPT_NO == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Department is required \n' ;
+	        } 
+            if (RECALL_BOX_ID == undefined || RECALL_BOX_ID == null || RECALL_BOX_ID == '') {
+		        ret_val = ret_val && false;
+		        msg += 'RECALL BOX ID is required \n' ;
+	        } 
+            if (RECALL_LOCATION == undefined || RECALL_LOCATION == null || RECALL_LOCATION == '') {
+		        ret_val = ret_val && false;
+		        msg += 'RECALL LOCATION is required \n' ;
+	        } 
+
+            if (ret_val == false) { 
+		        alert(msg);
+	        }
+
+	        return ret_val;
+        }
+
+        function btnSave_Click() { 
+            if (is_valid_entry()) {
+                if (confirm('Do you want to Save?')) {
+                    var url = $('#frmEntry').attr("action");
+                    var data = $('#frmEntry').serialize();
+
+                    $.post(url, data, function(res) { 
+                        if (res.is_success == true) {
+
+                        var add_client_box_link = '<a href="../AddClientBoxes/Index?RECALL_BOX_NO=' + res.id + '&BOX_NO=0" class="btn btn-success">Add Client Box</a>';
+
+                            $('#RECALL_BOX_NO').val(res.id);
+                            $('#div_add_client_box_link').html(add_client_box_link);
+                            alert('Saved Successfully');
+//                            btnSearch_Click();
+
+//                            $('#CLIENT_NO').val('');       
+//                            $('#DEPT_NO').val('');
+//                            $('#RECALL_BOX_ID').val('');
+//                            $('#RECALL_LOCATION').val('');
+                        } else {
+                            alert(res.msg);
+                        }
+                    });
+                    return false;
+                    
+                } else {
+                    return false;
+                }
+            } else {  
+                return false;
+            }
+        }
+
+        function btnCancel_Click() {
+            $('#CLIENT_NO').val('');       
+            $('#DEPT_NO').val('');
+            $('#RECALL_BOX_ID').val('');
+            $('#RECALL_LOCATION').val('');
+
+            $('#div_add_client_box_link').html('');
+        }
+
+        function CLIENT_NO_Click() {
+            load_department();
+        }
+
+        function load_clients() {  
+            $('#CLIENT_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#CLIENT_NO').append(empty_data);		
+            $.each(setup_info.client_list, function(i, item) {
+                var selected = '';
+                if (item.CLIENT_NO == CLIENT_NO) {
+                    selected = 'selected="selected"';
+                }                
+			    var html_data = '';
+			    html_data += '<option value="' + item.CLIENT_NO  + '" ' + selected + '>' + item.CLIENT_NAME + '</option>';
+			    $('#CLIENT_NO').append(html_data);	
+		    });
+        }
+
+        function load_department() {
+            $('#DEPT_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#DEPT_NO').append(empty_data);
+            $.each(setup_info.dept_list, function(i, item) {
+                if (item.CLIENT_NO == $('#CLIENT_NO').val()) { 
+                    var selected = '';
+                    if (item.DEPT_NO == DEPT_NO) {
+                        selected = 'selected="selected"';
+                    } 
+			        var html_data = '';
+			        html_data += '<option value="' + item.DEPT_NO  + '" ' + selected + '>' + item.DEPT_NAME + '</option>';
+			        $('#DEPT_NO').append(html_data);
+                } 	
+		    });
+        }
+
+        function btnSearch_Click() { 
+            var url = $('#frmSearch').attr("action"); 
+            var data = {
+                CLIENT_NO : $('#sr_CLIENT_NO').val(), 
+                DEPT_NO : $('#sr_DEPT_NO').val(), 
+                RECALL_BOX_ID : $('#sr_RECALL_BOX_ID').val(),
+                RECALL_LOCATION : $('#sr_RECALL_LOCATION').val()
+            };
+
+            $.post(url, data, function(res) { 
+                $('.result').html(res);
+            });
+        }
+
+        function btnClear_Click() {
+            $('.result').html('');
+
+            $('#sr_CLIENT_NO').val('');       
+            $('#sr_DEPT_NO').val('');
+            $('#sr_RECALL_BOX_ID').val('');
+        }
+
+        function sr_CLIENT_NO_Click() {
+            load_sr_department();
+        }
+
+        function load_sr_clients() {  
+            $('#sr_CLIENT_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#sr_CLIENT_NO').append(empty_data);		
+            $.each(setup_info.client_list, function(i, item) {
+			    var html_data = '';
+			    html_data += '<option value="' + item.CLIENT_NO  + '">' + item.CLIENT_NAME + '</option>';
+			    $('#sr_CLIENT_NO').append(html_data);	
+		    });
+        }
+
+        function load_sr_department() {
+            $('#sr_DEPT_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#sr_DEPT_NO').append(empty_data);
+            $.each(setup_info.dept_list, function(i, item) {
+                if (item.CLIENT_NO == $('#sr_CLIENT_NO').val()) { 
+			        var html_data = '';
+			        html_data += '<option value="' + item.DEPT_NO  + '">' + item.DEPT_NAME + '</option>';
+			        $('#sr_DEPT_NO').append(html_data);
+                } 	
+		    });
+        }
+    </script>
+}
+

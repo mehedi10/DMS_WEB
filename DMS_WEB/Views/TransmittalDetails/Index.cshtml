@@ -1,0 +1,58 @@
+﻿@model DMS_WEB.Models.TRN_TRANSMITTALS_GET_Result
+
+@{
+    ViewBag.Title = "Transmittal Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<script type="text/javascript">
+    var setup_info = @Html.Raw(@ViewBag.setup_info);
+</script>
+
+<div class="entryform search">
+    @Html.Partial("Search", Model)
+</div>
+
+<div class="result">
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(document).on("click", '#btnSearch', btnSearch_Click);
+            $(document).on("click", '#btnClear', btnClear_Click);
+        });  
+
+        function btnSearch_Click() {
+            var url = '../TransmittalDetails/Search'; 
+//            var url1 = '../ClientBTransmittalHistory/Account_Transmital_history_Search'; 
+//            var url2 = '../ClientBTransmittalHistory/Account__document_Transmital_history_Search'; 
+            var data = {
+                Transmitall_ID: $('#TRANSMIT_ID').val(), 
+            };
+
+
+            $.post(url, data, function(res) { 
+                $('.result').html(res);
+            });
+
+//             $.post(url, data, function(res) { 
+//                $('.account_result').html(res.client_account_transmit_history_details); 
+//            });
+
+//             $.post(url, data, function(res) { 
+//                $('.document_result').html(res.client_account_document_transmit_history_details);
+//            });
+        }
+
+        function btnClear_Click() {
+            $('.result').html('');
+            $('#TRANSMIT_ID').val('');
+        }
+    </script>
+}
+
+

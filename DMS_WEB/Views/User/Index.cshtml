@@ -1,0 +1,281 @@
+﻿@model DMS_WEB.Models.SEC_USERS_GET_Result
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@ViewBag.Title</h2>
+<script type="text/javascript">
+    var setup_info = @Html.Raw(@ViewBag.setup_info);
+</script>
+<div class="entryform save">
+    @Html.Partial("Save", Model)
+</div>
+<div class="entryform search">
+    @Html.Partial("Search")
+</div>
+<div class="result">
+</div>
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            load_default();
+
+            $(document).on("change", '#USER_TYPE_NO', USER_TYPE_NO_Click);
+            $(document).on("click", '#btnSave', btnSave_Click);
+            $(document).on("click", '#btnCancel', btnCancel_Click);   
+            
+            $(document).on("click", '#btnSearch', btnSearch_Click);
+            $(document).on("click", '#btnClear', btnClear_Click);
+            
+             $(document).on("click", '.edit', edit_info);
+            $(document).on("click", '.delete', delete_info);       
+        });
+
+        function load_default() {
+
+            $(document).on("live", '#USER_TYPE_NO', setTimeout(load_user_type, 10));
+            $(document).on("live", '#sr_USER_TYPE_NO', setTimeout(load_sr_user_type, 10));
+
+            $(document).on("live", '#CLIENT_NO', setTimeout(load_clients, 10));
+            $(document).on("live", '#sr_CLIENT_NO', setTimeout(load_sr_clients, 10));
+//            $(document).on("live", '#sr_STATUS', setTimeout(load_sr_Status, 10));
+        }
+
+        function load_user_type() {
+            $('#USER_TYPE_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';
+            $('#USER_TYPE_NO').append(empty_data);
+            $.each(setup_info.user_type_list, function (i, item) {
+                var selected = '';
+                if (item.USER_TYPE_NO == USER_TYPE_NO) {
+                    selected = 'selected="selected"';
+                }
+                var html_data = '';
+                html_data += '<option value="' + item.USER_TYPE_NO + '" ' + selected + '>' + item.USER_TYPE + '</option>';
+                $('#USER_TYPE_NO').append(html_data);
+            });
+        }
+
+        function load_sr_user_type() {
+            $('#sr_USER_TYPE_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';
+            $('#sr_USER_TYPE_NO').append(empty_data);
+            $.each(setup_info.user_type_list, function (i, item) {
+                var selected = '';
+                if (item.USER_TYPE_NO == USER_TYPE_NO) {
+                    selected = 'selected="selected"';
+                }
+                var html_data = '';
+                html_data += '<option value="' + item.USER_TYPE_NO + '" ' + selected + '>' + item.USER_TYPE + '</option>';
+                $('#sr_USER_TYPE_NO').append(html_data);
+            });
+        }
+
+        function load_clients() {
+            $('#CLIENT_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';
+            $('#CLIENT_NO').append(empty_data);
+            $.each(setup_info.client_list, function (i, item) {
+                var selected = '';
+                if (item.CLIENT_NO == CLIENT_NO) {
+                    selected = 'selected="selected"';
+                }
+                var html_data = '';
+                html_data += '<option value="' + item.CLIENT_NO + '" ' + selected + '>' + item.CLIENT_NAME + '</option>';
+                $('#CLIENT_NO').append(html_data);
+            });
+        }
+
+        function load_sr_clients() {
+            $('#sr_CLIENT_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';
+            $('#sr_CLIENT_NO').append(empty_data);
+            $.each(setup_info.client_list, function (i, item) {
+                var html_data = '';
+                html_data += '<option value="' + item.CLIENT_NO + '">' + item.CLIENT_NAME + '</option>';
+                $('#sr_CLIENT_NO').append(html_data);
+            });
+        }
+
+        function load_sr_Status() {
+        }
+
+
+        function btnSave_Click() {
+            if (is_valid_entry()) {
+                if (confirm('Do you want to Save?')) {
+                    var url = $('#frmEntry').attr("action");
+                    var data = $('#frmEntry').serialize();
+
+                    $.post(url, data, function (res) {
+                        if (res.is_success == true) {
+                            alert('Saved Successfully');
+                            btnSearch_Click();
+
+                        } else {
+                            alert(res.msg);
+                        }
+                    });
+                    return false;
+
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+
+        function is_valid_entry() {
+            var ret_val = true;
+            var msg = '';
+
+            var USER_TYPE_NO = $.trim($('#USER_TYPE_NO').val());
+            var FIRST_NAME = $.trim($('#FIRST_NAME').val());
+            var LOGIN_ID = $.trim($('#LOGIN_ID').val());
+            var PASS_SALT = $.trim($('#PASS_SALT').val());
+            var LOGIN_PASSWORD = $.trim($('#LOGIN_PASSWORD').val());
+            var CLIENT_NO = $.trim($('#CLIENT_NO').val());
+
+
+            if (USER_TYPE_NO == undefined || USER_TYPE_NO == null || USER_TYPE_NO == '') {
+                ret_val = ret_val && false;
+                msg += 'USER TYPE NO is required \n';
+            }
+
+            if (FIRST_NAME == undefined || FIRST_NAME == null || FIRST_NAME == '') {
+                ret_val = ret_val && false;
+                msg += 'FIRST NAME is required \n';
+            }
+
+            if (LOGIN_ID == undefined || LOGIN_ID == null || LOGIN_ID == '') {
+                ret_val = ret_val && false;
+                msg += 'LOGIN ID is required \n';
+            }
+
+            if (PASS_SALT == undefined || PASS_SALT == null || PASS_SALT == '') {
+                ret_val = ret_val && false;
+                msg += 'Login Password is required \n';
+            }
+
+            if (LOGIN_PASSWORD == undefined || LOGIN_PASSWORD == null || LOGIN_PASSWORD == '') {
+                ret_val = ret_val && false;
+                msg += 'Login Password is required \n';
+            }
+
+            if (USER_TYPE_NO == 400) {
+                if (CLIENT_NO == undefined || CLIENT_NO == null || CLIENT_NO == '') {
+                ret_val = ret_val && false;
+                msg += 'CLIENT NO is required \n';
+                }
+            }
+            
+
+            if (PASS_SALT != LOGIN_PASSWORD) {
+                ret_val = ret_val && false;
+                msg += 'Both Password Must be same \n';
+            }
+            
+            if (ret_val == false) {
+                alert(msg);
+            }
+
+            return ret_val;
+        }
+
+        function btnCancel_Click() {
+            $('#USER_TYPE_NO').val('');
+            $('#USER_TYPE').val('');
+            $('#USER_TYPE_DESC').val('');
+
+             $('#FIRST_NAME').val('');
+            $('#MID_NAME').val('');
+            $('#LAST_NAME').val('');
+
+             $('#LOGIN_ID').val('');
+            $('#PASS_SALT').val('');
+            $('#LOGIN_PASSWORD').val('');
+
+             $('#IS_ACTIVE').val('');
+//            $('#ACTIVE_FROM').val('');
+//            $('#ACTIVE_TO').val('');
+
+//             $('#IS_LOCKED').val('');
+//            $('#LOCK_REASON').val('');
+            $('#CLIENT_NO').val('');
+
+             $('#CAN_VIEW_DATA').val('');
+            $('#CAN_VIEW_IMAGE').val('');
+            $('#CAN_DO_REQUEST').val('');
+        }
+
+
+        function btnSearch_Click() { 
+            var url = $('#frmSearch').attr("action"); 
+
+            var data = {
+                CLIENT_NO : $('#sr_CLIENT_NO').val(), 
+                USER_TYPE_NO : $('#sr_USER_TYPE_NO').val(), 
+                LOGIN_ID : $('#sr_LOGIN_ID').val(), 
+//                STATUS : $('#sr_STATUS').val() 
+            };
+
+            $.post(url, data, function(res) { 
+                $('.result').html(res);
+            });
+        }
+
+        function edit_info(e) {            
+            var url = $(this).attr("href");            
+            $.get(url, function(res) {
+                $('.save').html(res);
+                load_default();
+            });
+            e.preventDefault();
+            return false;
+        }
+
+        function delete_info(e) {            
+            if (confirm('Do want to delete?')) {
+                var url = $(this).attr("href");     
+                var data = {id : $(this).attr("tag"), };
+                $.post(url, data, function(res) {
+                    if (res.is_success == true) {
+                        btnSearch_Click();
+                        alert('Record deleted successfully');
+
+                    } else {
+                        alert(res.msg);
+                    }
+                });
+            }
+            e.preventDefault();
+            return false;
+        }
+
+         function btnClear_Click() {
+            $('.result').html('');
+
+            $('#sr_CLIENT_NO').val('');
+            $('#sr_USER_TYPE_NO').val('');
+            $('#sr_LOGIN_ID').val('');
+            $('#sr_STATUS').val('');
+        }
+
+
+         function USER_TYPE_NO_Click() {
+
+            var USER_TYPE_NO = $.trim($('#USER_TYPE_NO').val());
+
+             if (USER_TYPE_NO == 400) {
+//                  $.get('/User/RenderView/' + USER_TYPE_NO , function(data) {
+
+//                $('.restoff').html(data);
+//            }); 
+                 $('.restoff').show();
+             } else {
+                  $('.restoff').hide(); 
+             }
+        }
+    </script>
+}

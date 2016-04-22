@@ -1,0 +1,321 @@
+﻿@model DMS_WEB.Models.TRN_CHALLANS_GET_Result
+
+@{
+    ViewBag.Title = "Challan";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>@ViewBag.Title</h2>
+
+<script type="text/javascript">
+    var setup_info = @Html.Raw(@ViewBag.setup_info);
+</script>
+
+<div class="entryform save">
+    @Html.Partial("Save", Model)
+</div>
+
+<div class="entryform search">
+    @Html.Partial("Search")
+</div>
+<div class="result">
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+//        var setup_info = @Html.Raw(@ViewBag.setup_info);
+
+        $(document).ready(function () {
+            load_default();
+
+            $(document).on("click", '#btnSave', btnSave_Click);
+            $(document).on("click", '#btnCancel', btnCancel_Click);
+            $(document).on("change", '#CLIENT_NO', CLIENT_NO_Click);
+            $(document).on("change", '#TRANSMIT_ID', TRANSMIT_ID_Click);
+
+            $(document).on("click", '#btnSearch', btnSearch_Click);
+            $(document).on("click", '#btnClear', btnClear_Click);
+            $(document).on("change", '#sr_CLIENT_NO', sr_CLIENT_NO_Click);  
+            $(document).on("click", '.edit', edit_info); 
+        });        
+
+          function load_default() {
+            $(document).on("live", '#CLIENT_NO', setTimeout( load_clients, 10));
+            $(document).on("live", '#DEPT_NO', setTimeout( CLIENT_NO_Click, 10));
+            $(document).on("live", '#TRN_TYPE_NO', setTimeout( load_trns_type, 10));
+            $(document).on("live", '#REQ_TYPE_NO', setTimeout( load_req_type, 10));
+
+            $(document).on("live", '#sr_CLIENT_NO', setTimeout( load_sr_clients, 10));
+            $(document).on("live", '#sr_DEPT_NO', setTimeout( sr_CLIENT_NO_Click, 10));
+            $(document).on("live", '#sr_TRN_TYPE_NO', setTimeout( load_sr_trns_type, 10));
+            $(document).on("live", '#sr_REQ_TYPE_NO', setTimeout( load_sr_req_type, 10));
+
+             $(document).on("live", '#REC_DATE', setTimeout(function() {
+                $('#REC_DATE').mask("99/99/9999");
+            }, 10));
+
+            $(document).on("live", '#TRN_DATE', setTimeout(function() {
+                $('#TRN_DATE').mask("99/99/9999");
+            }, 10));
+                                        
+        }
+        
+            
+            function edit_info(e) {            
+            var url = $(this).attr("href");            
+            $.get(url, function(res) {
+                $('.save').html(res);
+                load_default();
+            });
+            e.preventDefault();
+            return false;
+        }
+
+
+        function is_valid_entry() {
+            var ret_val = true;
+	        var msg = '';
+
+            var CLIENT_NO = $.trim($('#CLIENT_NO').val()); 
+            var DEPT_NO = $.trim($('#DEPT_NO').val()); 
+            var CHALLAN_ID = $.trim($('#CHALLAN_ID').val()); 
+            var REC_DATE = $.trim($('#REC_DATE').val()); 
+            var TRN_TYPE_NO = $.trim($('#TRN_TYPE_NO').val()); 
+            var REQ_TYPE_NO = $.trim($('#REQ_TYPE_NO').val()); 
+            var IS_OLD_DATA = $.trim($('#IS_OLD_DATA').val()); 
+                        
+
+            if (CLIENT_NO == undefined || CLIENT_NO == null || CLIENT_NO == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Client is required \n' ;
+	        } 
+            if (DEPT_NO == undefined || DEPT_NO == null || DEPT_NO == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Department is required \n' ;
+	        } 
+            if (CHALLAN_ID == undefined || CHALLAN_ID == null || CHALLAN_ID == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Challan ID is required \n' ;
+	        } 
+            if (REC_DATE == undefined || REC_DATE == null || REC_DATE == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Date is required \n' ;
+	        } 
+            if (TRN_TYPE_NO == undefined || TRN_TYPE_NO == null || TRN_TYPE_NO == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Transmittal Type is required \n' ;
+	        } 
+            if (REQ_TYPE_NO == undefined || REQ_TYPE_NO == null || REQ_TYPE_NO == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Request Type is required \n' ;
+	        } 
+            if (IS_OLD_DATA == undefined || IS_OLD_DATA == null || IS_OLD_DATA == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Old Data Entry is required \n' ;
+	        } 
+
+            if (ret_val == false) { 
+		        alert(msg);
+	        }
+
+	        return ret_val;
+        }
+
+       function btnSave_Click() { 
+            if (is_valid_entry()) {
+                if (confirm('Do you want to Save?')) {
+                    var url = $('#frmEntry').attr("action");
+                    var data = $('#frmEntry').serialize();
+
+                    $.post(url, data, function(res) { 
+                        if (res.is_success == true) {
+                            alert('Saved Successfully');
+
+                            $('#REC_DATE').val('');
+            
+                            $('#CHALLAN_ID').val('');
+                        } else {
+                            alert(res.msg);
+                        }
+                    });
+                    return false;
+                    
+                } else {
+                    return false;
+                }
+            } else {  
+                return false;
+            }
+        }
+
+        function btnCancel_Click() {
+            $('#REC_DATE').val('');
+            
+            $('#CHALLAN_ID').val('');
+            $('#CHALLAN_NO').val('');
+
+            $('#TRANSMIT_ID').val('');
+            $('#TRN_DATE').val('');
+        }
+
+        function CLIENT_NO_Click() {
+            load_department();
+        }
+
+        function load_clients() {  
+            $('#CLIENT_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#CLIENT_NO').append(empty_data);		
+            $.each(setup_info.client_list, function(i, item) {
+			    var html_data = '';
+			    html_data += '<option value="' + item.CLIENT_NO  + '">' + item.CLIENT_NAME + '</option>';
+			    $('#CLIENT_NO').append(html_data);	
+		    });
+        }
+
+        function load_department() {
+            $('#DEPT_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#DEPT_NO').append(empty_data);
+            $.each(setup_info.dept_list, function(i, item) {
+                if (item.CLIENT_NO == $('#CLIENT_NO').val()) { 
+			        var html_data = '';
+			        html_data += '<option value="' + item.DEPT_NO  + '">' + item.DEPT_NAME + '</option>';
+			        $('#DEPT_NO').append(html_data);
+                } 	
+		    });
+        }
+
+        function load_trns_type() {
+            $('#TRN_TYPE_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#TRN_TYPE_NO').append(empty_data);		
+            $.each(setup_info.trans_type_list, function(i, item) {
+			    var html_data = '';
+			    html_data += '<option value="' + item.TRN_TYPE_NO  + '">' + item.TRN_TYPE_NAME + '</option>';
+			    $('#TRN_TYPE_NO').append(html_data);	
+		    });
+        } 
+
+        function load_req_type() {
+            $('#REQ_TYPE_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#REQ_TYPE_NO').append(empty_data);		
+            $.each(setup_info.req_type_list, function(i, item) {
+			    var html_data = '';
+			    html_data += '<option value="' + item.REQ_TYPE_NO  + '">' + item.REQ_TYPE_NAME + '</option>';
+			    $('#REQ_TYPE_NO').append(html_data);	
+		    });
+        }
+
+        function TRANSMIT_ID_Click() {
+            var CLIENT_NO = $.trim($('#CLIENT_NO').val());
+            var DEPT_NO = $.trim($('#DEPT_NO').val());
+            var TRANSMIT_ID = $.trim($('#TRANSMIT_ID').val());
+
+            if(CLIENT_NO != null && CLIENT_NO != undefined && CLIENT_NO != "" 
+                && DEPT_NO != null && DEPT_NO != undefined && DEPT_NO != "" 
+                && TRANSMIT_ID != null && TRANSMIT_ID != undefined && TRANSMIT_ID != ""
+            ) {
+                var url = '../ReferenceLoader/GetTransmittal';
+                var data = { 
+                    CLIENT_NO : $('#CLIENT_NO').val(), 
+                    DEPT_NO : $('#DEPT_NO').val(), 
+                    TRANSMIT_ID : $('#TRANSMIT_ID').val(), 
+                };
+            
+                $.post(url, data, function(res) { 
+                    console.log(res);
+                    if (res != null && res.TRANSMIT_NO != null) {
+                        $('#TRANSMIT_NO').val(res.TRANSMIT_NO);
+                        $('#TRN_DATE').val(res.TRN_DATE);
+                    } else {
+                        $('#TRANSMIT_NO').val('');
+                        $('#TRANSMIT_ID').val('');
+                        $('#TRN_DATE').val('');
+                    }
+                });
+            } else { 
+                $('#TRANSMIT_NO').val('');
+                $('#TRANSMIT_ID').val('');
+                $('#TRN_DATE').val('');
+            }            
+        }
+
+        function btnSearch_Click() { 
+            var url = $('#frmSearch').attr("action"); 
+            // '../Challan/Search';
+            var data = {
+                CLIENT_NO : $('#sr_CLIENT_NO').val(), 
+                DEPT_NO : $('#sr_DEPT_NO').val(), 
+                CHALLAN_ID : $('#sr_CHALLAN_ID').val(), 
+                TRN_TYPE_NO : $('#sr_TRN_TYPE_NO').val(), 
+                REQ_TYPE_NO : $('#sr_REQ_TYPE_NO').val(), 
+            };
+
+            $.post(url, data, function(res) { 
+                $('.result').html(res);
+            });
+        }
+
+        function sr_CLIENT_NO_Click() {
+            load_sr_department();
+        }
+
+        function load_sr_clients() {  
+            $('#sr_CLIENT_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#sr_CLIENT_NO').append(empty_data);		
+            $.each(setup_info.client_list, function(i, item) {
+			    var html_data = '';
+			    html_data += '<option value="' + item.CLIENT_NO  + '">' + item.CLIENT_NAME + '</option>';
+			    $('#sr_CLIENT_NO').append(html_data);	
+		    });
+        }
+
+        function load_sr_department() {
+            $('#sr_DEPT_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#sr_DEPT_NO').append(empty_data);
+            $.each(setup_info.dept_list, function(i, item) {
+                if (item.CLIENT_NO == $('#sr_CLIENT_NO').val()) { 
+			        var html_data = '';
+			        html_data += '<option value="' + item.DEPT_NO  + '">' + item.DEPT_NAME + '</option>';
+			        $('#sr_DEPT_NO').append(html_data);
+                } 	
+		    });
+        }
+
+        function load_sr_trns_type() {
+            $('#sr_TRN_TYPE_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';
+            $('#sr_TRN_TYPE_NO').append(empty_data);		
+            $.each(setup_info.trans_type_list, function(i, item) {
+			    var html_data = '';
+			    html_data += '<option value="' + item.TRN_TYPE_NO  + '">' + item.TRN_TYPE_NAME + '</option>';
+			    $('#sr_TRN_TYPE_NO').append(html_data);	
+		    });
+        }
+
+        function load_sr_req_type() {
+            $('#sr_REQ_TYPE_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';
+            $('#sr_REQ_TYPE_NO').append(empty_data);		
+            $.each(setup_info.req_type_list, function(i, item) {
+			    var html_data = '';
+			    html_data += '<option value="' + item.REQ_TYPE_NO  + '">' + item.REQ_TYPE_NAME + '</option>';
+			    $('#sr_REQ_TYPE_NO').append(html_data);	
+		    });
+        }
+
+         
+
+        function btnClear_Click() {
+            $('.result').html('');
+
+            $('#sr_CHALLAN_ID').val('');
+        }
+
+    </script>
+}

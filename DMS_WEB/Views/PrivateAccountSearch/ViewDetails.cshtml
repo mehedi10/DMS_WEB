@@ -1,0 +1,168 @@
+﻿@using DMS_WEB.Models
+@model DMS_WEB.Models.Account_Document_Attach_ViewModel
+
+@{
+    ViewBag.Title = "Account View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+    string THUMB_HEIGHT = System.Configuration.ConfigurationManager.AppSettings["THUMB_HEIGHT"].Trim();
+    string THUMB_WIDTH = System.Configuration.ConfigurationManager.AppSettings["THUMB_WIDTH"].Trim();
+    string FULL_HEIGHT = System.Configuration.ConfigurationManager.AppSettings["FULL_HEIGHT"].Trim();
+    string FULL_WIDTH = System.Configuration.ConfigurationManager.AppSettings["FULL_WIDTH"].Trim();
+
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="entryform">
+    <fieldset>
+        <legend>@*SET_CLIENT_ACCOUNTS_GET_Result*@</legend>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Account ID", new { @for = "ACC_ID" })
+        </div>
+        <div class="editor-label">
+            @Html.DisplayFor(model => model.account_info.ACC_ID)
+        </div>
+        <div class="editor-label">
+            @Html.Label("Account Name", new { @for = "ACC_NAME" })
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.account_info.ACC_NAME)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Account Details", new { @for = "ACC_DETAILS" })
+        </div>
+        <div class="editor-label">
+            @Html.DisplayFor(model => model.account_info.ACC_DETAILS)
+        </div>
+        <div class="editor-label">
+            @Html.Label("Department", new { @for = "DEPT_NAME" })
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.account_info.DEPT_NAME)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Box ID", new { @for = "CLIENT_BOX_ID" })
+        </div>
+        <div class="editor-label">
+            @Html.DisplayFor(model => model.account_info.CLIENT_BOX_ID)
+        </div>
+        <div class="editor-label">
+            @Html.Label("Batch ID", new { @for = "ACC_NAME" })
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.account_info.BATCH_ID)
+        </div>
+        </div>
+
+        
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Transmittal Type", new { @for = "TRN_TYPE_NAME" })
+        </div>
+        <div class="editor-label">            
+            @Html.DisplayFor(model => model.account_info.TRN_TYPE_NAME)
+        </div>
+        <div class="editor-label">
+            
+        </div>
+        <div class="editor-field">
+            
+        </div>
+        </div>
+    
+    </fieldset>        
+</div> 
+
+
+
+<div class="entryform">
+<fieldset>
+    <div class="div_row tab_header">
+        <div class="div_cell div_caption">Type</div>    
+        <div class="div_cell div_caption">Details</div>    
+        <div class="div_cell div_caption">Attachments</div>  
+    </div>
+
+    @{
+        foreach (DMS_WEB.Models.SET_CLIENT_ACC_DOCS_GET_Result doc in Model.document_list)
+        {
+            <div class="div_row">
+                <div class="div_cell">@doc.DOC_TYPE</div>
+                <div class="div_cell">@doc.DOC_DETAILS</div>         
+                <div class="div_cell">
+                    <nav>
+                        <ul class="image_back">
+                    @{
+            foreach (DMS_WEB.Models.SET_CLIENT_ATTACHS_GET_Result attach in Model.attach_list) {
+                if (attach.DOC_TYPE_NO == doc.DOC_TYPE_NO) {
+                    
+                    string image_path = attach.FILE_LOCATION + @"/" + attach.ATTACH_NO.Value.ToString() + attach.FILE_EXT;                    
+                    image_path = image_path.Replace("~/", "../");
+                    string new_img_path = "../PrivateAccountSearch/ViewImage?ATTACH_NO=" + attach.ATTACH_NO.ToString() 
+                        + "&DEPT_NO=" + @Model.account_info.DEPT_NO.ToString()
+                        + "&FILE_EXT=" + attach.FILE_EXT +
+                        "&FILE_TYPE=" + attach.FILE_TYPE;
+                            <li class="image_back">
+                                <div class="div_row ">        
+                                    <div class="div_cell">
+                                        @*<img src="@image_path" height="@THUMB_HEIGHT" width="@THUMB_WIDTH" title="@attach.ATTACH_NAME" alt="@attach.ATTACH_NAME" class="cursor image" />*@
+                                        <img src="@new_img_path" height="@THUMB_HEIGHT" width="@THUMB_WIDTH" title="@attach.ATTACH_NO" alt="@attach.ATTACH_NAME" class="cursor image" />
+                                    </div>        
+                                </div>
+                            </li>                                 
+                }
+            }
+                        
+                    }
+                        </ul>
+                    </nav>
+                </div>   
+            </div>
+        }
+    }
+</fieldset>
+</div>
+
+@section Scripts {
+
+    <script type="text/javascript">
+//        var client_no = '@Model.account_info.CLIENT_NO';
+//        var user_no = this.USER_TYPE_NO;
+
+        $(document).ready(function () {
+            $(document).on("click", '.image', image_click);
+        });
+
+        function image_click(e) {
+//            var img_url = $(this).attr("src");
+            var attach_no = $(this).attr("title");
+
+            var url = '../PrivateAccountSearch/Imagelog?ATTACH_NO=' + attach_no;
+
+            window.open(url, '_blank');
+
+            
+            /*
+                var data = { 
+                    CLIENT_NO : client_no, 
+//                    USER_NO : user_no, 
+                    IMAGE : img_url, 
+                };
+            
+                $.post(url, data, function(res) { 
+                    var info = res;
+                });
+                */
+        }
+    </script>
+}

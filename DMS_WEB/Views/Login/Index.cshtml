@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Login</h2>
+<h3><span class="error">@ViewBag.ErrorMessage</span></h3>
+
+<div class="entryform save">
+@using (Html.BeginForm("Index", "Login", FormMethod.Post)) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend></legend>
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Login ID", new { @for = "LOGIN_ID" })
+            </div>
+            <div class="editor-field">
+                <input type="text" id="LOGIN_ID" name="LOGIN_ID" required="required" placeholder="Logon ID" value="@ViewBag.LOGIN_ID" />
+            </div>
+        </div>
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Password", new { @for = "LOGIN_PASSWORD" })
+            </div>
+            <div class="editor-field">
+                <input type="password" id="LOGIN_PASSWORD" name="LOGIN_PASSWORD" required="required" placeholder="Password" />
+            </div>
+        </div>
+        <div class="entry_form">
+            <div class="editor-label">&nbsp;</div>
+            <div class="editor-field">
+                <button type="submit" id="btnLogin" name="btnLogin" class="btn btn-success">Login</button>
+            </div>
+        </div>
+    </fieldset>
+
+}
+
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

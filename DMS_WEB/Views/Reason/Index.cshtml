@@ -1,0 +1,75 @@
+﻿@model IEnumerable<DMS_WEB.Models.SET_REASONS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SET_CLIENTS.CLIENT_NAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.REASON)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATE_USER_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATE_LOGON_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CREATE_TIME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_USER_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_LOGON_NO)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UPDATE_TIME)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SET_CLIENTS.CLIENT_NAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.REASON)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATE_USER_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATE_LOGON_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CREATE_TIME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATE_USER_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATE_LOGON_NO)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UPDATE_TIME)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.REASON_NO }) |
+            @Html.ActionLink("Details", "Details", new { id=item.REASON_NO }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.REASON_NO })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DMS_WEB.Models.SET_ACCOUNT_STATUS_CHECK_Manual_Result>
+
+@{
+    Layout = null;
+    ViewBag.Title = "List";
+}
+
+<div class="div_row tab_header">
+    <div class="div_cell div_caption">Status</div>
+    <div class="div_cell div_caption">Quantity</div>
+</div>
+@foreach (var item in Model)
+{
+    string str_tran_type = string.Empty;
+  
+    if (item.TRN_TYPE_NO == 1)
+    {
+        str_tran_type = "IN";
+    } 
+    else if (item.TRN_TYPE_NO == 2)
+    {
+        str_tran_type = "OUT";
+    }
+    else
+    {
+        str_tran_type = "Not Recieved";
+    }
+    
+    <div class="div_row">
+        <div class="div_cell div_caption">@str_tran_type</div>
+        <div class="div_cell">
+                @Html.ActionLink(item.cnt.ToString(), "ShowManualDetails", "AccountStatusManualCheck", new { @TRN_TYPE_NO = item.TRN_TYPE_NO}, new {@class="btn btn-primary" })
+        </div>                       
+    </div>    
+}
+

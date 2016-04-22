@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Account View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="entryform search">
+    @Html.Partial("Search")
+</div>
+
+<div class="result">
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+        });
+
+        $(document).on("click", '#btnSearch', btnSearch_Click);
+
+        function btnSearch_Click() { 
+            var url = $('#frmSearch').attr("action"); 
+            var data = $('#frmSearch').serialize();
+
+            $.post(url, data, function(res) { 
+                $('.result').html(res);
+            });
+        }
+
+    </script>
+}

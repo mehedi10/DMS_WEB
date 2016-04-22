@@ -1,0 +1,1451 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DBModelStoreContainer" CdmEntityContainer="DBEntities">
+    <EntitySetMapping Name="GEN_COMPANY_INFO">
+      <EntityTypeMapping TypeName="DBModel.GEN_COMPANY_INFO">
+        <MappingFragment StoreEntitySet="GEN_COMPANY_INFO">
+          <ScalarProperty Name="COMP_NO" ColumnName="COMP_NO" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="KEY_FEATURE" ColumnName="KEY_FEATURE" />
+          <ScalarProperty Name="ADDR" ColumnName="ADDR" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL_ADDR" ColumnName="EMAIL_ADDR" />
+          <ScalarProperty Name="LAST_NEW_TRANS_ID" ColumnName="LAST_NEW_TRANS_ID" />
+          <ScalarProperty Name="LAST_TRANS_IN_ID" ColumnName="LAST_TRANS_IN_ID" />
+          <ScalarProperty Name="LAST_TRANS_OUT_ID" ColumnName="LAST_TRANS_OUT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN_CONTROL_ACTIONS">
+      <EntityTypeMapping TypeName="DBModel.GEN_CONTROL_ACTIONS">
+        <MappingFragment StoreEntitySet="GEN_CONTROL_ACTIONS">
+          <ScalarProperty Name="ACTION_NO" ColumnName="ACTION_NO" />
+          <ScalarProperty Name="CONTROLLER_NAME" ColumnName="CONTROLLER_NAME" />
+          <ScalarProperty Name="ACTION_NAME" ColumnName="ACTION_NAME" />
+          <ScalarProperty Name="DETAIL_DESC" ColumnName="DETAIL_DESC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN_MENU_ACTIONS">
+      <EntityTypeMapping TypeName="DBModel.GEN_MENU_ACTIONS">
+        <MappingFragment StoreEntitySet="GEN_MENU_ACTIONS">
+          <ScalarProperty Name="MENU_ACTION_NO" ColumnName="MENU_ACTION_NO" />
+          <ScalarProperty Name="MENU_NO" ColumnName="MENU_NO" />
+          <ScalarProperty Name="ACTION_NO" ColumnName="ACTION_NO" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN_MENU_TYPES">
+      <EntityTypeMapping TypeName="DBModel.GEN_MENU_TYPES">
+        <MappingFragment StoreEntitySet="GEN_MENU_TYPES">
+          <ScalarProperty Name="MENU_TYPE_NO" ColumnName="MENU_TYPE_NO" />
+          <ScalarProperty Name="MENU_TYPE" ColumnName="MENU_TYPE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN_MENUS">
+      <EntityTypeMapping TypeName="DBModel.GEN_MENUS">
+        <MappingFragment StoreEntitySet="GEN_MENUS">
+          <ScalarProperty Name="MENU_NO" ColumnName="MENU_NO" />
+          <ScalarProperty Name="MENU_TYPE_NO" ColumnName="MENU_TYPE_NO" />
+          <ScalarProperty Name="MENU_NAME" ColumnName="MENU_NAME" />
+          <ScalarProperty Name="MENU_TIPS" ColumnName="MENU_TIPS" />
+          <ScalarProperty Name="IS_CHILD" ColumnName="IS_CHILD" />
+          <ScalarProperty Name="PARENT_MENU_NO" ColumnName="PARENT_MENU_NO" />
+          <ScalarProperty Name="IS_PUBLIC" ColumnName="IS_PUBLIC" />
+          <ScalarProperty Name="SL_NO" ColumnName="SL_NO" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="DEFAULT_URL" ColumnName="DEFAULT_URL" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN_TRANSMIT_REQUEST_TYPES">
+      <EntityTypeMapping TypeName="DBModel.GEN_TRANSMIT_REQUEST_TYPES">
+        <MappingFragment StoreEntitySet="GEN_TRANSMIT_REQUEST_TYPES">
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NAME" ColumnName="REQ_TYPE_NAME" />
+          <ScalarProperty Name="REQ_TYPE_CODE" ColumnName="REQ_TYPE_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN_TRANSMIT_TYPES">
+      <EntityTypeMapping TypeName="DBModel.GEN_TRANSMIT_TYPES">
+        <MappingFragment StoreEntitySet="GEN_TRANSMIT_TYPES">
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+          <ScalarProperty Name="TRANSMIT_PREFIX" ColumnName="TRANSMIT_PREFIX" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN_USER_TYPES">
+      <EntityTypeMapping TypeName="DBModel.GEN_USER_TYPES">
+        <MappingFragment StoreEntitySet="GEN_USER_TYPES">
+          <ScalarProperty Name="USER_TYPE_NO" ColumnName="USER_TYPE_NO" />
+          <ScalarProperty Name="USER_TYPE" ColumnName="USER_TYPE" />
+          <ScalarProperty Name="USER_TYPE_DESC" ColumnName="USER_TYPE_DESC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_ROLE_MENUS">
+      <EntityTypeMapping TypeName="DBModel.SEC_ROLE_MENUS">
+        <MappingFragment StoreEntitySet="SEC_ROLE_MENUS">
+          <ScalarProperty Name="ROLE_MENU_NO" ColumnName="ROLE_MENU_NO" />
+          <ScalarProperty Name="ROLE_NO" ColumnName="ROLE_NO" />
+          <ScalarProperty Name="MENU_NO" ColumnName="MENU_NO" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_ROLES">
+      <EntityTypeMapping TypeName="DBModel.SEC_ROLES">
+        <MappingFragment StoreEntitySet="SEC_ROLES">
+          <ScalarProperty Name="ROLE_NO" ColumnName="ROLE_NO" />
+          <ScalarProperty Name="ROLE_NAME" ColumnName="ROLE_NAME" />
+          <ScalarProperty Name="ROLE_DESC" ColumnName="ROLE_DESC" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_USER_LOGONS">
+      <EntityTypeMapping TypeName="DBModel.SEC_USER_LOGONS">
+        <MappingFragment StoreEntitySet="SEC_USER_LOGONS">
+          <ScalarProperty Name="LOGON_NO" ColumnName="LOGON_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="LOGIN_TIME" ColumnName="LOGIN_TIME" />
+          <ScalarProperty Name="LOGOUT_TIME" ColumnName="LOGOUT_TIME" />
+          <ScalarProperty Name="IS_LOGGED_IN" ColumnName="IS_LOGGED_IN" />
+          <ScalarProperty Name="SESS_ID" ColumnName="SESS_ID" />
+          <ScalarProperty Name="LOGIN_IP_ADDR" ColumnName="LOGIN_IP_ADDR" />
+          <ScalarProperty Name="DEVICE_ID" ColumnName="DEVICE_ID" />
+          <ScalarProperty Name="APP_NAME" ColumnName="APP_NAME" />
+          <ScalarProperty Name="APP_VER" ColumnName="APP_VER" />
+          <ScalarProperty Name="SERVER_IP" ColumnName="SERVER_IP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_USER_ROLES">
+      <EntityTypeMapping TypeName="DBModel.SEC_USER_ROLES">
+        <MappingFragment StoreEntitySet="SEC_USER_ROLES">
+          <ScalarProperty Name="USER_ROLE_NO" ColumnName="USER_ROLE_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="ROLE_NO" ColumnName="ROLE_NO" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SEC_USERS">
+      <EntityTypeMapping TypeName="DBModel.SEC_USERS">
+        <MappingFragment StoreEntitySet="SEC_USERS">
+          <ScalarProperty Name="CAN_DO_REQUEST" ColumnName="CAN_DO_REQUEST" />
+          <ScalarProperty Name="CAN_VIEW_IMAGE" ColumnName="CAN_VIEW_IMAGE" />
+          <ScalarProperty Name="CAN_VIEW_DATA" ColumnName="CAN_VIEW_DATA" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="USER_TYPE_NO" ColumnName="USER_TYPE_NO" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="MID_NAME" ColumnName="MID_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="LOGIN_ID" ColumnName="LOGIN_ID" />
+          <ScalarProperty Name="PASS_SALT" ColumnName="PASS_SALT" />
+          <ScalarProperty Name="LOGIN_PASSWORD" ColumnName="LOGIN_PASSWORD" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="IS_LOCKED" ColumnName="IS_LOCKED" />
+          <ScalarProperty Name="LOCK_REASON" ColumnName="LOCK_REASON" />
+          <ScalarProperty Name="LOCK_IP_ADDR" ColumnName="LOCK_IP_ADDR" />
+          <ScalarProperty Name="LOCK_TIME" ColumnName="LOCK_TIME" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_BOX_MERGES">
+      <EntityTypeMapping TypeName="DBModel.SET_BOX_MERGES">
+        <MappingFragment StoreEntitySet="SET_BOX_MERGES">
+          <ScalarProperty Name="MERGE_NO" ColumnName="MERGE_NO" />
+          <ScalarProperty Name="RECALL_BOX_NO" ColumnName="RECALL_BOX_NO" />
+          <ScalarProperty Name="CHILD_RECALL_BOX_NO" ColumnName="CHILD_RECALL_BOX_NO" />
+          <ScalarProperty Name="MERGE_DATE" ColumnName="MERGE_DATE" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_CLIENT_ACC_DOCS">
+      <EntityTypeMapping TypeName="DBModel.SET_CLIENT_ACC_DOCS">
+        <MappingFragment StoreEntitySet="SET_CLIENT_ACC_DOCS">
+          <ScalarProperty Name="DOC_NO" ColumnName="DOC_NO" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="DOC_TYPE_NO" ColumnName="DOC_TYPE_NO" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="DOC_DETAILS" ColumnName="DOC_DETAILS" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_CLIENT_ACCOUNTS">
+      <EntityTypeMapping TypeName="DBModel.SET_CLIENT_ACCOUNTS">
+        <MappingFragment StoreEntitySet="SET_CLIENT_ACCOUNTS">
+          <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="BATCH_NO" ColumnName="BATCH_NO" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="ACC_NAME" ColumnName="ACC_NAME" />
+          <ScalarProperty Name="ACC_DETAILS" ColumnName="ACC_DETAILS" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_CLIENT_ATTACHS">
+      <EntityTypeMapping TypeName="DBModel.SET_CLIENT_ATTACHS">
+        <MappingFragment StoreEntitySet="SET_CLIENT_ATTACHS">
+          <ScalarProperty Name="ATTACH_NO" ColumnName="ATTACH_NO" />
+          <ScalarProperty Name="DOC_NO" ColumnName="DOC_NO" />
+          <ScalarProperty Name="ATTACH_NAME" ColumnName="ATTACH_NAME" />
+          <ScalarProperty Name="FILE_LOCATION" ColumnName="FILE_LOCATION" />
+          <ScalarProperty Name="FILE_TYPE" ColumnName="FILE_TYPE" />
+          <ScalarProperty Name="FILE_EXT" ColumnName="FILE_EXT" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_CLIENT_BATCHES">
+      <EntityTypeMapping TypeName="DBModel.SET_CLIENT_BATCHES">
+        <MappingFragment StoreEntitySet="SET_CLIENT_BATCHES">
+          <ScalarProperty Name="BATCH_NO" ColumnName="BATCH_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="BATCH_ID" ColumnName="BATCH_ID" />
+          <ScalarProperty Name="BATCH_DETAILS" ColumnName="BATCH_DETAILS" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_CLIENT_DEPARTMENTS">
+      <EntityTypeMapping TypeName="DBModel.SET_CLIENT_DEPARTMENTS">
+        <MappingFragment StoreEntitySet="SET_CLIENT_DEPARTMENTS">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DEPT_ADDR" ColumnName="DEPT_ADDR" />
+          <ScalarProperty Name="DEPT_CONTACT" ColumnName="DEPT_CONTACT" />
+          <ScalarProperty Name="DEPT_EMAIL" ColumnName="DEPT_EMAIL" />
+          <ScalarProperty Name="DELIVERY_LOCATION" ColumnName="DELIVERY_LOCATION" />
+          <ScalarProperty Name="CONTACT_PERSON" ColumnName="CONTACT_PERSON" />
+          <ScalarProperty Name="CONTACT_ADDR" ColumnName="CONTACT_ADDR" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="ATTENTION" ColumnName="ATTENTION" />
+          <ScalarProperty Name="IS_NEW_TRANSMIT" ColumnName="IS_NEW_TRANSMIT" />
+          <ScalarProperty Name="IS_AUTO_ID" ColumnName="IS_AUTO_ID" />
+          <ScalarProperty Name="NEXT_ID" ColumnName="NEXT_ID" />
+          <ScalarProperty Name="ID_LENGHT" ColumnName="ID_LENGHT" />
+          <ScalarProperty Name="ID_PREFIX" ColumnName="ID_PREFIX" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_CLIENT_DEPT_BOXES">
+      <EntityTypeMapping TypeName="DBModel.SET_CLIENT_DEPT_BOXES">
+        <MappingFragment StoreEntitySet="SET_CLIENT_DEPT_BOXES">
+          <ScalarProperty Name="IS_BLACK_BOX" ColumnName="IS_BLACK_BOX" />
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="PROD_TYPE_NO" ColumnName="PROD_TYPE_NO" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="RECALL_BOX_NO" ColumnName="RECALL_BOX_NO" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_CLIENTS">
+      <EntityTypeMapping TypeName="DBModel.SET_CLIENTS">
+        <MappingFragment StoreEntitySet="SET_CLIENTS">
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_ALIAS" ColumnName="CLIENT_ALIAS" />
+          <ScalarProperty Name="CLIENT_ADDR" ColumnName="CLIENT_ADDR" />
+          <ScalarProperty Name="CLIENT_CONTACT" ColumnName="CLIENT_CONTACT" />
+          <ScalarProperty Name="CONTACT_PERSON" ColumnName="CONTACT_PERSON" />
+          <ScalarProperty Name="CONTACT_ADDR" ColumnName="CONTACT_ADDR" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="ATTENTION" ColumnName="ATTENTION" />
+          <ScalarProperty Name="EMAIL_ADDR" ColumnName="EMAIL_ADDR" />
+          <ScalarProperty Name="IS_ACIVE" ColumnName="IS_ACIVE" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_DOCS_TYPES">
+      <EntityTypeMapping TypeName="DBModel.SET_DOCS_TYPES">
+        <MappingFragment StoreEntitySet="SET_DOCS_TYPES">
+          <ScalarProperty Name="DOC_TYPE_NO" ColumnName="DOC_TYPE_NO" />
+          <ScalarProperty Name="DOC_TYPE" ColumnName="DOC_TYPE" />
+          <ScalarProperty Name="DOC_TYPE_CODE" ColumnName="DOC_TYPE_CODE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_PRODUCT_TYPES">
+      <EntityTypeMapping TypeName="DBModel.SET_PRODUCT_TYPES">
+        <MappingFragment StoreEntitySet="SET_PRODUCT_TYPES">
+          <ScalarProperty Name="PROD_TYPE_NO" ColumnName="PROD_TYPE_NO" />
+          <ScalarProperty Name="PRODUCT_TYPE" ColumnName="PRODUCT_TYPE" />
+          <ScalarProperty Name="SHORT_CODE" ColumnName="SHORT_CODE" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_REASONS">
+      <EntityTypeMapping TypeName="DBModel.SET_REASONS">
+        <MappingFragment StoreEntitySet="SET_REASONS">
+          <ScalarProperty Name="REASON_NO" ColumnName="REASON_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="REASON" ColumnName="REASON" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SET_REQUESTERS">
+      <EntityTypeMapping TypeName="DBModel.SET_REQUESTERS">
+        <MappingFragment StoreEntitySet="SET_REQUESTERS">
+          <ScalarProperty Name="REQUESTER_NO" ColumnName="REQUESTER_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="REQ_NAME" ColumnName="REQ_NAME" />
+          <ScalarProperty Name="REQ_ADDR" ColumnName="REQ_ADDR" />
+          <ScalarProperty Name="CONTACT" ColumnName="CONTACT" />
+          <ScalarProperty Name="EMAIL_ADDR" ColumnName="EMAIL_ADDR" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="DBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TBL_TEST_01">
+      <EntityTypeMapping TypeName="DBModel.TBL_TEST_01">
+        <MappingFragment StoreEntitySet="TBL_TEST_01">
+          <ScalarProperty Name="ID_NO" ColumnName="ID_NO" />
+          <ScalarProperty Name="ID_NAME" ColumnName="ID_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRN_CHALLAN_DETAILS">
+      <EntityTypeMapping TypeName="DBModel.TRN_CHALLAN_DETAILS">
+        <MappingFragment StoreEntitySet="TRN_CHALLAN_DETAILS">
+          <ScalarProperty Name="CHAL_DET_NO" ColumnName="CHAL_DET_NO" />
+          <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="BATCH_ID" ColumnName="BATCH_ID" />
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="IS_DATA_ENTRY" ColumnName="IS_DATA_ENTRY" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRN_TRANSMIT_REQ_TYPES">
+      <EntityTypeMapping TypeName="DBModel.TRN_TRANSMIT_REQ_TYPES">
+        <MappingFragment StoreEntitySet="TRN_TRANSMIT_REQ_TYPES">
+          <ScalarProperty Name="TRN_REQ_TYPE_NO" ColumnName="TRN_REQ_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SEC_USER_LOGONS_INSERT" FunctionName="DBModel.Store.SEC_USER_LOGONS_INSERT" />
+    <FunctionImportMapping FunctionImportName="SEC_USER_LOGOUT" FunctionName="DBModel.Store.SEC_USER_LOGOUT" />
+    <FunctionImportMapping FunctionImportName="GEN_COMPANY_INFO_GET" FunctionName="DBModel.Store.GEN_COMPANY_INFO_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GEN_COMPANY_INFO_GET_Result">
+          <ScalarProperty Name="COMP_NO" ColumnName="COMP_NO" />
+          <ScalarProperty Name="COMP_NAME" ColumnName="COMP_NAME" />
+          <ScalarProperty Name="KEY_FEATURE" ColumnName="KEY_FEATURE" />
+          <ScalarProperty Name="ADDR" ColumnName="ADDR" />
+          <ScalarProperty Name="PHONE" ColumnName="PHONE" />
+          <ScalarProperty Name="MOBILE" ColumnName="MOBILE" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="EMAIL_ADDR" ColumnName="EMAIL_ADDR" />
+          <ScalarProperty Name="LAST_NEW_TRANS_ID" ColumnName="LAST_NEW_TRANS_ID" />
+          <ScalarProperty Name="LAST_TRANS_IN_ID" ColumnName="LAST_TRANS_IN_ID" />
+          <ScalarProperty Name="LAST_TRANS_OUT_ID" ColumnName="LAST_TRANS_OUT_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENTS_GET" FunctionName="DBModel.Store.SET_CLIENTS_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_CLIENTS_GET_Result">
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_ALIAS" ColumnName="CLIENT_ALIAS" />
+          <ScalarProperty Name="CLIENT_ADDR" ColumnName="CLIENT_ADDR" />
+          <ScalarProperty Name="CLIENT_CONTACT" ColumnName="CLIENT_CONTACT" />
+          <ScalarProperty Name="CONTACT_PERSON" ColumnName="CONTACT_PERSON" />
+          <ScalarProperty Name="CONTACT_ADDR" ColumnName="CONTACT_ADDR" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="ATTENTION" ColumnName="ATTENTION" />
+          <ScalarProperty Name="EMAIL_ADDR" ColumnName="EMAIL_ADDR" />
+          <ScalarProperty Name="IS_ACIVE" ColumnName="IS_ACIVE" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_DEPARTMENTS_GET" FunctionName="DBModel.Store.SET_CLIENT_DEPARTMENTS_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_CLIENT_DEPARTMENTS_GET_Result">
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_ALIAS" ColumnName="CLIENT_ALIAS" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DEPT_ADDR" ColumnName="DEPT_ADDR" />
+          <ScalarProperty Name="DEPT_CONTACT" ColumnName="DEPT_CONTACT" />
+          <ScalarProperty Name="DEPT_EMAIL" ColumnName="DEPT_EMAIL" />
+          <ScalarProperty Name="DELIVERY_LOCATION" ColumnName="DELIVERY_LOCATION" />
+          <ScalarProperty Name="CONTACT_PERSON" ColumnName="CONTACT_PERSON" />
+          <ScalarProperty Name="CONTACT_ADDR" ColumnName="CONTACT_ADDR" />
+          <ScalarProperty Name="DESIGNATION" ColumnName="DESIGNATION" />
+          <ScalarProperty Name="ATTENTION" ColumnName="ATTENTION" />
+          <ScalarProperty Name="IS_NEW_TRANSMIT" ColumnName="IS_NEW_TRANSMIT" />
+          <ScalarProperty Name="IS_AUTO_ID" ColumnName="IS_AUTO_ID" />
+          <ScalarProperty Name="NEXT_ID" ColumnName="NEXT_ID" />
+          <ScalarProperty Name="ID_LENGHT" ColumnName="ID_LENGHT" />
+          <ScalarProperty Name="ID_PREFIX" ColumnName="ID_PREFIX" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_PRODUCT_TYPES_GET" FunctionName="DBModel.Store.SET_PRODUCT_TYPES_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_PRODUCT_TYPES_GET_Result">
+          <ScalarProperty Name="PROD_TYPE_NO" ColumnName="PROD_TYPE_NO" />
+          <ScalarProperty Name="PRODUCT_TYPE" ColumnName="PRODUCT_TYPE" />
+          <ScalarProperty Name="SHORT_CODE" ColumnName="SHORT_CODE" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GEN_TRANSMIT_TYPES_GET" FunctionName="DBModel.Store.GEN_TRANSMIT_TYPES_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GEN_TRANSMIT_TYPES_GET_Result">
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+          <ScalarProperty Name="TRANSMIT_PREFIX" ColumnName="TRANSMIT_PREFIX" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GEN_TRANSMIT_REQUEST_TYPES_GET" FunctionName="DBModel.Store.GEN_TRANSMIT_REQUEST_TYPES_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GEN_TRANSMIT_REQUEST_TYPES_GET_Result">
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NAME" ColumnName="REQ_TYPE_NAME" />
+          <ScalarProperty Name="REQ_TYPE_CODE" ColumnName="REQ_TYPE_CODE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="TRN_TRANSMITTALS">
+      <EntityTypeMapping TypeName="DBModel.TRN_TRANSMITTALS">
+        <MappingFragment StoreEntitySet="TRN_TRANSMITTALS">
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="IS_NEW_TRANSMIT" ColumnName="IS_NEW_TRANSMIT" />
+          <ScalarProperty Name="REQUESTER_NO" ColumnName="REQUESTER_NO" />
+          <ScalarProperty Name="REASON_NO" ColumnName="REASON_NO" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="PROD_TYPE_NO" ColumnName="PROD_TYPE_NO" />
+          <ScalarProperty Name="TRN_DATE" ColumnName="TRN_DATE" />
+          <ScalarProperty Name="TRANSMIT_ID" ColumnName="TRANSMIT_ID" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="TRN_TRANSMITTALS_GET" FunctionName="DBModel.Store.TRN_TRANSMITTALS_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.TRN_TRANSMITTALS_GET_Result">
+          <ScalarProperty Name="ROWNUM" ColumnName="ROWNUM" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="TRANSMIT_ID" ColumnName="TRANSMIT_ID" />
+          <ScalarProperty Name="TRN_DATE" ColumnName="TRN_DATE" />
+          <ScalarProperty Name="PROD_TYPE_NO" ColumnName="PROD_TYPE_NO" />
+          <ScalarProperty Name="REMARKS" ColumnName="REMARKS" />
+          <ScalarProperty Name="REASON_NO" ColumnName="REASON_NO" />
+          <ScalarProperty Name="REQUESTER_NO" ColumnName="REQUESTER_NO" />
+          <ScalarProperty Name="IS_NEW_TRANSMIT" ColumnName="IS_NEW_TRANSMIT" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="TRN_TRANSMITTALS_GET_PAGED" FunctionName="DBModel.Store.TRN_TRANSMITTALS_GET_PAGED" />
+    <FunctionImportMapping FunctionImportName="TRN_CHALLANS_GET_PAGED" FunctionName="DBModel.Store.TRN_CHALLANS_GET_PAGED" />
+    <FunctionImportMapping FunctionImportName="TRN_CHALLANS_INSERT" FunctionName="DBModel.Store.TRN_CHALLANS_INSERT" />
+    <FunctionImportMapping FunctionImportName="TRN_CHALLANS_GET" FunctionName="DBModel.Store.TRN_CHALLANS_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.TRN_CHALLANS_GET_Result">
+          <ScalarProperty Name="ROWNUM" ColumnName="ROWNUM" />
+          <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_ALIAS" ColumnName="CLIENT_ALIAS" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="CHALLAN_ID" ColumnName="CHALLAN_ID" />
+          <ScalarProperty Name="REC_DATE" ColumnName="REC_DATE" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="UPLOAD_FILE_NAME" ColumnName="UPLOAD_FILE_NAME" />
+          <ScalarProperty Name="FILE_EXT" ColumnName="FILE_EXT" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="TRN_CHALLANS">
+      <EntityTypeMapping TypeName="DBModel.TRN_CHALLANS">
+        <MappingFragment StoreEntitySet="TRN_CHALLANS">
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="FILE_EXT" ColumnName="FILE_EXT" />
+          <ScalarProperty Name="UPLOAD_FILE_NAME" ColumnName="UPLOAD_FILE_NAME" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="REC_DATE" ColumnName="REC_DATE" />
+          <ScalarProperty Name="CHALLAN_ID" ColumnName="CHALLAN_ID" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_DEPT_BOXES_GET_PAGED" FunctionName="DBModel.Store.SET_CLIENT_DEPT_BOXES_GET_PAGED" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_DEPT_BOXES_GET" FunctionName="DBModel.Store.SET_CLIENT_DEPT_BOXES_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_CLIENT_DEPT_BOXES_GET_Result">
+          <ScalarProperty Name="ROWNUM" ColumnName="ROWNUM" />
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_ALIAS" ColumnName="CLIENT_ALIAS" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="PROD_TYPE_NO" ColumnName="PROD_TYPE_NO" />
+          <ScalarProperty Name="PRODUCT_TYPE" ColumnName="PRODUCT_TYPE" />
+          <ScalarProperty Name="SHORT_CODE" ColumnName="SHORT_CODE" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NAME" ColumnName="REQ_TYPE_NAME" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="RECALL_BOX_NO" ColumnName="RECALL_BOX_NO" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_DEPT_BOXES_INSERT" FunctionName="DBModel.Store.SET_CLIENT_DEPT_BOXES_INSERT" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_DEPT_BOXES_DELETE" FunctionName="DBModel.Store.SET_CLIENT_DEPT_BOXES_DELETE" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_DEPT_BOXES_UPDATE" FunctionName="DBModel.Store.SET_CLIENT_DEPT_BOXES_UPDATE" />
+    <EntitySetMapping Name="SET_RECALL_BOXES">
+      <EntityTypeMapping TypeName="DBModel.SET_RECALL_BOXES">
+        <MappingFragment StoreEntitySet="SET_RECALL_BOXES">
+          <ScalarProperty Name="RECALL_LOCATION" ColumnName="RECALL_LOCATION" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="IS_MERGE_BOX" ColumnName="IS_MERGE_BOX" />
+          <ScalarProperty Name="IS_NEW_BOX" ColumnName="IS_NEW_BOX" />
+          <ScalarProperty Name="REF_RECALL_BOX_NO" ColumnName="REF_RECALL_BOX_NO" />
+          <ScalarProperty Name="IS_SPLIT_BOX" ColumnName="IS_SPLIT_BOX" />
+          <ScalarProperty Name="IS_DESTROYED" ColumnName="IS_DESTROYED" />
+          <ScalarProperty Name="LOC_SEQ_ID" ColumnName="LOC_SEQ_ID" />
+          <ScalarProperty Name="LOC_LEVEL_ID" ColumnName="LOC_LEVEL_ID" />
+          <ScalarProperty Name="LOC_BAY_ID" ColumnName="LOC_BAY_ID" />
+          <ScalarProperty Name="LOC_ROW_FACE_ID" ColumnName="LOC_ROW_FACE_ID" />
+          <ScalarProperty Name="LOC_ROW_ID" ColumnName="LOC_ROW_ID" />
+          <ScalarProperty Name="LOC_CHAMBER_ID" ColumnName="LOC_CHAMBER_ID" />
+          <ScalarProperty Name="LOC_FLOOR_ID" ColumnName="LOC_FLOOR_ID" />
+          <ScalarProperty Name="LOC_ARCH_ID" ColumnName="LOC_ARCH_ID" />
+          <ScalarProperty Name="LOC_DEPT_ID" ColumnName="LOC_DEPT_ID" />
+          <ScalarProperty Name="LOC_CLIENT_ID" ColumnName="LOC_CLIENT_ID" />
+          <ScalarProperty Name="RECALL_BOX_ID" ColumnName="RECALL_BOX_ID" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="RECALL_BOX_NO" ColumnName="RECALL_BOX_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_BATCHES_DELETE" FunctionName="DBModel.Store.SET_CLIENT_BATCHES_DELETE" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_BATCHES_INSERT" FunctionName="DBModel.Store.SET_CLIENT_BATCHES_INSERT" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_BATCHES_UPDATE" FunctionName="DBModel.Store.SET_CLIENT_BATCHES_UPDATE" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_BATCHES_GET" FunctionName="DBModel.Store.SET_CLIENT_BATCHES_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_CLIENT_BATCHES_GET_Result">
+          <ScalarProperty Name="ROWNUM" ColumnName="ROWNUM" />
+          <ScalarProperty Name="BATCH_NO" ColumnName="BATCH_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_ALIAS" ColumnName="CLIENT_ALIAS" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="BATCH_ID" ColumnName="BATCH_ID" />
+          <ScalarProperty Name="BATCH_DETAILS" ColumnName="BATCH_DETAILS" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NAME" ColumnName="REQ_TYPE_NAME" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_BATCHES_GET_PAGED" FunctionName="DBModel.Store.SET_CLIENT_BATCHES_GET_PAGED" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACCOUNTS_UPDATE" FunctionName="DBModel.Store.SET_CLIENT_ACCOUNTS_UPDATE" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACCOUNTS_INSERT" FunctionName="DBModel.Store.SET_CLIENT_ACCOUNTS_INSERT" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACCOUNTS_DELETE" FunctionName="DBModel.Store.SET_CLIENT_ACCOUNTS_DELETE" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACCOUNTS_GET_PAGED" FunctionName="DBModel.Store.SET_CLIENT_ACCOUNTS_GET_PAGED" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACC_DOCS_DELETE" FunctionName="DBModel.Store.SET_CLIENT_ACC_DOCS_DELETE" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACC_DOCS_GET" FunctionName="DBModel.Store.SET_CLIENT_ACC_DOCS_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_CLIENT_ACC_DOCS_GET_Result">
+          <ScalarProperty Name="ROWNUM" ColumnName="ROWNUM" />
+          <ScalarProperty Name="DOC_NO" ColumnName="DOC_NO" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="DOC_TYPE_NO" ColumnName="DOC_TYPE_NO" />
+          <ScalarProperty Name="DOC_TYPE" ColumnName="DOC_TYPE" />
+          <ScalarProperty Name="DOC_TYPE_CODE" ColumnName="DOC_TYPE_CODE" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="DOC_DETAILS" ColumnName="DOC_DETAILS" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACC_DOCS_INSERT" FunctionName="DBModel.Store.SET_CLIENT_ACC_DOCS_INSERT" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACC_DOCS_UPDATE" FunctionName="DBModel.Store.SET_CLIENT_ACC_DOCS_UPDATE" />
+    <FunctionImportMapping FunctionImportName="SET_DOCS_TYPES_GET" FunctionName="DBModel.Store.SET_DOCS_TYPES_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_DOCS_TYPES_GET_Result">
+          <ScalarProperty Name="DOC_TYPE_NO" ColumnName="DOC_TYPE_NO" />
+          <ScalarProperty Name="DOC_TYPE" ColumnName="DOC_TYPE" />
+          <ScalarProperty Name="DOC_TYPE_CODE" ColumnName="DOC_TYPE_CODE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ATTACHS_GET" FunctionName="DBModel.Store.SET_CLIENT_ATTACHS_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_CLIENT_ATTACHS_GET_Result">
+          <ScalarProperty Name="ROWNUM" ColumnName="ROWNUM" />
+          <ScalarProperty Name="ATTACH_NO" ColumnName="ATTACH_NO" />
+          <ScalarProperty Name="DOC_NO" ColumnName="DOC_NO" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="DOC_TYPE_NO" ColumnName="DOC_TYPE_NO" />
+          <ScalarProperty Name="DOC_TYPE" ColumnName="DOC_TYPE" />
+          <ScalarProperty Name="DOC_TYPE_CODE" ColumnName="DOC_TYPE_CODE" />
+          <ScalarProperty Name="ATTACH_NAME" ColumnName="ATTACH_NAME" />
+          <ScalarProperty Name="FILE_LOCATION" ColumnName="FILE_LOCATION" />
+          <ScalarProperty Name="FILE_TYPE" ColumnName="FILE_TYPE" />
+          <ScalarProperty Name="FILE_EXT" ColumnName="FILE_EXT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ATTACHS_INSERT" FunctionName="DBModel.Store.SET_CLIENT_ATTACHS_INSERT" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ATTACHS_DELETE" FunctionName="DBModel.Store.SET_CLIENT_ATTACHS_DELETE" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACCOUNTS_GET" FunctionName="DBModel.Store.SET_CLIENT_ACCOUNTS_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_CLIENT_ACCOUNTS_GET_Result">
+          <ScalarProperty Name="ROWNUM" ColumnName="ROWNUM" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="BATCH_NO" ColumnName="BATCH_NO" />
+          <ScalarProperty Name="BATCH_ID" ColumnName="BATCH_ID" />
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="ACC_NAME" ColumnName="ACC_NAME" />
+          <ScalarProperty Name="ACC_DETAILS" ColumnName="ACC_DETAILS" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SEC_USERS_CHANGE_PASSWORD" FunctionName="DBModel.Store.SEC_USERS_CHANGE_PASSWORD" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACCOUNTS_BULK_GET_PAGED" FunctionName="DBModel.Store.SET_CLIENT_ACCOUNTS_BULK_GET_PAGED" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACCOUNTS_BULK_GET" FunctionName="DBModel.Store.SET_CLIENT_ACCOUNTS_BULK_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_CLIENT_ACCOUNTS_BULK_GET_Result">
+          <ScalarProperty Name="ROWNUM" ColumnName="ROWNUM" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="BATCH_NO" ColumnName="BATCH_NO" />
+          <ScalarProperty Name="BATCH_ID" ColumnName="BATCH_ID" />
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="ACC_NAME" ColumnName="ACC_NAME" />
+          <ScalarProperty Name="ACC_DETAILS" ColumnName="ACC_DETAILS" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SEC_USERS_GET" FunctionName="DBModel.Store.SEC_USERS_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SEC_USERS_GET_Result">
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="USER_TYPE_NO" ColumnName="USER_TYPE_NO" />
+          <ScalarProperty Name="USER_TYPE" ColumnName="USER_TYPE" />
+          <ScalarProperty Name="USER_TYPE_DESC" ColumnName="USER_TYPE_DESC" />
+          <ScalarProperty Name="FIRST_NAME" ColumnName="FIRST_NAME" />
+          <ScalarProperty Name="MID_NAME" ColumnName="MID_NAME" />
+          <ScalarProperty Name="LAST_NAME" ColumnName="LAST_NAME" />
+          <ScalarProperty Name="LOGIN_ID" ColumnName="LOGIN_ID" />
+          <ScalarProperty Name="PASS_SALT" ColumnName="PASS_SALT" />
+          <ScalarProperty Name="LOGIN_PASSWORD" ColumnName="LOGIN_PASSWORD" />
+          <ScalarProperty Name="IS_ACTIVE" ColumnName="IS_ACTIVE" />
+          <ScalarProperty Name="ACTIVE_FROM" ColumnName="ACTIVE_FROM" />
+          <ScalarProperty Name="ACTIVE_TO" ColumnName="ACTIVE_TO" />
+          <ScalarProperty Name="IS_LOCKED" ColumnName="IS_LOCKED" />
+          <ScalarProperty Name="LOCK_REASON" ColumnName="LOCK_REASON" />
+          <ScalarProperty Name="LOCK_IP_ADDR" ColumnName="LOCK_IP_ADDR" />
+          <ScalarProperty Name="LOCK_TIME" ColumnName="LOCK_TIME" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_ALIAS" ColumnName="CLIENT_ALIAS" />
+          <ScalarProperty Name="CAN_VIEW_DATA" ColumnName="CAN_VIEW_DATA" />
+          <ScalarProperty Name="CAN_VIEW_IMAGE" ColumnName="CAN_VIEW_IMAGE" />
+          <ScalarProperty Name="CAN_DO_REQUEST" ColumnName="CAN_DO_REQUEST" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GEN_USER_TYPES_GET" FunctionName="DBModel.Store.GEN_USER_TYPES_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GEN_USER_TYPES_GET_Result">
+          <ScalarProperty Name="USER_TYPE_NO" ColumnName="USER_TYPE_NO" />
+          <ScalarProperty Name="USER_TYPE" ColumnName="USER_TYPE" />
+          <ScalarProperty Name="USER_TYPE_DESC" ColumnName="USER_TYPE_DESC" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SEC_USERS_INSERT" FunctionName="DBModel.Store.SEC_USERS_INSERT" />
+    <FunctionImportMapping FunctionImportName="SEC_USERS_DELETE" FunctionName="DBModel.Store.SEC_USERS_DELETE" />
+    <FunctionImportMapping FunctionImportName="SEC_USERS_UPDATE" FunctionName="DBModel.Store.SEC_USERS_UPDATE" />
+    <FunctionImportMapping FunctionImportName="SET_BULK_RECALL_BOXES_INSERT" FunctionName="DBModel.Store.SET_BULK_RECALL_BOXES_INSERT" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_BOXES_BULK_INSERT" FunctionName="DBModel.Store.SET_CLIENT_BOXES_BULK_INSERT" />
+    <FunctionImportMapping FunctionImportName="SET_RECALL_BOXES_INSERT" FunctionName="DBModel.Store.SET_RECALL_BOXES_INSERT" />
+    <FunctionImportMapping FunctionImportName="SET_RECALL_BOXES_UPDATE" FunctionName="DBModel.Store.SET_RECALL_BOXES_UPDATE" />
+    <FunctionImportMapping FunctionImportName="SET_RECALL_BOXES_GET" FunctionName="DBModel.Store.SET_RECALL_BOXES_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_RECALL_BOXES_GET_Result">
+          <ScalarProperty Name="ROWNUM" ColumnName="ROWNUM" />
+          <ScalarProperty Name="RECALL_BOX_NO" ColumnName="RECALL_BOX_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_ALIAS" ColumnName="CLIENT_ALIAS" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="RECALL_BOX_ID" ColumnName="RECALL_BOX_ID" />
+          <ScalarProperty Name="RECALL_LOCATION" ColumnName="RECALL_LOCATION" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_RECALL_BOXES_DELETE" FunctionName="DBModel.Store.SET_RECALL_BOXES_DELETE" />
+    <FunctionImportMapping FunctionImportName="SET_RECALL_BOXES_GET_PAGED" FunctionName="DBModel.Store.SET_RECALL_BOXES_GET_PAGED" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENTACCOUNT_CLIENTACCOUNTDOCS_INSERT" FunctionName="DBModel.Store.SET_CLIENTACCOUNT_CLIENTACCOUNTDOCS_INSERT" />
+    <FunctionImportMapping FunctionImportName="SET_ACCOUNT_STATUS_CHECK_BULK" FunctionName="DBModel.Store.SET_ACCOUNT_STATUS_CHECK_BULK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_ACCOUNT_STATUS_CHECK_BULK_Result">
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="cnt" ColumnName="cnt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_ACCOUNT_STATUS_CHECK_BULK_BY_TRN_TYPE_NO" FunctionName="DBModel.Store.SET_ACCOUNT_STATUS_CHECK_BULK_BY_TRN_TYPE_NO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_ACCOUNT_STATUS_CHECK_BULK_BY_TRN_TYPE_NO_Result">
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="BATCH_ID" ColumnName="BATCH_ID" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="RECALL_BOX_ID" ColumnName="RECALL_BOX_ID" />
+          <ScalarProperty Name="RECALL_LOCATION" ColumnName="RECALL_LOCATION" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_DEPT_RECALL_BOXES_GET_DETAILS" FunctionName="DBModel.Store.SET_CLIENT_DEPT_RECALL_BOXES_GET_DETAILS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_CLIENT_DEPT_RECALL_BOXES_GET_DETAILS_Result">
+          <ScalarProperty Name="ROWNUM" ColumnName="ROWNUM" />
+          <ScalarProperty Name="RECALL_BOX_NO" ColumnName="RECALL_BOX_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="CLIENT_ALIAS" ColumnName="CLIENT_ALIAS" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="RECALL_BOX_ID" ColumnName="RECALL_BOX_ID" />
+          <ScalarProperty Name="RECALL_LOCATION" ColumnName="RECALL_LOCATION" />
+          <ScalarProperty Name="IS_AUTO_ID" ColumnName="IS_AUTO_ID" />
+          <ScalarProperty Name="NEXT_ID" ColumnName="NEXT_ID" />
+          <ScalarProperty Name="ID_PREFIX" ColumnName="ID_PREFIX" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_BOX_NO_BY_CLIENT_BOX_ID" FunctionName="DBModel.Store.GET_BOX_NO_BY_CLIENT_BOX_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_BOX_NO_BY_CLIENT_BOX_ID_Result">
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="PROD_TYPE_NO" ColumnName="PROD_TYPE_NO" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="IS_BLACK_BOX" ColumnName="IS_BLACK_BOX" />
+          <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="RECALL_BOX_NO" ColumnName="RECALL_BOX_NO" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="RECALL_BOX_ID" ColumnName="RECALL_BOX_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_DEPT_BOXES_RECALL_UPDATE" FunctionName="DBModel.Store.SET_CLIENT_DEPT_BOXES_RECALL_UPDATE" />
+    <FunctionImportMapping FunctionImportName="GET_RECALL_BOX_NO_BY_CLIENT_BOX_ID" FunctionName="DBModel.Store.GET_RECALL_BOX_NO_BY_CLIENT_BOX_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_RECALL_BOX_NO_BY_CLIENT_BOX_ID_Result">
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="PROD_TYPE_NO" ColumnName="PROD_TYPE_NO" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="IS_BLACK_BOX" ColumnName="IS_BLACK_BOX" />
+          <ScalarProperty Name="CHALLAN_NO" ColumnName="CHALLAN_NO" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="RECALL_BOX_NO" ColumnName="RECALL_BOX_NO" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="RECALL_BOX_ID" ColumnName="RECALL_BOX_ID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_DEPT_BOXES_RECALL_DELETE" FunctionName="DBModel.Store.SET_CLIENT_DEPT_BOXES_RECALL_DELETE" />
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_IMAGE_DETAILS_INSERT" FunctionName="DBModel.Store.SET_CLIENT_IMAGE_DETAILS_INSERT" />
+    <FunctionImportMapping FunctionImportName="GET_ALL_IMAGE_URL" FunctionName="DBModel.Store.GET_ALL_IMAGE_URL">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_ALL_IMAGE_URL_Result">
+          <ScalarProperty Name="ATTACH_NO" ColumnName="ATTACH_NO" />
+          <ScalarProperty Name="DOC_NO" ColumnName="DOC_NO" />
+          <ScalarProperty Name="IMAGE_URL" ColumnName="IMAGE_URL" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_IMAGE_BY_ATTACH_NO" FunctionName="DBModel.Store.GET_IMAGE_BY_ATTACH_NO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_IMAGE_BY_ATTACH_NO_Result">
+          <ScalarProperty Name="DOC_NO" ColumnName="DOC_NO" />
+          <ScalarProperty Name="ATTACH_NAME" ColumnName="ATTACH_NAME" />
+          <ScalarProperty Name="FILE_LOCATION" ColumnName="FILE_LOCATION" />
+          <ScalarProperty Name="FILE_TYPE" ColumnName="FILE_TYPE" />
+          <ScalarProperty Name="FILE_EXT" ColumnName="FILE_EXT" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_GET_DETAILS" FunctionName="DBModel.Store.SET_CLIENT_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_GET_DETAILS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_CLIENT_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_GET_DETAILS_Result">
+          <ScalarProperty Name="COMPILE_VIEW_NO" ColumnName="COMPILE_VIEW_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="RPT_YEAR" ColumnName="RPT_YEAR" />
+          <ScalarProperty Name="RPT_MONTH" ColumnName="RPT_MONTH" />
+          <ScalarProperty Name="VIEW_QTY" ColumnName="VIEW_QTY" />
+          <ScalarProperty Name="COMPILE_DATE" ColumnName="COMPILE_DATE" />
+          <ScalarProperty Name="COMPILE_USER_NO" ColumnName="COMPILE_USER_NO" />
+          <ScalarProperty Name="COMPILE_LOGON_NO" ColumnName="COMPILE_LOGON_NO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_RPT_CLIENT_MONTHLY_IMAGE_VIEW_COMPILE_INSERT" FunctionName="DBModel.Store.SET_CLIENT_RPT_CLIENT_MONTHLY_IMAGE_VIEW_COMPILE_INSERT" />
+    <EntitySetMapping Name="RPT_CLIENT_MONTHLY_IMAGE_VIEWS">
+      <EntityTypeMapping TypeName="DBModel.RPT_CLIENT_MONTHLY_IMAGE_VIEWS">
+        <MappingFragment StoreEntitySet="RPT_CLIENT_MONTHLY_IMAGE_VIEWS">
+          <ScalarProperty Name="COMPILE_LOGON_NO" ColumnName="COMPILE_LOGON_NO" />
+          <ScalarProperty Name="COMPILE_USER_NO" ColumnName="COMPILE_USER_NO" />
+          <ScalarProperty Name="COMPILE_DATE" ColumnName="COMPILE_DATE" />
+          <ScalarProperty Name="VIEW_QTY" ColumnName="VIEW_QTY" />
+          <ScalarProperty Name="RPT_MONTH" ColumnName="RPT_MONTH" />
+          <ScalarProperty Name="RPT_YEAR" ColumnName="RPT_YEAR" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="COMPILE_VIEW_NO" ColumnName="COMPILE_VIEW_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TRN_IMAGE_VIEWS">
+      <EntityTypeMapping TypeName="DBModel.TRN_IMAGE_VIEWS">
+        <MappingFragment StoreEntitySet="TRN_IMAGE_VIEWS">
+          <ScalarProperty Name="IS_COMPILED" ColumnName="IS_COMPILED" />
+          <ScalarProperty Name="VIEW_LOGON_NO" ColumnName="VIEW_LOGON_NO" />
+          <ScalarProperty Name="VIEW_TIME" ColumnName="VIEW_TIME" />
+          <ScalarProperty Name="VIEW_DATE" ColumnName="VIEW_DATE" />
+          <ScalarProperty Name="DOC_NO" ColumnName="DOC_NO" />
+          <ScalarProperty Name="ATTACH_NO" ColumnName="ATTACH_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="USER_NO" ColumnName="USER_NO" />
+          <ScalarProperty Name="VIEW_NO" ColumnName="VIEW_NO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="CHECK_FOR_QTY_IN_TRN_IMAGE_VIEW" FunctionName="DBModel.Store.CHECK_FOR_QTY_IN_TRN_IMAGE_VIEW">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.CHECK_FOR_QTY_IN_TRN_IMAGE_VIEW_Result">
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_IMAGE_COMPILATION_HISTORY" FunctionName="DBModel.Store.GET_IMAGE_COMPILATION_HISTORY">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_IMAGE_COMPILATION_HISTORY_Result">
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="RPT_YEAR" ColumnName="RPT_YEAR" />
+          <ScalarProperty Name="RPT_MONTH" ColumnName="RPT_MONTH" />
+          <ScalarProperty Name="VIEW_QTY" ColumnName="VIEW_QTY" />
+          <ScalarProperty Name="COMPILE_DATE" ColumnName="COMPILE_DATE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_CLIENT_BOX_TRANSMIT_HISTORY" FunctionName="DBModel.Store.GET_CLIENT_BOX_TRANSMIT_HISTORY">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_CLIENT_BOX_TRANSMIT_HISTORY_Result">
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="TRANSMIT_ID" ColumnName="TRANSMIT_ID" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_ACCOUNT_TRANSMIT_HISTORY" FunctionName="DBModel.Store.GET_ACCOUNT_TRANSMIT_HISTORY">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_ACCOUNT_TRANSMIT_HISTORY_Result">
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="ACC_NAME" ColumnName="ACC_NAME" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="TRANSMIT_ID" ColumnName="TRANSMIT_ID" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_ACCOUNT_DOC_TRANSMIT_HISTORY" FunctionName="DBModel.Store.GET_ACCOUNT_DOC_TRANSMIT_HISTORY">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_ACCOUNT_DOC_TRANSMIT_HISTORY_Result">
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="DOC_TYPE_NO" ColumnName="DOC_TYPE_NO" />
+          <ScalarProperty Name="DOC_TYPE" ColumnName="DOC_TYPE" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="TRANSMIT_ID" ColumnName="TRANSMIT_ID" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACCOUNTS_GET_DETAILS" FunctionName="DBModel.Store.SET_CLIENT_ACCOUNTS_GET_DETAILS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_CLIENT_ACCOUNTS_GET_DETAILS_Result">
+          <ScalarProperty Name="ROWNUM" ColumnName="ROWNUM" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="BATCH_NO" ColumnName="BATCH_NO" />
+          <ScalarProperty Name="BATCH_ID" ColumnName="BATCH_ID" />
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="ACC_NAME" ColumnName="ACC_NAME" />
+          <ScalarProperty Name="ACC_DETAILS" ColumnName="ACC_DETAILS" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+          <ScalarProperty Name="TRANSMIT_PREFIX" ColumnName="TRANSMIT_PREFIX" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="REQ_TYPE_NAME" ColumnName="REQ_TYPE_NAME" />
+          <ScalarProperty Name="REQ_TYPE_CODE" ColumnName="REQ_TYPE_CODE" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="TRANSMIT_ID" ColumnName="TRANSMIT_ID" />
+          <ScalarProperty Name="TRN_DATE" ColumnName="TRN_DATE" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CLIENT_ACC_DOCS_GET_DETAILS" FunctionName="DBModel.Store.SET_CLIENT_ACC_DOCS_GET_DETAILS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_CLIENT_ACC_DOCS_GET_DETAILS_Result">
+          <ScalarProperty Name="DOC_NO" ColumnName="DOC_NO" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="DOC_TYPE_NO" ColumnName="DOC_TYPE_NO" />
+          <ScalarProperty Name="DOC_TYPE" ColumnName="DOC_TYPE" />
+          <ScalarProperty Name="DOC_TYPE_CODE" ColumnName="DOC_TYPE_CODE" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="DOC_DETAILS" ColumnName="DOC_DETAILS" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+          <ScalarProperty Name="REQ_TYPE_NO" ColumnName="REQ_TYPE_NO" />
+          <ScalarProperty Name="TRANSMIT_NO" ColumnName="TRANSMIT_NO" />
+          <ScalarProperty Name="TRANSMIT_ID" ColumnName="TRANSMIT_ID" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="LAST_TRN_DATE" ColumnName="LAST_TRN_DATE" />
+          <ScalarProperty Name="IS_OLD_DATA" ColumnName="IS_OLD_DATA" />
+          <ScalarProperty Name="CREATE_USER_NO" ColumnName="CREATE_USER_NO" />
+          <ScalarProperty Name="CREATE_LOGON_NO" ColumnName="CREATE_LOGON_NO" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="UPDATE_USER_NO" ColumnName="UPDATE_USER_NO" />
+          <ScalarProperty Name="UPDATE_LOGON_NO" ColumnName="UPDATE_LOGON_NO" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_CLIENT_BOX_TRANSMIT_DETAIL_BY_TRANSMIT_ID" FunctionName="DBModel.Store.GET_CLIENT_BOX_TRANSMIT_DETAIL_BY_TRANSMIT_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_CLIENT_BOX_TRANSMIT_DETAIL_BY_TRANSMIT_ID_Result">
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="TRANSMIT_ID" ColumnName="TRANSMIT_ID" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_CLIENT_ACCOUNT_DOC_TRANSMIT_DETAIL_BY_TRANSMIT_ID" FunctionName="DBModel.Store.GET_CLIENT_ACCOUNT_DOC_TRANSMIT_DETAIL_BY_TRANSMIT_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_CLIENT_ACCOUNT_DOC_TRANSMIT_DETAIL_BY_TRANSMIT_ID_Result">
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="DOC_TYPE_NO" ColumnName="DOC_TYPE_NO" />
+          <ScalarProperty Name="DOC_TYPE" ColumnName="DOC_TYPE" />
+          <ScalarProperty Name="TRANSMIT_ID" ColumnName="TRANSMIT_ID" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_CLIENT_ACCOUNT_TRANSMIT_DETAIL_BY_TRANSMIT_ID" FunctionName="DBModel.Store.GET_CLIENT_ACCOUNT_TRANSMIT_DETAIL_BY_TRANSMIT_ID">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_CLIENT_ACCOUNT_TRANSMIT_DETAIL_BY_TRANSMIT_ID_Result">
+          <ScalarProperty Name="CLIENT_NO" ColumnName="CLIENT_NO" />
+          <ScalarProperty Name="CLIENT_NAME" ColumnName="CLIENT_NAME" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="TRANSMIT_ID" ColumnName="TRANSMIT_ID" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+          <ScalarProperty Name="BOX_NO" ColumnName="BOX_NO" />
+          <ScalarProperty Name="DEPT_NAME" ColumnName="DEPT_NAME" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_CHALLAN_BULK_INSERT" FunctionName="DBModel.Store.SET_CHALLAN_BULK_INSERT" />
+    <FunctionImportMapping FunctionImportName="TRN_CHALLANS_UPDATE" FunctionName="DBModel.Store.TRN_CHALLANS_UPDATE" />
+    <FunctionImportMapping FunctionImportName="SET_ACCOUNT_STATUS_CHECK_Manual" FunctionName="DBModel.Store.SET_ACCOUNT_STATUS_CHECK_Manual">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_ACCOUNT_STATUS_CHECK_Manual_Result">
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="cnt" ColumnName="cnt" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GEN_COMPANY_INFO_UPDATE" FunctionName="DBModel.Store.GEN_COMPANY_INFO_UPDATE" />
+    <FunctionImportMapping FunctionImportName="SET_ACCOUNT_STATUS_CHECK_MANUAL_BY_TRN_TYPE_NO" FunctionName="DBModel.Store.SET_ACCOUNT_STATUS_CHECK_MANUAL_BY_TRN_TYPE_NO">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_ACCOUNT_STATUS_CHECK_MANUAL_BY_TRN_TYPE_NO_Result">
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="CREATE_TIME" ColumnName="CREATE_TIME" />
+          <ScalarProperty Name="ARCHIVE_DATE" ColumnName="ARCHIVE_DATE" />
+          <ScalarProperty Name="UPDATE_TIME" ColumnName="UPDATE_TIME" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="BATCH_ID" ColumnName="BATCH_ID" />
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="RECALL_BOX_ID" ColumnName="RECALL_BOX_ID" />
+          <ScalarProperty Name="RECALL_LOCATION" ColumnName="RECALL_LOCATION" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_ACCOUNT_DOC_LIST_FOR_REQUISITION_MISMATCH_CHECK" FunctionName="DBModel.Store.GET_ACCOUNT_DOC_LIST_FOR_REQUISITION_MISMATCH_CHECK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_ACCOUNT_DOC_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result">
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="ACC_NO" ColumnName="ACC_NO" />
+          <ScalarProperty Name="TRN_TYPE_NAME" ColumnName="TRN_TYPE_NAME" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="DOC_TYPE_NO" ColumnName="DOC_TYPE_NO" />
+          <ScalarProperty Name="DOC_TYPE" ColumnName="DOC_TYPE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SET_REQUESTERS_GET" FunctionName="DBModel.Store.SET_REQUESTERS_GET">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.SET_REQUESTERS_GET_Result">
+          <ScalarProperty Name="REQUESTER_NO" ColumnName="REQUESTER_NO" />
+          <ScalarProperty Name="DEPT_NO" ColumnName="DEPT_NO" />
+          <ScalarProperty Name="REQ_NAME" ColumnName="REQ_NAME" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_BOX_COUNT_FOR_REQUISITION_MISMATCH_CHECK" FunctionName="DBModel.Store.GET_BOX_COUNT_FOR_REQUISITION_MISMATCH_CHECK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_BOX_COUNT_FOR_REQUISITION_MISMATCH_CHECK_Result">
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TotalNo" ColumnName="TotalNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_BOX_LIST_FOR_REQUISITION_MISMATCH_CHECK" FunctionName="DBModel.Store.GET_BOX_LIST_FOR_REQUISITION_MISMATCH_CHECK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_BOX_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result">
+          <ScalarProperty Name="CLIENT_BOX_ID" ColumnName="CLIENT_BOX_ID" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_ACCOUNT_COUNT_FOR_REQUISITION_MISMATCH_CHECK" FunctionName="DBModel.Store.GET_ACCOUNT_COUNT_FOR_REQUISITION_MISMATCH_CHECK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_ACCOUNT_COUNT_FOR_REQUISITION_MISMATCH_CHECK_Result">
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TotalNo" ColumnName="TotalNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_ACCOUNT_LIST_FOR_REQUISITION_MISMATCH_CHECK" FunctionName="DBModel.Store.GET_ACCOUNT_LIST_FOR_REQUISITION_MISMATCH_CHECK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_ACCOUNT_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result">
+          <ScalarProperty Name="ACC_ID" ColumnName="ACC_ID" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_CHALLAN_COUNT_FOR_REQUISITION_MISMATCH_CHECK" FunctionName="DBModel.Store.GET_CHALLAN_COUNT_FOR_REQUISITION_MISMATCH_CHECK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_CHALLAN_COUNT_FOR_REQUISITION_MISMATCH_CHECK_Result">
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+          <ScalarProperty Name="TotalNo" ColumnName="TotalNo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_CHALLAN_LIST_FOR_REQUISITION_MISMATCH_CHECK" FunctionName="DBModel.Store.GET_CHALLAN_LIST_FOR_REQUISITION_MISMATCH_CHECK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="DBModel.GET_CHALLAN_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result">
+          <ScalarProperty Name="CHALLAN_ID" ColumnName="CHALLAN_ID" />
+          <ScalarProperty Name="TRN_TYPE_NO" ColumnName="TRN_TYPE_NO" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SEC_CLIENT_USER_REQUISITION_AND_REQUISITION_DETAILS_INSERT" FunctionName="DBModel.Store.SEC_CLIENT_USER_REQUISITION_AND_REQUISITION_DETAILS_INSERT" />
+  </EntityContainerMapping>
+</Mapping>

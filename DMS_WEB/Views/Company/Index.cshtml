@@ -1,0 +1,146 @@
+﻿@model DMS_WEB.Models.GEN_COMPANY_INFO_GET_Result
+
+@{
+    ViewBag.Title = "Company Information";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@ViewBag.Title</legend>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Company Name")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.COMP_NAME, new {@required = "required" })
+            @Html.ValidationMessageFor(model => model.COMP_NAME)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Company Feature")
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.KEY_FEATURE)
+            @Html.ValidationMessageFor(model => model.KEY_FEATURE)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Address")
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.ADDR, new { @required = "required" })
+            @Html.ValidationMessageFor(model => model.ADDR)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Phone")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.PHONE, new { @required = "required" })
+            @Html.ValidationMessageFor(model => model.PHONE)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Mobile")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.MOBILE, new { @required = "required" })
+            @Html.ValidationMessageFor(model => model.MOBILE)
+        </div>
+        </div>
+
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Fax")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.FAX)
+            @Html.ValidationMessageFor(model => model.FAX)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Email")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.EMAIL_ADDR)
+            @Html.ValidationMessageFor(model => model.EMAIL_ADDR)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Last New Transmittal ID")           
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.LAST_NEW_TRANS_ID)
+            @Html.ValidationMessageFor(model => model.LAST_NEW_TRANS_ID)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Last Transmittal IN ID")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.LAST_TRANS_IN_ID)
+            @Html.ValidationMessageFor(model => model.LAST_TRANS_IN_ID)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Last Transmittal OUT ID")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.LAST_TRANS_OUT_ID)
+            @Html.ValidationMessageFor(model => model.LAST_TRANS_OUT_ID)
+        </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">&nbsp;</div>
+            <div class="editor-field">
+                <button type="submit" id="btnSave" name="btnSave" class="btn btn-success">Update</button>
+            </div>
+        </div>
+        
+    </fieldset>
+}
+
+@section Scripts {
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+
+        $(document).on("click", '#btnSave', btnSave_Click);
+
+        function btnSave_Click() {
+            if (confirm('Do you want to Save?')) {
+                $('form').submit();
+            } else {
+                return false;
+            }
+        }
+    </script>
+}
+
+

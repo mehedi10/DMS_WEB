@@ -1,0 +1,122 @@
+﻿@using System.Diagnostics
+@model IEnumerable<DMS_WEB.Models.SET_ACCOUNT_STATUS_CHECK_BULK_BY_TRN_TYPE_NO_Result>
+
+@{
+    ViewBag.Title = "ShowBulkDetails";
+    var SrNo = 1;
+}
+
+    <h2>All Account Details by Transmital Type</h2>
+
+@{
+    DMS_WEB.Models.SEC_USERS_GET_Result user_info = null;
+    try
+    {
+        user_info = Session["sess_user_info"] as DMS_WEB.Models.SEC_USERS_GET_Result;
+    }
+    catch (Exception ex)
+    {
+
+    }
+
+    if (user_info != null)
+    {
+        if (user_info.USER_TYPE_NO == (short)DMS_WEB.Models.UserTypes.Super_Admin)
+        {
+            <div class="div_row tab_header">
+                <div class="div_cell div_caption">Sr.No</div>
+                <div class="div_cell div_caption">Account List</div>
+                <div class="div_cell div_caption">Transmital Type</div>
+                <div class="div_cell div_caption">Batch ID</div>
+                <div class="div_cell div_caption">Client Box ID</div>
+                <div class="div_cell div_caption">Recall Box ID</div>
+                <div class="div_cell div_caption">Recall Location</div>
+            </div>
+
+            foreach (var item in Model)
+            {
+                string str_tran_type = string.Empty;
+
+                if (item.TRN_TYPE_NO == 1)
+                {
+                    str_tran_type = "IN";
+                }
+                else if (item.TRN_TYPE_NO == 2)
+                {
+                    str_tran_type = "OUT";
+                }
+                else
+                {
+                    str_tran_type = "Not Recieved";
+                }
+
+
+                <div class="div_row">
+                    @if (item != null)
+                    {
+                        <div class="div_cell">@SrNo</div>
+                        SrNo++;
+                    }
+        
+                    <div class="div_cell">@Html.DisplayFor(modelItem => item.ACC_ID)</div> 
+                    <div class="div_cell">@str_tran_type</div>  
+                    <div class="div_cell">@Html.DisplayFor(modelItem => item.BATCH_ID)</div> 
+                    <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_BOX_ID)</div> 
+                    <div class="div_cell">@Html.DisplayFor(modelItem => item.RECALL_BOX_ID)</div> 
+                    <div class="div_cell">@Html.DisplayFor(modelItem => item.RECALL_LOCATION)</div>                      
+                </div>
+            }
+
+            <div class="div_cell div_caption">
+                @Html.ActionLink("Back", "AccountStatusList", "AccountStatusBulkCheck", new { @class = "btn btn-primary" })
+            </div>
+        }
+
+        else
+        {
+            <div class="div_row tab_header">
+                <div class="div_cell div_caption">Sr.No</div>
+                <div class="div_cell div_caption">Account List</div>
+                <div class="div_cell div_caption">Transmital Type</div>
+                <div class="div_cell div_caption">Batch ID</div>
+                <div class="div_cell div_caption">Client Box ID</div>
+            </div>
+
+            foreach (var item in Model)
+            {
+                string str_tran_type = string.Empty;
+
+                if (item.TRN_TYPE_NO == 1)
+                {
+                    str_tran_type = "IN";
+                }
+                else if (item.TRN_TYPE_NO == 2)
+                {
+                    str_tran_type = "OUT";
+                }
+                else
+                {
+                    str_tran_type = "Not Recieved";
+                }
+
+
+                <div class="div_row">
+                    @if (item != null)
+                    {
+                        <div class="div_cell">@SrNo</div>
+                        SrNo++;
+                    }
+        
+                    <div class="div_cell">@Html.DisplayFor(modelItem => item.ACC_ID)</div> 
+                    <div class="div_cell">@str_tran_type</div>  
+                    <div class="div_cell">@Html.DisplayFor(modelItem => item.BATCH_ID)</div> 
+                    <div class="div_cell">@Html.DisplayFor(modelItem => item.CLIENT_BOX_ID)</div>                     
+                </div>
+            }
+
+            <div class="div_cell div_caption">
+                @Html.ActionLink("Back", "AccountStatusList", "AccountStatusBulkCheck", new { @class = "btn btn-primary" })
+            </div>
+        }
+    }
+}

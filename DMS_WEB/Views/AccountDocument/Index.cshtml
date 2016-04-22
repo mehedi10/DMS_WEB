@@ -1,0 +1,274 @@
+﻿@model DMS_WEB.Models.AccountDocumentViewModel
+
+@{
+    ViewBag.Title = "Account's Document";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    //ViewBag.ACC_NO = Model.account_info.ACC_NO;
+    Model.document_info.ACC_NO = Model.account_info.ACC_NO;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<script type="text/javascript">
+    var setup_info = @Html.Raw(@ViewBag.setup_info);
+</script>
+
+<div class="entryform">
+    @Html.Partial("AccountInfo", Model.account_info)
+</div>
+
+<div class="entryform save">
+    @Html.Partial("Save", Model.document_info)
+</div>
+
+<div class="result">
+    @Html.Partial("List", Model.document_list)
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            load_default();
+
+            $(document).on("click", '#btnSave', btnSave_Click);
+            $(document).on("click", '#btnCancel', btnCancel_Click);
+            $(document).on("change", '#TRANSMIT_ID', TRANSMIT_ID_Click);
+
+            $(document).on("click", '.edit', edit_info);
+            $(document).on("click", '.delete', delete_info);
+        });
+
+        function load_default() {
+            $(document).on("live", '#DOC_TYPE_NO', setTimeout(load_doc_type, 10));
+            $(document).on("live", '#TRN_TYPE_NO', setTimeout(load_trns_type, 10));
+            $(document).on("live", '#REQ_TYPE_NO', setTimeout(load_req_type, 10));
+
+            $(document).on("live", '#ARCHIVE_DATE', setTimeout(function () {
+                $('#ARCHIVE_DATE').mask("99/99/9999");
+            }, 10));
+
+            $(document).on("live", '#TRN_DATE', setTimeout(function () {
+                $('#TRN_DATE').mask("99/99/9999");
+            }, 10));
+
+        }
+
+        function edit_info(e) {            
+            var url = $(this).attr("href");            
+            $.get(url, function(res) {
+                $('.save').html(res);
+                load_default();
+            });
+            e.preventDefault();
+            return false;
+        }
+
+        function delete_info(e) {            
+            if (confirm('Do want to delete?')) {
+                var url = $(this).attr("href");     
+                var data = {id : $(this).attr("tag"), };
+                $.post(url, data, function(res) {
+                    if (res.is_success == true) {
+                        
+                        //btnSearch_Click();
+                        
+                        alert('Record deleted successfully');
+
+                        var list_url = '../AccountDocument/List?ACC_NO=' + @Model.account_info.ACC_NO;
+                        $.get(list_url, function(list_res) {
+                            //console.log(list_res);
+                            $('.result').html(list_res);
+                        });
+
+                    } else {
+                        alert(res.msg);
+                    }
+                });
+            }
+            e.preventDefault();
+            return false;
+        }
+
+        function is_valid_entry() {
+            var ret_val = true;
+	        var msg = '';
+            
+            var ACC_NO = $.trim($('#ACC_NO').val()); 
+            var DOC_TYPE_NO = $.trim($('#DOC_TYPE_NO').val()); 
+            var ARCHIVE_DATE = $.trim($('#ARCHIVE_DATE').val()); 
+            var TRN_TYPE_NO = $.trim($('#TRN_TYPE_NO').val()); 
+            var REQ_TYPE_NO = $.trim($('#REQ_TYPE_NO').val()); 
+            var IS_OLD_DATA = $.trim($('#IS_OLD_DATA').val()); 
+                        
+            
+            if (ACC_NO == undefined || ACC_NO == null || ACC_NO == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Account is required \n' ;
+	        } 
+            if (DOC_TYPE_NO == undefined || DOC_TYPE_NO == null || DOC_TYPE_NO == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Document Type is required \n' ;
+	        } 
+            if (ARCHIVE_DATE == undefined || ARCHIVE_DATE == null || ARCHIVE_DATE == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Archieve Date is required \n' ;
+	        } else if (isDate(ARCHIVE_DATE) == false) { 
+                ret_val = ret_val && false;
+		        msg += 'Invalid Archieve Date \n' ;
+            }
+            if (TRN_TYPE_NO == undefined || TRN_TYPE_NO == null || TRN_TYPE_NO == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Transmittal Type is required \n' ;
+	        } 
+            if (REQ_TYPE_NO == undefined || REQ_TYPE_NO == null || REQ_TYPE_NO == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Request Type is required \n' ;
+	        } 
+            if (IS_OLD_DATA == undefined || IS_OLD_DATA == null || IS_OLD_DATA == '') {
+		        ret_val = ret_val && false;
+		        msg += 'Old Data Entry is required \n' ;
+	        } 
+
+            if (ret_val == false) { 
+		        alert(msg);
+	        }
+
+	        return ret_val;
+        }
+
+        function btnSave_Click() { 
+            if (is_valid_entry()) {
+                if (confirm('Do you want to Save?')) {
+                    var url = $('#frmEntry').attr("action");
+                    var data = $('#frmEntry').serialize();
+
+                    $.post(url, data, function(res) { 
+                        if (res.is_success == true) {                                                        
+                            var attach_entry_link = '<a href="../DocumentAttachment/Index?ACC_NO=@Model.account_info.ACC_NO&DOC_NO=' + res.id + '&ATTACH_NO=0" class="btn btn-success">Attachment</a>';
+
+                            $('#DOC_NO').val(res.id);
+                            $('#div_attach_link').html(attach_entry_link);
+
+                            alert('Saved Successfully');
+
+                            var list_url = '../AccountDocument/List?ACC_NO=' + @Model.account_info.ACC_NO;
+                            $.get(list_url, function(list_res) {
+                                //console.log(list_res);
+                                $('.result').html(list_res);
+                            });
+
+                        } else {
+                            alert(res.msg);
+                        }
+                    });
+                    return false;
+                    
+                } else {
+                    return false;
+                }
+            } else {  
+                return false;
+            }
+        }
+
+        function btnCancel_Click() { 
+            $('#DOC_NO').val('');
+            $('#DOC_DETAILS').val('');
+
+            $('#ARCHIVE_DATE').val('');
+            $('#TRANSMIT_NO').val('');
+            $('#TRANSMIT_ID').val('');
+            $('#TRN_DATE').val('');
+            
+            $('#div_attach_link').html('');
+
+            $('#ACC_ID').focus('');
+        }
+
+        function load_doc_type() {
+            $('#DOC_TYPE_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#DOC_TYPE_NO').append(empty_data);		
+            $.each(setup_info.doc_type_list, function(i, item) {
+                var selected = '';
+                if (item.DOC_TYPE_NO == DOC_TYPE_NO) {
+                    selected = 'selected="selected"';
+                } 
+			    var html_data = '';
+			    html_data += '<option value="' + item.DOC_TYPE_NO  + '" ' + selected + '>' + item.DOC_TYPE + '</option>';
+			    $('#DOC_TYPE_NO').append(html_data);	
+		    });
+        } 
+
+        function load_trns_type() {
+            $('#TRN_TYPE_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#TRN_TYPE_NO').append(empty_data);		
+            $.each(setup_info.trans_type_list, function(i, item) {
+                var selected = '';
+                if (item.TRN_TYPE_NO == TRN_TYPE_NO) {
+                    selected = 'selected="selected"';
+                } 
+			    var html_data = '';
+			    html_data += '<option value="' + item.TRN_TYPE_NO  + '" ' + selected + '>' + item.TRN_TYPE_NAME + '</option>';
+			    $('#TRN_TYPE_NO').append(html_data);	
+		    });
+        } 
+
+        function load_req_type() {
+            $('#REQ_TYPE_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';        
+            $('#REQ_TYPE_NO').append(empty_data);		
+            $.each(setup_info.req_type_list, function(i, item) {
+                var selected = '';
+                if (item.REQ_TYPE_NO == REQ_TYPE_NO) {
+                    selected = 'selected="selected"';
+                }
+			    var html_data = '';
+			    html_data += '<option value="' + item.REQ_TYPE_NO  + '" ' + selected + '>' + item.REQ_TYPE_NAME + '</option>';
+			    $('#REQ_TYPE_NO').append(html_data);	
+		    });
+        }
+
+        function TRANSMIT_ID_Click() {
+            var CLIENT_NO = $.trim($('#CLIENT_NO').val());
+            var DEPT_NO = $.trim($('#DEPT_NO').val());
+            var TRANSMIT_ID = $.trim($('#TRANSMIT_ID').val());
+
+            if(CLIENT_NO != null && CLIENT_NO != undefined && CLIENT_NO != "" 
+                && DEPT_NO != null && DEPT_NO != undefined && DEPT_NO != "" 
+                && TRANSMIT_ID != null && TRANSMIT_ID != undefined && TRANSMIT_ID != ""
+            ) {
+                var url = '../ReferenceLoader/GetTransmittal';
+                var data = { 
+                    CLIENT_NO : $('#CLIENT_NO').val(), 
+                    DEPT_NO : $('#DEPT_NO').val(), 
+                    TRANSMIT_ID : $('#TRANSMIT_ID').val(), 
+                };
+            
+                $.post(url, data, function(res) { 
+                    console.log(res);
+                    var info = null;
+                    if (res != null) {
+                        info = res[0];
+                    }                    
+                    if (info != null && info.TRANSMIT_NO != null) { 
+                        $('#TRANSMIT_NO').val(info.TRANSMIT_NO);
+                        $('#TRN_DATE').val(info.TRN_DATE);
+                    } else {
+                        $('#TRANSMIT_NO').val('');
+                        $('#TRANSMIT_ID').val('');
+                        $('#TRN_DATE').val('');
+                    }
+                });
+            } else { 
+                $('#TRANSMIT_NO').val('');
+                $('#TRANSMIT_ID').val('');
+                $('#TRN_DATE').val('');
+            }            
+        }
+
+    </script>
+}

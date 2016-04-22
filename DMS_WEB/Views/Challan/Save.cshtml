@@ -1,0 +1,141 @@
+﻿@model DMS_WEB.Models.TRN_CHALLANS_GET_Result
+
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("Save", "Challan", FormMethod.Post, new { @id= "frmEntry"})) {
+    @Html.ValidationSummary(true)
+
+     @Html.HiddenFor(model => model.CHALLAN_NO)
+
+    <fieldset>
+        <legend>@*@ViewBag.Title*@</legend>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Client", new { @for = "CLIENT_NO" })
+        </div>
+        <div class="editor-field">
+            <select id="CLIENT_NO" name="CLIENT_NO" required="required">                
+            </select>
+            @Html.ValidationMessageFor(model => model.CLIENT_NO)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Department", new { @for = "DEPT_NO" })
+        </div>
+        <div class="editor-field">
+            <select id="DEPT_NO" name="DEPT_NO" required="required">                
+            </select>
+            @Html.ValidationMessageFor(model => model.DEPT_NO)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Challan ID", new { @for = "CHALLAN_ID" })
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CHALLAN_ID)
+            @Html.ValidationMessageFor(model => model.CHALLAN_ID)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Date", new { @for = "REC_DATE" })
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.REC_DATE, new { @required = "required" })
+            @Html.ValidationMessageFor(model => model.REC_DATE)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Transmittal Type", new { @for = "TRN_TYPE_NO" })
+        </div>
+        <div class="editor-field">
+            <select id="TRN_TYPE_NO" name="TRN_TYPE_NO" required="required">                
+            </select>
+            @Html.ValidationMessageFor(model => model.TRN_TYPE_NO)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Request Type", new { @for = "REQ_TYPE_NO" })
+        </div>
+        <div class="editor-field">
+            <select id="REQ_TYPE_NO" name="REQ_TYPE_NO" required="required">                
+            </select>
+            @Html.ValidationMessageFor(model => model.REQ_TYPE_NO)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Transmittal ID", new { @for = "TRANSMIT_ID" })
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.TRANSMIT_NO)
+            @Html.TextBox("TRANSMIT_ID")
+            @Html.ValidationMessage("TRANSMIT_ID")
+            @Html.TextBox("TRN_DATE")
+        </div>
+        </div>
+        
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Old Data Entry", new { @for = "IS_OLD_DATA" })
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_OLD_DATA)
+            @Html.ValidationMessageFor(model => model.IS_OLD_DATA)
+        </div>
+        </div>
+
+       @* <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("File", new { @for = "UPLOAD_FILE_NAME" })
+        </div>
+        <div class="editor-field">            
+            @Html.TextBoxFor(model => model.UPLOAD_FILE_NAME, new { @type = "file", @required = "required" })
+            @Html.ValidationMessageFor(model => model.UPLOAD_FILE_NAME)
+        </div>
+        </div>*@
+
+        <div class="entry_form">
+            <div class="editor-label">                
+            </div>
+            <div class="editor-field">
+                <button type="submit" id="btnSave" name="btnSave" class="btn btn-success">Save</button> 
+                <button type="button" id="btnCancel" name="btnCancel" class="btn btn-warning">Cancel</button> 
+            </div>
+        </div>
+    </fieldset>
+}
+
+
+@section Scripts {
+
+}
+
+<script type="text/javascript">
+
+    //    var setup_info = @Html.Raw(@ViewBag.setup_info);
+
+    var CLIENT_NO = '@Model.CLIENT_NO';
+    var DEPT_NO = '@Model.DEPT_NO';
+    var TRN_TYPE_NO = '@Model.TRN_TYPE_NO';
+    var REQ_TYPE_NO = '@Model.REQ_TYPE_NO';
+
+
+    $(document).ready(function () {
+             //load_default();
+    });     
+    
+</script>

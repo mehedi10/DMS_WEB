@@ -1,0 +1,123 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_GET_DETAILS_Result
+
+@{
+    ViewBag.Title = "Client's Image View(Monthly)";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<script type="text/javascript">
+    var setup_info = @Html.Raw(@ViewBag.setup_info);
+</script>
+
+<div class="entryform save">
+    @Html.Partial("Save", Model)
+</div>
+
+<div class="result">
+</div>
+
+
+@section Scripts {
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            load_default();
+            $(document).on("click", '#btnSave', btnSave_Click);
+        });
+
+        function load_default() {
+            $(document).on("live", '#CLIENT_NO', setTimeout(load_clients, 10));
+        }
+
+
+        function is_valid_entry() {
+            var ret_val = true;
+            var msg = '';
+
+            var Year = $.trim($('#Year').val());
+            var Month = $.trim($('#Month').val());
+
+
+            if (Year == undefined || Year == null || Year == '') {
+                ret_val = ret_val && false;
+                msg += 'Year is required \n';
+            }
+            if (Year.length != 4) {
+                ret_val = ret_val && false;
+                msg += 'Year Must be 4 digits \n';
+            }
+            if (Month == undefined || Month == null || Month == '' || Month == 0) {
+                ret_val = ret_val && false;
+                msg += 'Please select Month \n';
+            }
+
+            if (ret_val == false) {
+                alert(msg);
+            }
+
+            return ret_val;
+        }
+
+        function btnSave_Click() {
+            if (is_valid_entry()) {
+                    var client_no = $.trim($('#CLIENT_NO').val());
+                    var year = $.trim($('#Year').val());
+                    var month = $.trim($('#Month').val());
+
+
+                    var url = '../ClientImageViewMonthly/Save?CLIENT_NO=' + client_no + '&YEAR=' + year + '&MONTH=' + month;
+//                    var data = { 
+//                    CLIENT_NO : client_no, 
+//                    Year : year, 
+//                    Month : month, 
+//                };
+
+                    $.post(url, function (res) {
+                        if (res.is_success == true) {
+                            alert('Proceed Successfully');
+
+
+                            $('#CLIENT_NO').val('');
+                            $('#Year').val('');
+                            $('#Month').val('0');
+
+                            var url = '../ClientImageViewMonthly/List'; 
+                            var data = {
+                                CLIENT_NO : client_no, 
+                                YEAR : year, 
+                                MONTH : month, 
+                            };
+
+                            $.post(url, data, function(res) { 
+                                $('.result').html(res);
+                            });
+                        } else {
+                            alert('Can not proceed');
+                        }
+                    });
+                    return false;
+            } else {
+                return false;
+            }
+        }
+
+
+        function load_clients() {
+            $('#CLIENT_NO').empty();
+            var empty_data = '<option value="">-- Select --</option>';
+            $('#CLIENT_NO').append(empty_data);
+            $.each(setup_info.client_list, function (i, item) {
+                var selected = '';
+                if (item.CLIENT_NO == CLIENT_NO) {
+                    selected = 'selected="selected"';
+                }
+                var html_data = '';
+                html_data += '<option value="' + item.CLIENT_NO + '" ' + selected + '>' + item.CLIENT_NAME + '</option>';
+                $('#CLIENT_NO').append(html_data);
+            });
+        }
+
+    </script>   
+}

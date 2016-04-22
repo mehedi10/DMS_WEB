@@ -1,0 +1,66 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_GET_DETAILS_Result
+@{
+    Layout = null;
+}
+
+@using (Html.BeginForm("Save", "ClientImageViewMonthly", FormMethod.Post, new { @id = "frmEntry" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Client", new { @for = "CLIENT_NO" })
+            </div>
+            <div class="editor-field">
+                <select id="CLIENT_NO" name="CLIENT_NO">
+                </select>
+                @Html.HiddenFor(model=>model.CLIENT_NO)
+            </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Year", new { @for = "Year" })
+            </div>
+            <div class="editor-field">
+                @Html.TextBox("Year")
+            </div>
+            
+            <div class="editor-label">
+                @Html.Label("Month", new { @for = "Month" })
+            </div>
+            <div class="editor-field">
+                <select id="Month" name="Month">
+                     <option value="0">Select Month</option>
+                     <option value="01">Jan</option>
+                     <option value="02">Feb</option>
+                     <option value="03">March</option>
+                     <option value="04">April</option>
+                     <option value="05">May</option>
+                     <option value="06">June</option>
+                     <option value="07">July</option>
+                     <option value="08">August</option>
+                     <option value="09">September</option>
+                     <option value="10">October</option>
+                     <option value="11">November</option>
+                     <option value="12">December</option>
+                 </select>
+            </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">
+            </div>
+            <div class="editor-field">
+                <button type="submit" id="btnSave" name="btnSave" class="confirm btn btn-primary">
+                    Process</button>
+            </div>
+        </div>
+    </fieldset>
+}
+@section Scripts {
+}
+<script type="text/javascript">
+</script>
+

@@ -1,0 +1,67 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_ATTACHS_GET_Result
+@{
+    Layout = null;
+
+    string THUMB_HEIGHT = System.Configuration.ConfigurationManager.AppSettings["THUMB_HEIGHT"].Trim();
+    string THUMB_WIDTH = System.Configuration.ConfigurationManager.AppSettings["THUMB_WIDTH"].Trim();
+    string FULL_HEIGHT = System.Configuration.ConfigurationManager.AppSettings["FULL_HEIGHT"].Trim();
+    string FULL_WIDTH = System.Configuration.ConfigurationManager.AppSettings["FULL_WIDTH"].Trim();
+}
+@using (Html.BeginForm("Save", "DocumentAttachment", FormMethod.Post, new { @id = "frmEntry", @enctype = "multipart/form-data" })) {
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.ATTACH_NO)
+    @Html.HiddenFor(model => model.DOC_NO)
+    @Html.HiddenFor(model => model.ACC_NO)
+    @Html.HiddenFor(model => model.CLIENT_NO)
+    @Html.HiddenFor(model => model.DEPT_NO)
+
+
+    <fieldset>
+        <legend>@*SET_CLIENT_ATTACHS_GET_Result*@</legend>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("File", new { @for = "ATTACH_NAME" })
+        </div>
+        <div class="editor-field">            
+            @Html.TextBoxFor(model => model.ATTACH_NAME, new { @type = "file", @required = "required" })
+            @*@Html.ValidationMessageFor(model => model.ATTACH_NAME)*@
+        </div>
+
+        @*<div class="editor-field">
+            <img id="IMG_DATA" src="" height="@THUMB_HEIGHT" width="@THUMB_WIDTH" />
+        </div>*@
+
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">                
+            </div>
+            <div class="editor-field">                
+                <button type="submit" id="btnSave" name="btnSave" class="confirm btn btn-primary">Save</button> 
+                <button type="button" id="btnCancel" name="btnCancel" class="btn btn-warning">Cancel</button>                 
+            </div>
+        </div>
+    </fieldset>
+}
+
+
+@section Scripts {
+
+    
+}
+
+<script type="text/javascript">
+
+    $(document).ready(function () { 
+
+    });
+
+//    $(document).on("change", '#ATTACH_NAME', ATTACH_NAME_Click);
+
+//    function ATTACH_NAME_Click(e) {
+//        $('#IMG_DATA').attr('src', $('input[type=file]').val());
+//    }
+    
+</script>

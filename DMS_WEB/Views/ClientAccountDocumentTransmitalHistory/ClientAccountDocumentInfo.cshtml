@@ -1,0 +1,41 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_ACC_DOCS_GET_DETAILS_Result
+<fieldset>
+    <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Client", new { @for = "Client" })
+        </div>
+        <div class="editor-label">
+            @Html.DisplayFor(model => model.CLIENT_NAME)
+        </div>
+        <div class="editor-label">
+            @Html.Label("Department", new { @for = "Department" })
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.DEPT_NAME)
+        </div>
+    </div>
+    <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Box ID", new { @for = "CLIENT_BOX_ID" })
+        </div>
+        <div class="editor-label">
+            @Html.DisplayFor(model => model.CLIENT_BOX_ID)
+        </div>
+        
+        <div class="editor-label">
+            @Html.Label("ACC ID", new { @for = "ACC_ID" })
+        </div>
+        <div class="editor-label">
+            @Html.DisplayFor(model => model.ACC_ID)
+        </div>
+    </div>
+    
+    <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Document Type", new { @for = "DOC_TYPE" })
+        </div>
+        <div class="editor-label">
+            @Html.DisplayFor(model => model.DOC_TYPE)
+        </div>
+    </div>
+</fieldset>

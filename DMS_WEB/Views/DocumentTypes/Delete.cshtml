@@ -1,0 +1,32 @@
+﻿@model DMS_WEB.Models.SET_DOCS_TYPES
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>SET_DOCS_TYPES</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DOC_TYPE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DOC_TYPE)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DOC_TYPE_CODE)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DOC_TYPE_CODE)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

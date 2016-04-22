@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DMS_WEB.Models.GET_CLIENT_BOX_TRANSMIT_HISTORY_Result>
+
+@{
+    Layout = null;
+    int count = 1;
+}
+
+<div class="div_row tab_header">
+    <div class="div_cell div_caption">NO</div>
+    <div class="div_cell div_caption">Transmital ID</div>
+    <div class="div_cell div_caption">Transmittal Type</div>
+    <div class="div_cell div_caption">Create Date</div>
+</div>
+
+@foreach (var item in Model)
+{
+
+    <div class="div_row">
+                    @if (item != null)
+                    {
+                        <div class="div_cell">@count</div>
+                        count++;
+                    }
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.TRANSMIT_ID)</div>       
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.TRN_TYPE_NAME)</div>
+        <div class="div_cell">@Html.DisplayFor(modelItem => item.CREATE_TIME)</div> 
+    </div>    
+
+}
+

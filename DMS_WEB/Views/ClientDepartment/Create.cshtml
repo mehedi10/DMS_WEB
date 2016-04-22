@@ -1,0 +1,192 @@
+﻿@model DMS_WEB.Models.SET_CLIENT_DEPARTMENTS
+
+@{
+    ViewBag.Title = "New Client Department";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@ViewBag.Title</legend>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Client")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CLIENT_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.CLIENT_NO)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Department Name")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DEPT_NAME, new { @required = "required" })
+            @Html.ValidationMessageFor(model => model.DEPT_NAME)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Address")
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.DEPT_ADDR)
+            @Html.ValidationMessageFor(model => model.DEPT_ADDR)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Contact")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DEPT_CONTACT)
+            @Html.ValidationMessageFor(model => model.DEPT_CONTACT)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Department Email")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DEPT_EMAIL)
+            @Html.ValidationMessageFor(model => model.DEPT_EMAIL)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Delivery Location")
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.DELIVERY_LOCATION)
+            @Html.ValidationMessageFor(model => model.DELIVERY_LOCATION)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Contat Person")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.CONTACT_PERSON)
+            @Html.ValidationMessageFor(model => model.CONTACT_PERSON)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Contct Address")
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.CONTACT_ADDR)
+            @Html.ValidationMessageFor(model => model.CONTACT_ADDR)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Designation")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.DESIGNATION)
+            @Html.ValidationMessageFor(model => model.DESIGNATION)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Attention")
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.ATTENTION)
+            @Html.ValidationMessageFor(model => model.ATTENTION)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Start with New Transmittal")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_NEW_TRANSMIT)
+            @Html.ValidationMessageFor(model => model.IS_NEW_TRANSMIT)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Starts with Auto ID")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_AUTO_ID)
+            @Html.ValidationMessageFor(model => model.IS_AUTO_ID)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Next ID")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NEXT_ID)
+            @Html.ValidationMessageFor(model => model.NEXT_ID)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("ID Length")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ID_LENGHT)
+            @Html.ValidationMessageFor(model => model.ID_LENGHT)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("ID Prefix")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ID_PREFIX)
+            @Html.ValidationMessageFor(model => model.ID_PREFIX)
+        </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">&nbsp;</div>
+            <div class="editor-field">
+                <button type="submit" id="btnSave" name="btnSave" class="btn btn-success">Save</button> 
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+            </div>
+        </div>        
+    </fieldset>
+}
+
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+
+        $(document).on("click", '#btnSave', btnSave_Click);
+
+        function btnSave_Click() {
+            if (confirm('Do you want to Save?')) {
+                $('form').submit();
+            } else {
+                return false;
+            }
+        }
+    </script>
+}

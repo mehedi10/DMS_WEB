@@ -1,0 +1,144 @@
+﻿@model DMS_WEB.Models.SET_CLIENTS
+
+@{
+    ViewBag.Title = "Edit Client";
+}
+
+<h2>@ViewBag.Title </h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@ViewBag.Title</legend>
+
+        @Html.HiddenFor(model => model.CLIENT_NO)
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Client Name")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.CLIENT_NAME, new {@required = "required" })
+            @Html.ValidationMessageFor(model => model.CLIENT_NAME)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Alias")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.CLIENT_ALIAS, new { @required = "required" })
+            @Html.ValidationMessageFor(model => model.CLIENT_ALIAS)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Address")
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.CLIENT_ADDR)
+            @Html.ValidationMessageFor(model => model.CLIENT_ADDR)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Contact")
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.CLIENT_CONTACT)
+            @Html.ValidationMessageFor(model => model.CLIENT_CONTACT)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Contact Person")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.CONTACT_PERSON)
+            @Html.ValidationMessageFor(model => model.CONTACT_PERSON)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Contact Address")
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.CONTACT_ADDR)
+            @Html.ValidationMessageFor(model => model.CONTACT_ADDR)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Designation")
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.DESIGNATION)
+            @Html.ValidationMessageFor(model => model.DESIGNATION)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Attention")
+        </div>
+        <div class="editor-field">
+            @Html.TextAreaFor(model => model.ATTENTION)
+            @Html.ValidationMessageFor(model => model.ATTENTION)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Email")
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.EMAIL_ADDR)
+            @Html.ValidationMessageFor(model => model.EMAIL_ADDR)
+        </div>
+        </div>
+
+        <div class="entry_form">
+        <div class="editor-label">
+            @Html.Label("Status")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IS_ACIVE)
+            @Html.ValidationMessageFor(model => model.IS_ACIVE)
+        </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">&nbsp;</div>
+            <div class="editor-field">
+                <button type="submit" id="btnSave" name="btnSave" class="btn btn-success">Save</button> 
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+    </fieldset>
+}
+
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+
+        $(document).on("click", '#btnSave', btnSave_Click);
+
+        function btnSave_Click() {
+            if (confirm('Do you want to Save?')) {
+                $('form').submit();
+            } else {
+                return false;
+            }
+        }
+    </script>
+}

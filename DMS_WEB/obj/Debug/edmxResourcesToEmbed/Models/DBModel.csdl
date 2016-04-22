@@ -1,0 +1,2752 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GEN_COMPANY_INFO" EntityType="DBModel.GEN_COMPANY_INFO" />
+    <EntitySet Name="GEN_CONTROL_ACTIONS" EntityType="DBModel.GEN_CONTROL_ACTIONS" />
+    <EntitySet Name="GEN_MENU_ACTIONS" EntityType="DBModel.GEN_MENU_ACTIONS" />
+    <EntitySet Name="GEN_MENU_TYPES" EntityType="DBModel.GEN_MENU_TYPES" />
+    <EntitySet Name="GEN_MENUS" EntityType="DBModel.GEN_MENUS" />
+    <EntitySet Name="GEN_TRANSMIT_REQUEST_TYPES" EntityType="DBModel.GEN_TRANSMIT_REQUEST_TYPES" />
+    <EntitySet Name="GEN_TRANSMIT_TYPES" EntityType="DBModel.GEN_TRANSMIT_TYPES" />
+    <EntitySet Name="GEN_USER_TYPES" EntityType="DBModel.GEN_USER_TYPES" />
+    <EntitySet Name="SEC_ROLE_MENUS" EntityType="DBModel.SEC_ROLE_MENUS" />
+    <EntitySet Name="SEC_ROLES" EntityType="DBModel.SEC_ROLES" />
+    <EntitySet Name="SEC_USER_LOGONS" EntityType="DBModel.SEC_USER_LOGONS" />
+    <EntitySet Name="SEC_USER_ROLES" EntityType="DBModel.SEC_USER_ROLES" />
+    <EntitySet Name="SEC_USERS" EntityType="DBModel.SEC_USERS" />
+    <EntitySet Name="SET_BOX_MERGES" EntityType="DBModel.SET_BOX_MERGES" />
+    <EntitySet Name="SET_CLIENT_ACC_DOCS" EntityType="DBModel.SET_CLIENT_ACC_DOCS" />
+    <EntitySet Name="SET_CLIENT_ACCOUNTS" EntityType="DBModel.SET_CLIENT_ACCOUNTS" />
+    <EntitySet Name="SET_CLIENT_ATTACHS" EntityType="DBModel.SET_CLIENT_ATTACHS" />
+    <EntitySet Name="SET_CLIENT_BATCHES" EntityType="DBModel.SET_CLIENT_BATCHES" />
+    <EntitySet Name="SET_CLIENT_DEPARTMENTS" EntityType="DBModel.SET_CLIENT_DEPARTMENTS" />
+    <EntitySet Name="SET_CLIENT_DEPT_BOXES" EntityType="DBModel.SET_CLIENT_DEPT_BOXES" />
+    <EntitySet Name="SET_CLIENTS" EntityType="DBModel.SET_CLIENTS" />
+    <EntitySet Name="SET_DOCS_TYPES" EntityType="DBModel.SET_DOCS_TYPES" />
+    <EntitySet Name="SET_PRODUCT_TYPES" EntityType="DBModel.SET_PRODUCT_TYPES" />
+    <EntitySet Name="SET_REASONS" EntityType="DBModel.SET_REASONS" />
+    <EntitySet Name="SET_REQUESTERS" EntityType="DBModel.SET_REQUESTERS" />
+    <EntitySet Name="sysdiagrams" EntityType="DBModel.sysdiagram" />
+    <EntitySet Name="TBL_TEST_01" EntityType="DBModel.TBL_TEST_01" />
+    <EntitySet Name="TRN_CHALLAN_DETAILS" EntityType="DBModel.TRN_CHALLAN_DETAILS" />
+    <EntitySet Name="TRN_TRANSMIT_REQ_TYPES" EntityType="DBModel.TRN_TRANSMIT_REQ_TYPES" />
+    <AssociationSet Name="FK_GEN_MENU_ACTIONS_GEN_CONTROL_ACTIONS" Association="DBModel.FK_GEN_MENU_ACTIONS_GEN_CONTROL_ACTIONS">
+      <End Role="GEN_CONTROL_ACTIONS" EntitySet="GEN_CONTROL_ACTIONS" />
+      <End Role="GEN_MENU_ACTIONS" EntitySet="GEN_MENU_ACTIONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GEN_MENU_ACTIONS_GEN_MENUS" Association="DBModel.FK_GEN_MENU_ACTIONS_GEN_MENUS">
+      <End Role="GEN_MENUS" EntitySet="GEN_MENUS" />
+      <End Role="GEN_MENU_ACTIONS" EntitySet="GEN_MENU_ACTIONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GEN_MENUS_GEN_MENU_TYPES" Association="DBModel.FK_GEN_MENUS_GEN_MENU_TYPES">
+      <End Role="GEN_MENU_TYPES" EntitySet="GEN_MENU_TYPES" />
+      <End Role="GEN_MENUS" EntitySet="GEN_MENUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GEN_MENUS_GEN_MENUS" Association="DBModel.FK_GEN_MENUS_GEN_MENUS">
+      <End Role="GEN_MENUS" EntitySet="GEN_MENUS" />
+      <End Role="GEN_MENUS1" EntitySet="GEN_MENUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SEC_ROLE_MENUS_GEN_MENUS" Association="DBModel.FK_SEC_ROLE_MENUS_GEN_MENUS">
+      <End Role="GEN_MENUS" EntitySet="GEN_MENUS" />
+      <End Role="SEC_ROLE_MENUS" EntitySet="SEC_ROLE_MENUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SEC_USERS_GEN_USER_TYPES" Association="DBModel.FK_SEC_USERS_GEN_USER_TYPES">
+      <End Role="GEN_USER_TYPES" EntitySet="GEN_USER_TYPES" />
+      <End Role="SEC_USERS" EntitySet="SEC_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SEC_ROLE_MENUS_SEC_ROLES" Association="DBModel.FK_SEC_ROLE_MENUS_SEC_ROLES">
+      <End Role="SEC_ROLES" EntitySet="SEC_ROLES" />
+      <End Role="SEC_ROLE_MENUS" EntitySet="SEC_ROLE_MENUS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SEC_USER_ROLES_SEC_ROLES" Association="DBModel.FK_SEC_USER_ROLES_SEC_ROLES">
+      <End Role="SEC_ROLES" EntitySet="SEC_ROLES" />
+      <End Role="SEC_USER_ROLES" EntitySet="SEC_USER_ROLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SEC_USER_LOGONS_SEC_USERS" Association="DBModel.FK_SEC_USER_LOGONS_SEC_USERS">
+      <End Role="SEC_USERS" EntitySet="SEC_USERS" />
+      <End Role="SEC_USER_LOGONS" EntitySet="SEC_USER_LOGONS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SEC_USER_ROLES_SEC_USERS" Association="DBModel.FK_SEC_USER_ROLES_SEC_USERS">
+      <End Role="SEC_USERS" EntitySet="SEC_USERS" />
+      <End Role="SEC_USER_ROLES" EntitySet="SEC_USER_ROLES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SEC_USERS_SET_CLIENTS" Association="DBModel.FK_SEC_USERS_SET_CLIENTS">
+      <End Role="SET_CLIENTS" EntitySet="SET_CLIENTS" />
+      <End Role="SEC_USERS" EntitySet="SEC_USERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_ACC_DOCS_SET_CLIENT_ACCOUNTS" Association="DBModel.FK_SET_CLIENT_ACC_DOCS_SET_CLIENT_ACCOUNTS">
+      <End Role="SET_CLIENT_ACCOUNTS" EntitySet="SET_CLIENT_ACCOUNTS" />
+      <End Role="SET_CLIENT_ACC_DOCS" EntitySet="SET_CLIENT_ACC_DOCS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_ACC_DOCS_SET_DOCS_TYPES" Association="DBModel.FK_SET_CLIENT_ACC_DOCS_SET_DOCS_TYPES">
+      <End Role="SET_DOCS_TYPES" EntitySet="SET_DOCS_TYPES" />
+      <End Role="SET_CLIENT_ACC_DOCS" EntitySet="SET_CLIENT_ACC_DOCS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_ATTACHS_SET_CLIENT_ACC_DOCS" Association="DBModel.FK_SET_CLIENT_ATTACHS_SET_CLIENT_ACC_DOCS">
+      <End Role="SET_CLIENT_ACC_DOCS" EntitySet="SET_CLIENT_ACC_DOCS" />
+      <End Role="SET_CLIENT_ATTACHS" EntitySet="SET_CLIENT_ATTACHS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_ACCOUNTS_SET_CLIENT_BATCHES" Association="DBModel.FK_SET_CLIENT_ACCOUNTS_SET_CLIENT_BATCHES">
+      <End Role="SET_CLIENT_BATCHES" EntitySet="SET_CLIENT_BATCHES" />
+      <End Role="SET_CLIENT_ACCOUNTS" EntitySet="SET_CLIENT_ACCOUNTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_ACCOUNTS_SET_CLIENTS" Association="DBModel.FK_SET_CLIENT_ACCOUNTS_SET_CLIENTS">
+      <End Role="SET_CLIENTS" EntitySet="SET_CLIENTS" />
+      <End Role="SET_CLIENT_ACCOUNTS" EntitySet="SET_CLIENT_ACCOUNTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_BATCHES_SET_CLIENT_DEPT_BOXES" Association="DBModel.FK_SET_CLIENT_BATCHES_SET_CLIENT_DEPT_BOXES">
+      <End Role="SET_CLIENT_DEPT_BOXES" EntitySet="SET_CLIENT_DEPT_BOXES" />
+      <End Role="SET_CLIENT_BATCHES" EntitySet="SET_CLIENT_BATCHES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_BATCHES_SET_CLIENTS" Association="DBModel.FK_SET_CLIENT_BATCHES_SET_CLIENTS">
+      <End Role="SET_CLIENTS" EntitySet="SET_CLIENTS" />
+      <End Role="SET_CLIENT_BATCHES" EntitySet="SET_CLIENT_BATCHES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_DEPARTMENTS_SET_CLIENTS" Association="DBModel.FK_SET_CLIENT_DEPARTMENTS_SET_CLIENTS">
+      <End Role="SET_CLIENTS" EntitySet="SET_CLIENTS" />
+      <End Role="SET_CLIENT_DEPARTMENTS" EntitySet="SET_CLIENT_DEPARTMENTS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_DEPT_BOXES_SET_CLIENT_DEPARTMENTS" Association="DBModel.FK_SET_CLIENT_DEPT_BOXES_SET_CLIENT_DEPARTMENTS">
+      <End Role="SET_CLIENT_DEPARTMENTS" EntitySet="SET_CLIENT_DEPARTMENTS" />
+      <End Role="SET_CLIENT_DEPT_BOXES" EntitySet="SET_CLIENT_DEPT_BOXES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_REQUESTERS_SET_CLIENT_DEPARTMENTS" Association="DBModel.FK_SET_REQUESTERS_SET_CLIENT_DEPARTMENTS">
+      <End Role="SET_CLIENT_DEPARTMENTS" EntitySet="SET_CLIENT_DEPARTMENTS" />
+      <End Role="SET_REQUESTERS" EntitySet="SET_REQUESTERS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_DEPT_BOXES_SET_CLIENTS" Association="DBModel.FK_SET_CLIENT_DEPT_BOXES_SET_CLIENTS">
+      <End Role="SET_CLIENTS" EntitySet="SET_CLIENTS" />
+      <End Role="SET_CLIENT_DEPT_BOXES" EntitySet="SET_CLIENT_DEPT_BOXES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_DEPT_BOXES_SET_PRODUCT_TYPES" Association="DBModel.FK_SET_CLIENT_DEPT_BOXES_SET_PRODUCT_TYPES">
+      <End Role="SET_PRODUCT_TYPES" EntitySet="SET_PRODUCT_TYPES" />
+      <End Role="SET_CLIENT_DEPT_BOXES" EntitySet="SET_CLIENT_DEPT_BOXES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_REASONS_SET_CLIENTS" Association="DBModel.FK_SET_REASONS_SET_CLIENTS">
+      <End Role="SET_CLIENTS" EntitySet="SET_CLIENTS" />
+      <End Role="SET_REASONS" EntitySet="SET_REASONS" />
+    </AssociationSet>
+    <FunctionImport Name="SEC_USER_LOGONS_INSERT">
+      <Parameter Name="LOGON_NO" Mode="InOut" Type="Int64" />
+      <Parameter Name="USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="SESS_ID" Mode="In" Type="String" />
+      <Parameter Name="LOGIN_IP_ADDR" Mode="In" Type="String" />
+      <Parameter Name="DEVICE_ID" Mode="In" Type="String" />
+      <Parameter Name="APP_NAME" Mode="In" Type="String" />
+      <Parameter Name="APP_VER" Mode="In" Type="String" />
+      <Parameter Name="SERVER_IP" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SEC_USER_LOGOUT">
+      <Parameter Name="LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GEN_COMPANY_INFO_GET" ReturnType="Collection(DBModel.GEN_COMPANY_INFO_GET_Result)" />
+    <FunctionImport Name="SET_CLIENTS_GET" ReturnType="Collection(DBModel.SET_CLIENTS_GET_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="IS_ACIVE" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_DEPARTMENTS_GET" ReturnType="Collection(DBModel.SET_CLIENT_DEPARTMENTS_GET_Result)">
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NAME" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SET_PRODUCT_TYPES_GET" ReturnType="Collection(DBModel.SET_PRODUCT_TYPES_GET_Result)">
+      <Parameter Name="PROD_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="PRODUCT_TYPE" Mode="In" Type="String" />
+      <Parameter Name="SHORT_CODE" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GEN_TRANSMIT_TYPES_GET" ReturnType="Collection(DBModel.GEN_TRANSMIT_TYPES_GET_Result)">
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRN_TYPE_NAME" Mode="In" Type="String" />
+      <Parameter Name="TRANSMIT_PREFIX" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GEN_TRANSMIT_REQUEST_TYPES_GET" ReturnType="Collection(DBModel.GEN_TRANSMIT_REQUEST_TYPES_GET_Result)">
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NAME" Mode="In" Type="String" />
+      <Parameter Name="REQ_TYPE_CODE" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="TRN_TRANSMITTALS" EntityType="DBModel.TRN_TRANSMITTALS" />
+    <AssociationSet Name="FK_TRN_TRANSMITTALS_GEN_TRANSMIT_TYPES" Association="DBModel.FK_TRN_TRANSMITTALS_GEN_TRANSMIT_TYPES">
+      <End Role="GEN_TRANSMIT_TYPES" EntitySet="GEN_TRANSMIT_TYPES" />
+      <End Role="TRN_TRANSMITTALS" EntitySet="TRN_TRANSMITTALS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRN_TRANSMITTALS_SET_CLIENT_DEPARTMENTS" Association="DBModel.FK_TRN_TRANSMITTALS_SET_CLIENT_DEPARTMENTS">
+      <End Role="SET_CLIENT_DEPARTMENTS" EntitySet="SET_CLIENT_DEPARTMENTS" />
+      <End Role="TRN_TRANSMITTALS" EntitySet="TRN_TRANSMITTALS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRN_TRANSMITTALS_SET_CLIENTS" Association="DBModel.FK_TRN_TRANSMITTALS_SET_CLIENTS">
+      <End Role="SET_CLIENTS" EntitySet="SET_CLIENTS" />
+      <End Role="TRN_TRANSMITTALS" EntitySet="TRN_TRANSMITTALS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRN_TRANSMITTALS_SET_PRODUCT_TYPES" Association="DBModel.FK_TRN_TRANSMITTALS_SET_PRODUCT_TYPES">
+      <End Role="SET_PRODUCT_TYPES" EntitySet="SET_PRODUCT_TYPES" />
+      <End Role="TRN_TRANSMITTALS" EntitySet="TRN_TRANSMITTALS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRN_TRANSMITTALS_SET_REASONS" Association="DBModel.FK_TRN_TRANSMITTALS_SET_REASONS">
+      <End Role="SET_REASONS" EntitySet="SET_REASONS" />
+      <End Role="TRN_TRANSMITTALS" EntitySet="TRN_TRANSMITTALS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRN_TRANSMITTALS_SET_REQUESTERS" Association="DBModel.FK_TRN_TRANSMITTALS_SET_REQUESTERS">
+      <End Role="SET_REQUESTERS" EntitySet="SET_REQUESTERS" />
+      <End Role="TRN_TRANSMITTALS" EntitySet="TRN_TRANSMITTALS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRN_TRANSMIT_REQ_TYPES_TRN_TRANSMITTALS" Association="DBModel.FK_TRN_TRANSMIT_REQ_TYPES_TRN_TRANSMITTALS">
+      <End Role="TRN_TRANSMITTALS" EntitySet="TRN_TRANSMITTALS" />
+      <End Role="TRN_TRANSMIT_REQ_TYPES" EntitySet="TRN_TRANSMIT_REQ_TYPES" />
+    </AssociationSet>
+    <FunctionImport Name="TRN_TRANSMITTALS_GET" ReturnType="Collection(DBModel.TRN_TRANSMITTALS_GET_Result)">
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="TRANSMIT_ID" Mode="In" Type="String" />
+      <Parameter Name="START_INDEX" Mode="In" Type="Int32" />
+      <Parameter Name="END_INDEX" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="TRN_TRANSMITTALS_GET_PAGED" ReturnType="Collection(Int64)">
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="TRANSMIT_ID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="TRN_CHALLANS_GET_PAGED">
+      <Parameter Name="CNT" Mode="InOut" Type="Int64" />
+      <Parameter Name="CHALLAN_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CHALLAN_ID" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="TRN_CHALLANS_INSERT">
+      <Parameter Name="CHALLAN_NO" Mode="InOut" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CHALLAN_ID" Mode="In" Type="String" />
+      <Parameter Name="REC_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="LAST_TRN_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="CREATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CREATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="TRN_CHALLANS_GET" ReturnType="Collection(DBModel.TRN_CHALLANS_GET_Result)">
+      <Parameter Name="CHALLAN_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CHALLAN_ID" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="START_INDEX" Mode="In" Type="Int32" />
+      <Parameter Name="END_INDEX" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="TRN_CHALLANS" EntityType="DBModel.TRN_CHALLANS" />
+    <AssociationSet Name="FK_TRN_CHALLANS_GEN_TRANSMIT_TYPES" Association="DBModel.FK_TRN_CHALLANS_GEN_TRANSMIT_TYPES">
+      <End Role="GEN_TRANSMIT_TYPES" EntitySet="GEN_TRANSMIT_TYPES" />
+      <End Role="TRN_CHALLANS" EntitySet="TRN_CHALLANS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRN_CHALLANS_SET_CLIENT_DEPARTMENTS" Association="DBModel.FK_TRN_CHALLANS_SET_CLIENT_DEPARTMENTS">
+      <End Role="SET_CLIENT_DEPARTMENTS" EntitySet="SET_CLIENT_DEPARTMENTS" />
+      <End Role="TRN_CHALLANS" EntitySet="TRN_CHALLANS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_DEPT_BOXES_TRN_CHALLANS" Association="DBModel.FK_SET_CLIENT_DEPT_BOXES_TRN_CHALLANS">
+      <End Role="TRN_CHALLANS" EntitySet="TRN_CHALLANS" />
+      <End Role="SET_CLIENT_DEPT_BOXES" EntitySet="SET_CLIENT_DEPT_BOXES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRN_CHALLANS_SET_CLIENTS" Association="DBModel.FK_TRN_CHALLANS_SET_CLIENTS">
+      <End Role="SET_CLIENTS" EntitySet="SET_CLIENTS" />
+      <End Role="TRN_CHALLANS" EntitySet="TRN_CHALLANS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRN_CHALLAN_DETAILS_TRN_CHALLANS" Association="DBModel.FK_TRN_CHALLAN_DETAILS_TRN_CHALLANS">
+      <End Role="TRN_CHALLANS" EntitySet="TRN_CHALLANS" />
+      <End Role="TRN_CHALLAN_DETAILS" EntitySet="TRN_CHALLAN_DETAILS" />
+    </AssociationSet>
+    <FunctionImport Name="SET_CLIENT_DEPT_BOXES_GET_PAGED">
+      <Parameter Name="CNT" Mode="InOut" Type="Int64" />
+      <Parameter Name="BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="PROD_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="CHALLAN_NO" Mode="In" Type="Int32" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="RECALL_BOX_NO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_DEPT_BOXES_GET" ReturnType="Collection(DBModel.SET_CLIENT_DEPT_BOXES_GET_Result)">
+      <Parameter Name="BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="PROD_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="CHALLAN_NO" Mode="In" Type="Int32" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="RECALL_BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="START_INDEX" Mode="In" Type="Int32" />
+      <Parameter Name="END_INDEX" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_DEPT_BOXES_INSERT">
+      <Parameter Name="BOX_NO" Mode="InOut" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="PROD_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="CHALLAN_NO" Mode="In" Type="Int32" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="RECALL_BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CREATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CREATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_DEPT_BOXES_DELETE">
+      <Parameter Name="BOX_NO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_DEPT_BOXES_UPDATE">
+      <Parameter Name="BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="PROD_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="CHALLAN_NO" Mode="In" Type="Int32" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="RECALL_BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="SET_RECALL_BOXES" EntityType="DBModel.SET_RECALL_BOXES" />
+    <AssociationSet Name="FK_SET_BOX_MERGES_SET_RECALL_BOXES" Association="DBModel.FK_SET_BOX_MERGES_SET_RECALL_BOXES">
+      <End Role="SET_RECALL_BOXES" EntitySet="SET_RECALL_BOXES" />
+      <End Role="SET_BOX_MERGES" EntitySet="SET_BOX_MERGES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_BOX_MERGES_SET_RECALL_BOXES1" Association="DBModel.FK_SET_BOX_MERGES_SET_RECALL_BOXES1">
+      <End Role="SET_RECALL_BOXES" EntitySet="SET_RECALL_BOXES" />
+      <End Role="SET_BOX_MERGES" EntitySet="SET_BOX_MERGES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_RECALL_BOXES_SET_CLIENT_DEPARTMENTS" Association="DBModel.FK_SET_RECALL_BOXES_SET_CLIENT_DEPARTMENTS">
+      <End Role="SET_CLIENT_DEPARTMENTS" EntitySet="SET_CLIENT_DEPARTMENTS" />
+      <End Role="SET_RECALL_BOXES" EntitySet="SET_RECALL_BOXES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_CLIENT_DEPT_BOXES_SET_RECALL_BOXES" Association="DBModel.FK_SET_CLIENT_DEPT_BOXES_SET_RECALL_BOXES">
+      <End Role="SET_RECALL_BOXES" EntitySet="SET_RECALL_BOXES" />
+      <End Role="SET_CLIENT_DEPT_BOXES" EntitySet="SET_CLIENT_DEPT_BOXES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_RECALL_BOXES_SET_CLIENTS" Association="DBModel.FK_SET_RECALL_BOXES_SET_CLIENTS">
+      <End Role="SET_CLIENTS" EntitySet="SET_CLIENTS" />
+      <End Role="SET_RECALL_BOXES" EntitySet="SET_RECALL_BOXES" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SET_RECALL_BOXES_SET_RECALL_BOXES" Association="DBModel.FK_SET_RECALL_BOXES_SET_RECALL_BOXES">
+      <End Role="SET_RECALL_BOXES" EntitySet="SET_RECALL_BOXES" />
+      <End Role="SET_RECALL_BOXES1" EntitySet="SET_RECALL_BOXES" />
+    </AssociationSet>
+    <FunctionImport Name="SET_CLIENT_BATCHES_DELETE">
+      <Parameter Name="BATCH_NO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_BATCHES_INSERT">
+      <Parameter Name="BATCH_NO" Mode="InOut" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="BATCH_ID" Mode="In" Type="String" />
+      <Parameter Name="BATCH_DETAILS" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="LAST_TRN_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="CREATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CREATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_BATCHES_UPDATE">
+      <Parameter Name="BATCH_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="BATCH_ID" Mode="In" Type="String" />
+      <Parameter Name="BATCH_DETAILS" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="LAST_TRN_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="UPDATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_BATCHES_GET" ReturnType="Collection(DBModel.SET_CLIENT_BATCHES_GET_Result)">
+      <Parameter Name="BATCH_NO" Mode="In" Type="Int32" />
+      <Parameter Name="BATCH_ID" Mode="In" Type="String" />
+      <Parameter Name="BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="START_INDEX" Mode="In" Type="Int32" />
+      <Parameter Name="END_INDEX" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_BATCHES_GET_PAGED">
+      <Parameter Name="CNT" Mode="InOut" Type="Int64" />
+      <Parameter Name="BATCH_NO" Mode="In" Type="Int32" />
+      <Parameter Name="BATCH_ID" Mode="In" Type="String" />
+      <Parameter Name="BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <AssociationSet Name="FK_SET_CLIENT_ACCOUNTS_SET_CLIENT_DEPARTMENTS" Association="DBModel.FK_SET_CLIENT_ACCOUNTS_SET_CLIENT_DEPARTMENTS">
+      <End Role="SET_CLIENT_DEPARTMENTS" EntitySet="SET_CLIENT_DEPARTMENTS" />
+      <End Role="SET_CLIENT_ACCOUNTS" EntitySet="SET_CLIENT_ACCOUNTS" />
+    </AssociationSet>
+    <FunctionImport Name="SET_CLIENT_ACCOUNTS_UPDATE">
+      <Parameter Name="ACC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="BATCH_NO" Mode="In" Type="Int32" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="ACC_ID" Mode="In" Type="String" />
+      <Parameter Name="ACC_NAME" Mode="In" Type="String" />
+      <Parameter Name="ACC_DETAILS" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="LAST_TRN_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="UPDATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ACCOUNTS_INSERT">
+      <Parameter Name="ACC_NO" Mode="InOut" Type="Int64" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="BATCH_NO" Mode="In" Type="Int32" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="ACC_ID" Mode="In" Type="String" />
+      <Parameter Name="ACC_NAME" Mode="In" Type="String" />
+      <Parameter Name="ACC_DETAILS" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="LAST_TRN_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="CREATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CREATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ACCOUNTS_DELETE">
+      <Parameter Name="ACC_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ACCOUNTS_GET_PAGED">
+      <Parameter Name="CNT" Mode="InOut" Type="Int64" />
+      <Parameter Name="ACC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="BATCH_NO" Mode="In" Type="Int32" />
+      <Parameter Name="BATCH_ID" Mode="In" Type="String" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="ACC_ID" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ACC_DOCS_DELETE">
+      <Parameter Name="DOC_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ACC_DOCS_GET" ReturnType="Collection(DBModel.SET_CLIENT_ACC_DOCS_GET_Result)">
+      <Parameter Name="DOC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="ACC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="DOC_TYPE_NO" Mode="In" Type="Int16" />
+      <Parameter Name="START_INDEX" Mode="In" Type="Int32" />
+      <Parameter Name="END_INDEX" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ACC_DOCS_INSERT">
+      <Parameter Name="DOC_NO" Mode="InOut" Type="Int64" />
+      <Parameter Name="ACC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="DOC_TYPE_NO" Mode="In" Type="Int16" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="DOC_DETAILS" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="LAST_TRN_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="CREATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CREATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ACC_DOCS_UPDATE">
+      <Parameter Name="DOC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="ACC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="DOC_TYPE_NO" Mode="In" Type="Int16" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="DOC_DETAILS" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="LAST_TRN_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="UPDATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_DOCS_TYPES_GET" ReturnType="Collection(DBModel.SET_DOCS_TYPES_GET_Result)">
+      <Parameter Name="DOC_TYPE_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DOC_TYPE" Mode="In" Type="String" />
+      <Parameter Name="DOC_TYPE_CODE" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ATTACHS_GET" ReturnType="Collection(DBModel.SET_CLIENT_ATTACHS_GET_Result)">
+      <Parameter Name="ATTACH_NO" Mode="In" Type="Int64" />
+      <Parameter Name="DOC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="ACC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="START_INDEX" Mode="In" Type="Int32" />
+      <Parameter Name="END_INDEX" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ATTACHS_INSERT">
+      <Parameter Name="ATTACH_NO" Mode="InOut" Type="Int64" />
+      <Parameter Name="DOC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="ATTACH_NAME" Mode="In" Type="String" />
+      <Parameter Name="FILE_LOCATION" Mode="In" Type="String" />
+      <Parameter Name="FILE_TYPE" Mode="In" Type="String" />
+      <Parameter Name="FILE_EXT" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ATTACHS_DELETE">
+      <Parameter Name="ATTACH_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ACCOUNTS_GET" ReturnType="Collection(DBModel.SET_CLIENT_ACCOUNTS_GET_Result)">
+      <Parameter Name="ACC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="BATCH_NO" Mode="In" Type="Int32" />
+      <Parameter Name="BATCH_ID" Mode="In" Type="String" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="ACC_ID" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="START_INDEX" Mode="In" Type="Int32" />
+      <Parameter Name="END_INDEX" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SEC_USERS_CHANGE_PASSWORD">
+      <Parameter Name="USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="LOGIN_PASSWORD" Mode="In" Type="String" />
+      <Parameter Name="UPDATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ACCOUNTS_BULK_GET_PAGED">
+      <Parameter Name="CNT" Mode="InOut" Type="Int64" />
+      <Parameter Name="ACC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="BATCH_NO" Mode="In" Type="Int32" />
+      <Parameter Name="BATCH_ID" Mode="In" Type="String" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="ACC_LIST" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ACCOUNTS_BULK_GET" ReturnType="Collection(DBModel.SET_CLIENT_ACCOUNTS_BULK_GET_Result)">
+      <Parameter Name="ACC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="BATCH_NO" Mode="In" Type="Int32" />
+      <Parameter Name="BATCH_ID" Mode="In" Type="String" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="ACC_LIST" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="START_INDEX" Mode="In" Type="Int32" />
+      <Parameter Name="END_INDEX" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SEC_USERS_GET" ReturnType="Collection(DBModel.SEC_USERS_GET_Result)">
+      <Parameter Name="USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="USER_TYPE_NO" Mode="In" Type="Int16" />
+      <Parameter Name="LOGIN_ID" Mode="In" Type="String" />
+      <Parameter Name="LOGIN_PASSWORD" Mode="In" Type="String" />
+      <Parameter Name="IS_ACTIVE" Mode="In" Type="Boolean" />
+      <Parameter Name="IS_LOCKED" Mode="In" Type="Boolean" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GEN_USER_TYPES_GET" ReturnType="Collection(DBModel.GEN_USER_TYPES_GET_Result)">
+      <Parameter Name="USER_TYPE_NO" Mode="In" Type="Int16" />
+      <Parameter Name="USER_TYPE" Mode="In" Type="String" />
+      <Parameter Name="USER_TYPE_DESC" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SEC_USERS_INSERT">
+      <Parameter Name="USER_NO" Mode="InOut" Type="Int32" />
+      <Parameter Name="USER_TYPE_NO" Mode="In" Type="Int16" />
+      <Parameter Name="FIRST_NAME" Mode="In" Type="String" />
+      <Parameter Name="MID_NAME" Mode="In" Type="String" />
+      <Parameter Name="LAST_NAME" Mode="In" Type="String" />
+      <Parameter Name="LOGIN_ID" Mode="In" Type="String" />
+      <Parameter Name="PASS_SALT" Mode="In" Type="String" />
+      <Parameter Name="LOGIN_PASSWORD" Mode="In" Type="String" />
+      <Parameter Name="IS_ACTIVE" Mode="In" Type="Boolean" />
+      <Parameter Name="ACTIVE_FROM" Mode="In" Type="DateTime" />
+      <Parameter Name="ACTIVE_TO" Mode="In" Type="DateTime" />
+      <Parameter Name="IS_LOCKED" Mode="In" Type="Boolean" />
+      <Parameter Name="LOCK_REASON" Mode="In" Type="String" />
+      <Parameter Name="LOCK_IP_ADDR" Mode="In" Type="String" />
+      <Parameter Name="LOCK_TIME" Mode="In" Type="DateTime" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CAN_VIEW_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="CAN_VIEW_IMAGE" Mode="In" Type="Boolean" />
+      <Parameter Name="CAN_DO_REQUEST" Mode="In" Type="Boolean" />
+      <Parameter Name="CREATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CREATE_LOGON_NO" Mode="In" Type="Int64" />
+      <Parameter Name="CREATE_TIME" Mode="In" Type="DateTime" />
+      <Parameter Name="UPDATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_LOGON_NO" Mode="In" Type="Int64" />
+      <Parameter Name="UPDATE_TIME" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SEC_USERS_DELETE">
+      <Parameter Name="USER_NO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SEC_USERS_UPDATE">
+      <Parameter Name="USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="USER_TYPE_NO" Mode="In" Type="Int16" />
+      <Parameter Name="FIRST_NAME" Mode="In" Type="String" />
+      <Parameter Name="MID_NAME" Mode="In" Type="String" />
+      <Parameter Name="LAST_NAME" Mode="In" Type="String" />
+      <Parameter Name="LOGIN_ID" Mode="In" Type="String" />
+      <Parameter Name="PASS_SALT" Mode="In" Type="String" />
+      <Parameter Name="LOGIN_PASSWORD" Mode="In" Type="String" />
+      <Parameter Name="IS_ACTIVE" Mode="In" Type="Boolean" />
+      <Parameter Name="ACTIVE_FROM" Mode="In" Type="DateTime" />
+      <Parameter Name="ACTIVE_TO" Mode="In" Type="DateTime" />
+      <Parameter Name="IS_LOCKED" Mode="In" Type="Boolean" />
+      <Parameter Name="LOCK_REASON" Mode="In" Type="String" />
+      <Parameter Name="LOCK_IP_ADDR" Mode="In" Type="String" />
+      <Parameter Name="LOCK_TIME" Mode="In" Type="DateTime" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CAN_VIEW_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="CAN_VIEW_IMAGE" Mode="In" Type="Boolean" />
+      <Parameter Name="CAN_DO_REQUEST" Mode="In" Type="Boolean" />
+      <Parameter Name="CREATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CREATE_LOGON_NO" Mode="In" Type="Int64" />
+      <Parameter Name="CREATE_TIME" Mode="In" Type="DateTime" />
+      <Parameter Name="UPDATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_LOGON_NO" Mode="In" Type="Int64" />
+      <Parameter Name="UPDATE_TIME" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SET_BULK_RECALL_BOXES_INSERT">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="DEPT_NAME" Mode="In" Type="String" />
+      <Parameter Name="RECALL_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="RECALL_LOCATION" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_BOXES_BULK_INSERT">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="DEPT_NAME" Mode="In" Type="String" />
+      <Parameter Name="PRODUCT_TYPE" Mode="In" Type="String" />
+      <Parameter Name="ARCHIVE_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="RECALL_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE" Mode="In" Type="String" />
+      <Parameter Name="TRANSMIT_ID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SET_RECALL_BOXES_INSERT">
+      <Parameter Name="RECALL_BOX_NO" Mode="InOut" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="RECALL_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="RECALL_LOCATION" Mode="In" Type="String" />
+      <Parameter Name="CREATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CREATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_RECALL_BOXES_UPDATE">
+      <Parameter Name="RECALL_BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="RECALL_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="RECALL_LOCATION" Mode="In" Type="String" />
+      <Parameter Name="UPDATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_RECALL_BOXES_GET" ReturnType="Collection(DBModel.SET_RECALL_BOXES_GET_Result)">
+      <Parameter Name="RECALL_BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="RECALL_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="START_INDEX" Mode="In" Type="Int32" />
+      <Parameter Name="END_INDEX" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SET_RECALL_BOXES_DELETE">
+      <Parameter Name="RECALL_BOX_NO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SET_RECALL_BOXES_GET_PAGED">
+      <Parameter Name="RBT" Mode="InOut" Type="Int64" />
+      <Parameter Name="RECALL_BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="RECALL_BOX_ID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENTACCOUNT_CLIENTACCOUNTDOCS_INSERT">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="DEPT_NAME" Mode="In" Type="String" />
+      <Parameter Name="ARCHIVING_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="ACC_ID" Mode="In" Type="String" />
+      <Parameter Name="ACC_NAME" Mode="In" Type="String" />
+      <Parameter Name="ACC_DETAILS" Mode="In" Type="String" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="BATCH_ID" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE" Mode="In" Type="String" />
+      <Parameter Name="TRANSMIT_ID" Mode="In" Type="String" />
+      <Parameter Name="DOC_TYPE" Mode="In" Type="String" />
+      <Parameter Name="CREATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CREATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_ACCOUNT_STATUS_CHECK_BULK" ReturnType="Collection(DBModel.SET_ACCOUNT_STATUS_CHECK_BULK_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="ACC_ID_LIST" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SET_ACCOUNT_STATUS_CHECK_BULK_BY_TRN_TYPE_NO" ReturnType="Collection(DBModel.SET_ACCOUNT_STATUS_CHECK_BULK_BY_TRN_TYPE_NO_Result)">
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Int32" />
+      <Parameter Name="ACC_ID_LIST" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_DEPT_RECALL_BOXES_GET_DETAILS" ReturnType="Collection(DBModel.SET_CLIENT_DEPT_RECALL_BOXES_GET_DETAILS_Result)">
+      <Parameter Name="RECALL_BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GET_BOX_NO_BY_CLIENT_BOX_ID" ReturnType="Collection(DBModel.GET_BOX_NO_BY_CLIENT_BOX_ID_Result)">
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_DEPT_BOXES_RECALL_UPDATE">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="RECALL_BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GET_RECALL_BOX_NO_BY_CLIENT_BOX_ID" ReturnType="Collection(DBModel.GET_RECALL_BOX_NO_BY_CLIENT_BOX_ID_Result)">
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_DEPT_BOXES_RECALL_DELETE">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="RECALL_BOX_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_IMAGE_DETAILS_INSERT">
+      <Parameter Name="USER_NO" Mode="In" Type="Int64" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="ATTACH_NO" Mode="In" Type="Int64" />
+      <Parameter Name="DOC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="VIEW_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GET_ALL_IMAGE_URL" ReturnType="Collection(DBModel.GET_ALL_IMAGE_URL_Result)" />
+    <FunctionImport Name="GET_IMAGE_BY_ATTACH_NO" ReturnType="Collection(DBModel.GET_IMAGE_BY_ATTACH_NO_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="ATTACH_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_GET_DETAILS" ReturnType="Collection(DBModel.SET_CLIENT_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_GET_DETAILS_Result)" />
+    <FunctionImport Name="SET_CLIENT_RPT_CLIENT_MONTHLY_IMAGE_VIEW_COMPILE_INSERT">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="RPT_YEAR" Mode="In" Type="Int64" />
+      <Parameter Name="RPT_MONTH" Mode="In" Type="Int64" />
+      <Parameter Name="QTY" Mode="In" Type="Int64" />
+      <Parameter Name="COMPILE_USER_NO" Mode="In" Type="Int64" />
+      <Parameter Name="COMPILE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <EntitySet Name="RPT_CLIENT_MONTHLY_IMAGE_VIEWS" EntityType="DBModel.RPT_CLIENT_MONTHLY_IMAGE_VIEWS" />
+    <EntitySet Name="TRN_IMAGE_VIEWS" EntityType="DBModel.TRN_IMAGE_VIEWS" />
+    <AssociationSet Name="FK_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_SET_CLIENTS" Association="DBModel.FK_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_SET_CLIENTS">
+      <End Role="SET_CLIENTS" EntitySet="SET_CLIENTS" />
+      <End Role="RPT_CLIENT_MONTHLY_IMAGE_VIEWS" EntitySet="RPT_CLIENT_MONTHLY_IMAGE_VIEWS" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TRN_IMAGE_VIEWS_SEC_USERS" Association="DBModel.FK_TRN_IMAGE_VIEWS_SEC_USERS">
+      <End Role="SEC_USERS" EntitySet="SEC_USERS" />
+      <End Role="TRN_IMAGE_VIEWS" EntitySet="TRN_IMAGE_VIEWS" />
+    </AssociationSet>
+    <FunctionImport Name="CHECK_FOR_QTY_IN_TRN_IMAGE_VIEW" ReturnType="Collection(DBModel.CHECK_FOR_QTY_IN_TRN_IMAGE_VIEW_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="RPT_YEAR" Mode="In" Type="Int64" />
+      <Parameter Name="RPT_MONTH" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GET_IMAGE_COMPILATION_HISTORY" ReturnType="Collection(DBModel.GET_IMAGE_COMPILATION_HISTORY_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="YEAR" Mode="In" Type="Int64" />
+      <Parameter Name="MONTH" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GET_CLIENT_BOX_TRANSMIT_HISTORY" ReturnType="Collection(DBModel.GET_CLIENT_BOX_TRANSMIT_HISTORY_Result)">
+      <Parameter Name="BOX_NO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GET_ACCOUNT_TRANSMIT_HISTORY" ReturnType="Collection(DBModel.GET_ACCOUNT_TRANSMIT_HISTORY_Result)">
+      <Parameter Name="ACC_NO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GET_ACCOUNT_DOC_TRANSMIT_HISTORY" ReturnType="Collection(DBModel.GET_ACCOUNT_DOC_TRANSMIT_HISTORY_Result)">
+      <Parameter Name="DOC_NO" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ACCOUNTS_GET_DETAILS" ReturnType="Collection(DBModel.SET_CLIENT_ACCOUNTS_GET_DETAILS_Result)">
+      <Parameter Name="ACC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CLIENT_ACC_DOCS_GET_DETAILS" ReturnType="Collection(DBModel.SET_CLIENT_ACC_DOCS_GET_DETAILS_Result)">
+      <Parameter Name="DOC_NO" Mode="In" Type="Int64" />
+      <Parameter Name="ACC_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="GET_CLIENT_BOX_TRANSMIT_DETAIL_BY_TRANSMIT_ID" ReturnType="Collection(DBModel.GET_CLIENT_BOX_TRANSMIT_DETAIL_BY_TRANSMIT_ID_Result)">
+      <Parameter Name="TRANSMIT_ID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GET_CLIENT_ACCOUNT_DOC_TRANSMIT_DETAIL_BY_TRANSMIT_ID" ReturnType="Collection(DBModel.GET_CLIENT_ACCOUNT_DOC_TRANSMIT_DETAIL_BY_TRANSMIT_ID_Result)">
+      <Parameter Name="TRANSMIT_ID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GET_CLIENT_ACCOUNT_TRANSMIT_DETAIL_BY_TRANSMIT_ID" ReturnType="Collection(DBModel.GET_CLIENT_ACCOUNT_TRANSMIT_DETAIL_BY_TRANSMIT_ID_Result)">
+      <Parameter Name="TRANSMIT_ID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SET_CHALLAN_BULK_INSERT">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DOC_TYPE" Mode="In" Type="String" />
+      <Parameter Name="ACC_ID" Mode="In" Type="String" />
+      <Parameter Name="BATCH_ID" Mode="In" Type="String" />
+      <Parameter Name="CLIENT_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="RECALL_BOX_ID" Mode="In" Type="String" />
+      <Parameter Name="ACC_NAME" Mode="In" Type="String" />
+      <Parameter Name="TRN_TYPE_NAME" Mode="In" Type="String" />
+      <Parameter Name="CHALLAN_ID" Mode="In" Type="String" />
+      <Parameter Name="REC_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="CHALLAN_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="CREATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CREATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="TRN_CHALLANS_UPDATE">
+      <Parameter Name="CHALLAN_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="CHALLAN_ID" Mode="In" Type="String" />
+      <Parameter Name="REC_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="TRANSMIT_NO" Mode="In" Type="Int64" />
+      <Parameter Name="LAST_TRN_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="IS_OLD_DATA" Mode="In" Type="Boolean" />
+      <Parameter Name="UPDATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="UPDATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+    <FunctionImport Name="SET_ACCOUNT_STATUS_CHECK_Manual" ReturnType="Collection(DBModel.SET_ACCOUNT_STATUS_CHECK_Manual_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="ACC_ID_LIST" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GEN_COMPANY_INFO_UPDATE">
+      <Parameter Name="COMP_NAME" Mode="In" Type="String" />
+      <Parameter Name="KEY_FEATURE" Mode="In" Type="String" />
+      <Parameter Name="ADDR" Mode="In" Type="String" />
+      <Parameter Name="PHONE" Mode="In" Type="String" />
+      <Parameter Name="MOBILE" Mode="In" Type="String" />
+      <Parameter Name="FAX" Mode="In" Type="String" />
+      <Parameter Name="EMAIL_ADDR" Mode="In" Type="String" />
+      <Parameter Name="LAST_NEW_TRANS_ID" Mode="In" Type="String" />
+      <Parameter Name="LAST_TRANS_IN_ID" Mode="In" Type="String" />
+      <Parameter Name="LAST_TRANS_OUT_ID" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SET_ACCOUNT_STATUS_CHECK_MANUAL_BY_TRN_TYPE_NO" ReturnType="Collection(DBModel.SET_ACCOUNT_STATUS_CHECK_MANUAL_BY_TRN_TYPE_NO_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Int32" />
+      <Parameter Name="ACC_ID_LIST" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GET_ACCOUNT_DOC_LIST_FOR_REQUISITION_MISMATCH_CHECK" ReturnType="Collection(DBModel.GET_ACCOUNT_DOC_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Int32" />
+      <Parameter Name="ACC_ID" Mode="In" Type="String" />
+      <Parameter Name="DOC_TYPE" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SET_REQUESTERS_GET" ReturnType="Collection(DBModel.SET_REQUESTERS_GET_Result)">
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+    </FunctionImport>
+    <FunctionImport Name="GET_BOX_COUNT_FOR_REQUISITION_MISMATCH_CHECK" ReturnType="Collection(DBModel.GET_BOX_COUNT_FOR_REQUISITION_MISMATCH_CHECK_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Int32" />
+      <Parameter Name="LIST" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GET_BOX_LIST_FOR_REQUISITION_MISMATCH_CHECK" ReturnType="Collection(DBModel.GET_BOX_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Int32" />
+      <Parameter Name="LIST" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GET_ACCOUNT_COUNT_FOR_REQUISITION_MISMATCH_CHECK" ReturnType="Collection(DBModel.GET_ACCOUNT_COUNT_FOR_REQUISITION_MISMATCH_CHECK_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Int32" />
+      <Parameter Name="LIST" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GET_ACCOUNT_LIST_FOR_REQUISITION_MISMATCH_CHECK" ReturnType="Collection(DBModel.GET_ACCOUNT_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Int32" />
+      <Parameter Name="LIST" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GET_CHALLAN_COUNT_FOR_REQUISITION_MISMATCH_CHECK" ReturnType="Collection(DBModel.GET_CHALLAN_COUNT_FOR_REQUISITION_MISMATCH_CHECK_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Int32" />
+      <Parameter Name="LIST" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="GET_CHALLAN_LIST_FOR_REQUISITION_MISMATCH_CHECK" ReturnType="Collection(DBModel.GET_CHALLAN_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result)">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int32" />
+      <Parameter Name="TRN_TYPE_NO" Mode="In" Type="Int32" />
+      <Parameter Name="LIST" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="SEC_CLIENT_USER_REQUISITION_AND_REQUISITION_DETAILS_INSERT">
+      <Parameter Name="CLIENT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="DEPT_NO" Mode="In" Type="Int16" />
+      <Parameter Name="REQ_TYPE_NO" Mode="In" Type="Byte" />
+      <Parameter Name="REQ_DATE" Mode="In" Type="DateTime" />
+      <Parameter Name="UPLOAD_FILE_NAME" Mode="In" Type="String" />
+      <Parameter Name="FILE_EXT" Mode="In" Type="String" />
+      <Parameter Name="REQUESTER_NO" Mode="In" Type="Int16" />
+      <Parameter Name="REMARKS" Mode="In" Type="String" />
+      <Parameter Name="LIST" Mode="In" Type="String" />
+      <Parameter Name="CREATE_USER_NO" Mode="In" Type="Int32" />
+      <Parameter Name="CREATE_LOGON_NO" Mode="In" Type="Int64" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="GEN_COMPANY_INFO">
+    <Key>
+      <PropertyRef Name="COMP_NO" />
+    </Key>
+    <Property Name="COMP_NO" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="COMP_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="KEY_FEATURE" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="ADDR" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="PHONE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MOBILE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="FAX" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="EMAIL_ADDR" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LAST_NEW_TRANS_ID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LAST_TRANS_IN_ID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LAST_TRANS_OUT_ID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="GEN_CONTROL_ACTIONS">
+    <Key>
+      <PropertyRef Name="ACTION_NO" />
+    </Key>
+    <Property Name="ACTION_NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CONTROLLER_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ACTION_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DETAIL_DESC" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="GEN_MENU_ACTIONS" Relationship="DBModel.FK_GEN_MENU_ACTIONS_GEN_CONTROL_ACTIONS" FromRole="GEN_CONTROL_ACTIONS" ToRole="GEN_MENU_ACTIONS" />
+  </EntityType>
+  <EntityType Name="GEN_MENU_ACTIONS">
+    <Key>
+      <PropertyRef Name="MENU_ACTION_NO" />
+    </Key>
+    <Property Name="MENU_ACTION_NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MENU_NO" Type="Int16" Nullable="false" />
+    <Property Name="ACTION_NO" Type="Int32" Nullable="false" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+    <NavigationProperty Name="GEN_CONTROL_ACTIONS" Relationship="DBModel.FK_GEN_MENU_ACTIONS_GEN_CONTROL_ACTIONS" FromRole="GEN_MENU_ACTIONS" ToRole="GEN_CONTROL_ACTIONS" />
+    <NavigationProperty Name="GEN_MENUS" Relationship="DBModel.FK_GEN_MENU_ACTIONS_GEN_MENUS" FromRole="GEN_MENU_ACTIONS" ToRole="GEN_MENUS" />
+  </EntityType>
+  <EntityType Name="GEN_MENU_TYPES">
+    <Key>
+      <PropertyRef Name="MENU_TYPE_NO" />
+    </Key>
+    <Property Name="MENU_TYPE_NO" Type="Int16" Nullable="false" />
+    <Property Name="MENU_TYPE" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="GEN_MENUS" Relationship="DBModel.FK_GEN_MENUS_GEN_MENU_TYPES" FromRole="GEN_MENU_TYPES" ToRole="GEN_MENUS" />
+  </EntityType>
+  <EntityType Name="GEN_MENUS">
+    <Key>
+      <PropertyRef Name="MENU_NO" />
+    </Key>
+    <Property Name="MENU_NO" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MENU_TYPE_NO" Type="Int16" Nullable="false" />
+    <Property Name="MENU_NAME" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="MENU_TIPS" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="IS_CHILD" Type="Boolean" />
+    <Property Name="PARENT_MENU_NO" Type="Int16" />
+    <Property Name="IS_PUBLIC" Type="Boolean" />
+    <Property Name="SL_NO" Type="Int16" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" />
+    <Property Name="ACTIVE_TO" Type="DateTime" />
+    <Property Name="DEFAULT_URL" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="GEN_MENU_ACTIONS" Relationship="DBModel.FK_GEN_MENU_ACTIONS_GEN_MENUS" FromRole="GEN_MENUS" ToRole="GEN_MENU_ACTIONS" />
+    <NavigationProperty Name="GEN_MENU_TYPES" Relationship="DBModel.FK_GEN_MENUS_GEN_MENU_TYPES" FromRole="GEN_MENUS" ToRole="GEN_MENU_TYPES" />
+    <NavigationProperty Name="GEN_MENUS1" Relationship="DBModel.FK_GEN_MENUS_GEN_MENUS" FromRole="GEN_MENUS" ToRole="GEN_MENUS1" />
+    <NavigationProperty Name="GEN_MENUS2" Relationship="DBModel.FK_GEN_MENUS_GEN_MENUS" FromRole="GEN_MENUS1" ToRole="GEN_MENUS" />
+    <NavigationProperty Name="SEC_ROLE_MENUS" Relationship="DBModel.FK_SEC_ROLE_MENUS_GEN_MENUS" FromRole="GEN_MENUS" ToRole="SEC_ROLE_MENUS" />
+  </EntityType>
+  <EntityType Name="GEN_TRANSMIT_REQUEST_TYPES">
+    <Key>
+      <PropertyRef Name="REQ_TYPE_NO" />
+    </Key>
+    <Property Name="REQ_TYPE_NO" Type="Byte" Nullable="false" />
+    <Property Name="REQ_TYPE_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="REQ_TYPE_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="GEN_TRANSMIT_TYPES">
+    <Key>
+      <PropertyRef Name="TRN_TYPE_NO" />
+    </Key>
+    <Property Name="TRN_TYPE_NO" Type="Byte" Nullable="false" />
+    <Property Name="TRN_TYPE_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TRANSMIT_PREFIX" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="TRN_TRANSMITTALS" Relationship="DBModel.FK_TRN_TRANSMITTALS_GEN_TRANSMIT_TYPES" FromRole="GEN_TRANSMIT_TYPES" ToRole="TRN_TRANSMITTALS" />
+    <NavigationProperty Name="TRN_CHALLANS" Relationship="DBModel.FK_TRN_CHALLANS_GEN_TRANSMIT_TYPES" FromRole="GEN_TRANSMIT_TYPES" ToRole="TRN_CHALLANS" />
+  </EntityType>
+  <EntityType Name="GEN_USER_TYPES">
+    <Key>
+      <PropertyRef Name="USER_TYPE_NO" />
+    </Key>
+    <Property Name="USER_TYPE_NO" Type="Int16" Nullable="false" />
+    <Property Name="USER_TYPE" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="USER_TYPE_DESC" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="SEC_USERS" Relationship="DBModel.FK_SEC_USERS_GEN_USER_TYPES" FromRole="GEN_USER_TYPES" ToRole="SEC_USERS" />
+  </EntityType>
+  <EntityType Name="SEC_ROLE_MENUS">
+    <Key>
+      <PropertyRef Name="ROLE_MENU_NO" />
+    </Key>
+    <Property Name="ROLE_MENU_NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROLE_NO" Type="Int32" Nullable="false" />
+    <Property Name="MENU_NO" Type="Int16" Nullable="false" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" />
+    <Property Name="ACTIVE_TO" Type="DateTime" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="GEN_MENUS" Relationship="DBModel.FK_SEC_ROLE_MENUS_GEN_MENUS" FromRole="SEC_ROLE_MENUS" ToRole="GEN_MENUS" />
+    <NavigationProperty Name="SEC_ROLES" Relationship="DBModel.FK_SEC_ROLE_MENUS_SEC_ROLES" FromRole="SEC_ROLE_MENUS" ToRole="SEC_ROLES" />
+  </EntityType>
+  <EntityType Name="SEC_ROLES">
+    <Key>
+      <PropertyRef Name="ROLE_NO" />
+    </Key>
+    <Property Name="ROLE_NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ROLE_NAME" Type="String" Nullable="false" MaxLength="250" Unicode="false" FixedLength="false" />
+    <Property Name="ROLE_DESC" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" />
+    <Property Name="ACTIVE_TO" Type="DateTime" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="SEC_ROLE_MENUS" Relationship="DBModel.FK_SEC_ROLE_MENUS_SEC_ROLES" FromRole="SEC_ROLES" ToRole="SEC_ROLE_MENUS" />
+    <NavigationProperty Name="SEC_USER_ROLES" Relationship="DBModel.FK_SEC_USER_ROLES_SEC_ROLES" FromRole="SEC_ROLES" ToRole="SEC_USER_ROLES" />
+  </EntityType>
+  <EntityType Name="SEC_USER_LOGONS">
+    <Key>
+      <PropertyRef Name="LOGON_NO" />
+    </Key>
+    <Property Name="LOGON_NO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_NO" Type="Int32" Nullable="false" />
+    <Property Name="LOGIN_TIME" Type="DateTime" />
+    <Property Name="LOGOUT_TIME" Type="DateTime" />
+    <Property Name="IS_LOGGED_IN" Type="Boolean" />
+    <Property Name="SESS_ID" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LOGIN_IP_ADDR" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DEVICE_ID" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="APP_NAME" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="APP_VER" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SERVER_IP" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="SEC_USERS" Relationship="DBModel.FK_SEC_USER_LOGONS_SEC_USERS" FromRole="SEC_USER_LOGONS" ToRole="SEC_USERS" />
+  </EntityType>
+  <EntityType Name="SEC_USER_ROLES">
+    <Key>
+      <PropertyRef Name="USER_ROLE_NO" />
+    </Key>
+    <Property Name="USER_ROLE_NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_NO" Type="Int32" Nullable="false" />
+    <Property Name="ROLE_NO" Type="Int32" Nullable="false" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" />
+    <Property Name="ACTIVE_TO" Type="DateTime" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="SEC_ROLES" Relationship="DBModel.FK_SEC_USER_ROLES_SEC_ROLES" FromRole="SEC_USER_ROLES" ToRole="SEC_ROLES" />
+    <NavigationProperty Name="SEC_USERS" Relationship="DBModel.FK_SEC_USER_ROLES_SEC_USERS" FromRole="SEC_USER_ROLES" ToRole="SEC_USERS" />
+  </EntityType>
+  <EntityType Name="SEC_USERS">
+    <Key>
+      <PropertyRef Name="USER_NO" />
+    </Key>
+    <Property Name="USER_NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="USER_TYPE_NO" Type="Int16" Nullable="false" />
+    <Property Name="FIRST_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="MID_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LAST_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LOGIN_ID" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="PASS_SALT" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="LOGIN_PASSWORD" Type="String" Nullable="false" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="IS_ACTIVE" Type="Boolean" />
+    <Property Name="ACTIVE_FROM" Type="DateTime" />
+    <Property Name="ACTIVE_TO" Type="DateTime" />
+    <Property Name="IS_LOCKED" Type="Boolean" />
+    <Property Name="LOCK_REASON" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LOCK_IP_ADDR" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="LOCK_TIME" Type="DateTime" />
+    <Property Name="CLIENT_NO" Type="Int16" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="GEN_USER_TYPES" Relationship="DBModel.FK_SEC_USERS_GEN_USER_TYPES" FromRole="SEC_USERS" ToRole="GEN_USER_TYPES" />
+    <NavigationProperty Name="SEC_USER_LOGONS" Relationship="DBModel.FK_SEC_USER_LOGONS_SEC_USERS" FromRole="SEC_USERS" ToRole="SEC_USER_LOGONS" />
+    <NavigationProperty Name="SEC_USER_ROLES" Relationship="DBModel.FK_SEC_USER_ROLES_SEC_USERS" FromRole="SEC_USERS" ToRole="SEC_USER_ROLES" />
+    <NavigationProperty Name="SET_CLIENTS" Relationship="DBModel.FK_SEC_USERS_SET_CLIENTS" FromRole="SEC_USERS" ToRole="SET_CLIENTS" />
+    <Property Type="Boolean" Name="CAN_VIEW_DATA" />
+    <Property Type="Boolean" Name="CAN_VIEW_IMAGE" />
+    <Property Type="Boolean" Name="CAN_DO_REQUEST" />
+    <NavigationProperty Name="TRN_IMAGE_VIEWS" Relationship="DBModel.FK_TRN_IMAGE_VIEWS_SEC_USERS" FromRole="SEC_USERS" ToRole="TRN_IMAGE_VIEWS" />
+  </EntityType>
+  <EntityType Name="SET_BOX_MERGES">
+    <Key>
+      <PropertyRef Name="MERGE_NO" />
+    </Key>
+    <Property Name="MERGE_NO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RECALL_BOX_NO" Type="Int32" Nullable="false" />
+    <Property Name="CHILD_RECALL_BOX_NO" Type="Int32" Nullable="false" />
+    <Property Name="MERGE_DATE" Type="DateTime" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="SET_RECALL_BOXES" Relationship="DBModel.FK_SET_BOX_MERGES_SET_RECALL_BOXES" FromRole="SET_BOX_MERGES" ToRole="SET_RECALL_BOXES" />
+    <NavigationProperty Name="SET_RECALL_BOXES1" Relationship="DBModel.FK_SET_BOX_MERGES_SET_RECALL_BOXES1" FromRole="SET_BOX_MERGES" ToRole="SET_RECALL_BOXES" />
+  </EntityType>
+  <EntityType Name="SET_CLIENT_ACC_DOCS">
+    <Key>
+      <PropertyRef Name="DOC_NO" />
+    </Key>
+    <Property Name="DOC_NO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ACC_NO" Type="Int64" Nullable="false" />
+    <Property Name="DOC_TYPE_NO" Type="Int16" Nullable="false" />
+    <Property Name="ARCHIVE_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="DOC_DETAILS" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="TRN_TYPE_NO" Type="Byte" Nullable="false" />
+    <Property Name="REQ_TYPE_NO" Type="Byte" />
+    <Property Name="TRANSMIT_NO" Type="Int64" />
+    <Property Name="LAST_TRN_DATE" Type="DateTime" />
+    <Property Name="IS_OLD_DATA" Type="Boolean" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="SET_CLIENT_ACCOUNTS" Relationship="DBModel.FK_SET_CLIENT_ACC_DOCS_SET_CLIENT_ACCOUNTS" FromRole="SET_CLIENT_ACC_DOCS" ToRole="SET_CLIENT_ACCOUNTS" />
+    <NavigationProperty Name="SET_DOCS_TYPES" Relationship="DBModel.FK_SET_CLIENT_ACC_DOCS_SET_DOCS_TYPES" FromRole="SET_CLIENT_ACC_DOCS" ToRole="SET_DOCS_TYPES" />
+    <NavigationProperty Name="SET_CLIENT_ATTACHS" Relationship="DBModel.FK_SET_CLIENT_ATTACHS_SET_CLIENT_ACC_DOCS" FromRole="SET_CLIENT_ACC_DOCS" ToRole="SET_CLIENT_ATTACHS" />
+  </EntityType>
+  <EntityType Name="SET_CLIENT_ACCOUNTS">
+    <Key>
+      <PropertyRef Name="ACC_NO" />
+    </Key>
+    <Property Name="ACC_NO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENT_NO" Type="Int16" Nullable="false" />
+    <Property Name="BATCH_NO" Type="Int32" Nullable="false" />
+    <Property Name="ARCHIVE_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="ACC_ID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ACC_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ACC_DETAILS" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="TRN_TYPE_NO" Type="Byte" Nullable="false" />
+    <Property Name="REQ_TYPE_NO" Type="Byte" />
+    <Property Name="TRANSMIT_NO" Type="Int64" />
+    <Property Name="LAST_TRN_DATE" Type="DateTime" />
+    <Property Name="IS_OLD_DATA" Type="Boolean" />
+    <Property Name="CREATE_USER_NO" Type="Int32" Nullable="false" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="SET_CLIENT_ACC_DOCS" Relationship="DBModel.FK_SET_CLIENT_ACC_DOCS_SET_CLIENT_ACCOUNTS" FromRole="SET_CLIENT_ACCOUNTS" ToRole="SET_CLIENT_ACC_DOCS" />
+    <NavigationProperty Name="SET_CLIENT_BATCHES" Relationship="DBModel.FK_SET_CLIENT_ACCOUNTS_SET_CLIENT_BATCHES" FromRole="SET_CLIENT_ACCOUNTS" ToRole="SET_CLIENT_BATCHES" />
+    <NavigationProperty Name="SET_CLIENTS" Relationship="DBModel.FK_SET_CLIENT_ACCOUNTS_SET_CLIENTS" FromRole="SET_CLIENT_ACCOUNTS" ToRole="SET_CLIENTS" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="false" />
+    <NavigationProperty Name="SET_CLIENT_DEPARTMENTS" Relationship="DBModel.FK_SET_CLIENT_ACCOUNTS_SET_CLIENT_DEPARTMENTS" FromRole="SET_CLIENT_ACCOUNTS" ToRole="SET_CLIENT_DEPARTMENTS" />
+    <Property Type="Int32" Name="CHALLAN_NO" />
+  </EntityType>
+  <EntityType Name="SET_CLIENT_ATTACHS">
+    <Key>
+      <PropertyRef Name="ATTACH_NO" />
+    </Key>
+    <Property Name="ATTACH_NO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DOC_NO" Type="Int64" Nullable="false" />
+    <Property Name="ATTACH_NAME" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="FILE_LOCATION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="FILE_TYPE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="FILE_EXT" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="SET_CLIENT_ACC_DOCS" Relationship="DBModel.FK_SET_CLIENT_ATTACHS_SET_CLIENT_ACC_DOCS" FromRole="SET_CLIENT_ATTACHS" ToRole="SET_CLIENT_ACC_DOCS" />
+  </EntityType>
+  <EntityType Name="SET_CLIENT_BATCHES">
+    <Key>
+      <PropertyRef Name="BATCH_NO" />
+    </Key>
+    <Property Name="BATCH_NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENT_NO" Type="Int16" Nullable="false" />
+    <Property Name="BOX_NO" Type="Int32" Nullable="false" />
+    <Property Name="ARCHIVE_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="BATCH_ID" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="BATCH_DETAILS" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="TRN_TYPE_NO" Type="Byte" Nullable="false" />
+    <Property Name="REQ_TYPE_NO" Type="Byte" />
+    <Property Name="TRANSMIT_NO" Type="Int64" />
+    <Property Name="LAST_TRN_DATE" Type="DateTime" />
+    <Property Name="IS_OLD_DATA" Type="Boolean" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="SET_CLIENT_ACCOUNTS" Relationship="DBModel.FK_SET_CLIENT_ACCOUNTS_SET_CLIENT_BATCHES" FromRole="SET_CLIENT_BATCHES" ToRole="SET_CLIENT_ACCOUNTS" />
+    <NavigationProperty Name="SET_CLIENT_DEPT_BOXES" Relationship="DBModel.FK_SET_CLIENT_BATCHES_SET_CLIENT_DEPT_BOXES" FromRole="SET_CLIENT_BATCHES" ToRole="SET_CLIENT_DEPT_BOXES" />
+    <NavigationProperty Name="SET_CLIENTS" Relationship="DBModel.FK_SET_CLIENT_BATCHES_SET_CLIENTS" FromRole="SET_CLIENT_BATCHES" ToRole="SET_CLIENTS" />
+  </EntityType>
+  <EntityType Name="SET_CLIENT_DEPARTMENTS">
+    <Key>
+      <PropertyRef Name="DEPT_NO" />
+    </Key>
+    <Property Name="DEPT_NO" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENT_NO" Type="Int16" Nullable="false" />
+    <Property Name="DEPT_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DEPT_ADDR" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="DEPT_CONTACT" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="DEPT_EMAIL" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DELIVERY_LOCATION" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACT_PERSON" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACT_ADDR" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="DESIGNATION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ATTENTION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IS_NEW_TRANSMIT" Type="Boolean" />
+    <Property Name="IS_AUTO_ID" Type="Boolean" />
+    <Property Name="NEXT_ID" Type="Int32" />
+    <Property Name="ID_LENGHT" Type="Byte" />
+    <Property Name="ID_PREFIX" Type="String" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="SET_CLIENTS" Relationship="DBModel.FK_SET_CLIENT_DEPARTMENTS_SET_CLIENTS" FromRole="SET_CLIENT_DEPARTMENTS" ToRole="SET_CLIENTS" />
+    <NavigationProperty Name="SET_CLIENT_DEPT_BOXES" Relationship="DBModel.FK_SET_CLIENT_DEPT_BOXES_SET_CLIENT_DEPARTMENTS" FromRole="SET_CLIENT_DEPARTMENTS" ToRole="SET_CLIENT_DEPT_BOXES" />
+    <NavigationProperty Name="SET_REQUESTERS" Relationship="DBModel.FK_SET_REQUESTERS_SET_CLIENT_DEPARTMENTS" FromRole="SET_CLIENT_DEPARTMENTS" ToRole="SET_REQUESTERS" />
+    <NavigationProperty Name="TRN_TRANSMITTALS" Relationship="DBModel.FK_TRN_TRANSMITTALS_SET_CLIENT_DEPARTMENTS" FromRole="SET_CLIENT_DEPARTMENTS" ToRole="TRN_TRANSMITTALS" />
+    <NavigationProperty Name="TRN_CHALLANS" Relationship="DBModel.FK_TRN_CHALLANS_SET_CLIENT_DEPARTMENTS" FromRole="SET_CLIENT_DEPARTMENTS" ToRole="TRN_CHALLANS" />
+    <NavigationProperty Name="SET_RECALL_BOXES" Relationship="DBModel.FK_SET_RECALL_BOXES_SET_CLIENT_DEPARTMENTS" FromRole="SET_CLIENT_DEPARTMENTS" ToRole="SET_RECALL_BOXES" />
+    <NavigationProperty Name="SET_CLIENT_ACCOUNTS" Relationship="DBModel.FK_SET_CLIENT_ACCOUNTS_SET_CLIENT_DEPARTMENTS" FromRole="SET_CLIENT_DEPARTMENTS" ToRole="SET_CLIENT_ACCOUNTS" />
+  </EntityType>
+  <EntityType Name="SET_CLIENT_DEPT_BOXES">
+    <Key>
+      <PropertyRef Name="BOX_NO" />
+    </Key>
+    <Property Name="BOX_NO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENT_NO" Type="Int16" Nullable="false" />
+    <Property Name="DEPT_NO" Type="Int16" Nullable="false" />
+    <Property Name="PROD_TYPE_NO" Type="Byte" Nullable="false" />
+    <Property Name="ARCHIVE_DATE" Type="DateTime" Nullable="false" />
+    <Property Name="CLIENT_BOX_ID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CHALLAN_NO" Type="Int32" />
+    <Property Name="TRN_TYPE_NO" Type="Byte" Nullable="false" />
+    <Property Name="REQ_TYPE_NO" Type="Byte" />
+    <Property Name="TRANSMIT_NO" Type="Int64" />
+    <Property Name="LAST_TRN_DATE" Type="DateTime" />
+    <Property Name="IS_OLD_DATA" Type="Boolean" />
+    <Property Name="RECALL_BOX_NO" Type="Int32" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="SET_CLIENT_BATCHES" Relationship="DBModel.FK_SET_CLIENT_BATCHES_SET_CLIENT_DEPT_BOXES" FromRole="SET_CLIENT_DEPT_BOXES" ToRole="SET_CLIENT_BATCHES" />
+    <NavigationProperty Name="SET_CLIENT_DEPARTMENTS" Relationship="DBModel.FK_SET_CLIENT_DEPT_BOXES_SET_CLIENT_DEPARTMENTS" FromRole="SET_CLIENT_DEPT_BOXES" ToRole="SET_CLIENT_DEPARTMENTS" />
+    <NavigationProperty Name="SET_CLIENTS" Relationship="DBModel.FK_SET_CLIENT_DEPT_BOXES_SET_CLIENTS" FromRole="SET_CLIENT_DEPT_BOXES" ToRole="SET_CLIENTS" />
+    <NavigationProperty Name="SET_PRODUCT_TYPES" Relationship="DBModel.FK_SET_CLIENT_DEPT_BOXES_SET_PRODUCT_TYPES" FromRole="SET_CLIENT_DEPT_BOXES" ToRole="SET_PRODUCT_TYPES" />
+    <NavigationProperty Name="TRN_CHALLANS" Relationship="DBModel.FK_SET_CLIENT_DEPT_BOXES_TRN_CHALLANS" FromRole="SET_CLIENT_DEPT_BOXES" ToRole="TRN_CHALLANS" />
+    <NavigationProperty Name="SET_RECALL_BOXES" Relationship="DBModel.FK_SET_CLIENT_DEPT_BOXES_SET_RECALL_BOXES" FromRole="SET_CLIENT_DEPT_BOXES" ToRole="SET_RECALL_BOXES" />
+    <Property Type="Boolean" Name="IS_BLACK_BOX" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SET_CLIENTS">
+    <Key>
+      <PropertyRef Name="CLIENT_NO" />
+    </Key>
+    <Property Name="CLIENT_NO" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENT_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CLIENT_ALIAS" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="CLIENT_ADDR" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="CLIENT_CONTACT" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACT_PERSON" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CONTACT_ADDR" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="DESIGNATION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="ATTENTION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="EMAIL_ADDR" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="IS_ACIVE" Type="Boolean" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="SEC_USERS" Relationship="DBModel.FK_SEC_USERS_SET_CLIENTS" FromRole="SET_CLIENTS" ToRole="SEC_USERS" />
+    <NavigationProperty Name="SET_CLIENT_ACCOUNTS" Relationship="DBModel.FK_SET_CLIENT_ACCOUNTS_SET_CLIENTS" FromRole="SET_CLIENTS" ToRole="SET_CLIENT_ACCOUNTS" />
+    <NavigationProperty Name="SET_CLIENT_BATCHES" Relationship="DBModel.FK_SET_CLIENT_BATCHES_SET_CLIENTS" FromRole="SET_CLIENTS" ToRole="SET_CLIENT_BATCHES" />
+    <NavigationProperty Name="SET_CLIENT_DEPARTMENTS" Relationship="DBModel.FK_SET_CLIENT_DEPARTMENTS_SET_CLIENTS" FromRole="SET_CLIENTS" ToRole="SET_CLIENT_DEPARTMENTS" />
+    <NavigationProperty Name="SET_CLIENT_DEPT_BOXES" Relationship="DBModel.FK_SET_CLIENT_DEPT_BOXES_SET_CLIENTS" FromRole="SET_CLIENTS" ToRole="SET_CLIENT_DEPT_BOXES" />
+    <NavigationProperty Name="SET_REASONS" Relationship="DBModel.FK_SET_REASONS_SET_CLIENTS" FromRole="SET_CLIENTS" ToRole="SET_REASONS" />
+    <NavigationProperty Name="TRN_TRANSMITTALS" Relationship="DBModel.FK_TRN_TRANSMITTALS_SET_CLIENTS" FromRole="SET_CLIENTS" ToRole="TRN_TRANSMITTALS" />
+    <NavigationProperty Name="TRN_CHALLANS" Relationship="DBModel.FK_TRN_CHALLANS_SET_CLIENTS" FromRole="SET_CLIENTS" ToRole="TRN_CHALLANS" />
+    <NavigationProperty Name="SET_RECALL_BOXES" Relationship="DBModel.FK_SET_RECALL_BOXES_SET_CLIENTS" FromRole="SET_CLIENTS" ToRole="SET_RECALL_BOXES" />
+    <NavigationProperty Name="RPT_CLIENT_MONTHLY_IMAGE_VIEWS" Relationship="DBModel.FK_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_SET_CLIENTS" FromRole="SET_CLIENTS" ToRole="RPT_CLIENT_MONTHLY_IMAGE_VIEWS" />
+  </EntityType>
+  <EntityType Name="SET_DOCS_TYPES">
+    <Key>
+      <PropertyRef Name="DOC_TYPE_NO" />
+    </Key>
+    <Property Name="DOC_TYPE_NO" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DOC_TYPE" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="DOC_TYPE_CODE" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="SET_CLIENT_ACC_DOCS" Relationship="DBModel.FK_SET_CLIENT_ACC_DOCS_SET_DOCS_TYPES" FromRole="SET_DOCS_TYPES" ToRole="SET_CLIENT_ACC_DOCS" />
+  </EntityType>
+  <EntityType Name="SET_PRODUCT_TYPES">
+    <Key>
+      <PropertyRef Name="PROD_TYPE_NO" />
+    </Key>
+    <Property Name="PROD_TYPE_NO" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PRODUCT_TYPE" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="SHORT_CODE" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="SET_CLIENT_DEPT_BOXES" Relationship="DBModel.FK_SET_CLIENT_DEPT_BOXES_SET_PRODUCT_TYPES" FromRole="SET_PRODUCT_TYPES" ToRole="SET_CLIENT_DEPT_BOXES" />
+    <NavigationProperty Name="TRN_TRANSMITTALS" Relationship="DBModel.FK_TRN_TRANSMITTALS_SET_PRODUCT_TYPES" FromRole="SET_PRODUCT_TYPES" ToRole="TRN_TRANSMITTALS" />
+  </EntityType>
+  <EntityType Name="SET_REASONS">
+    <Key>
+      <PropertyRef Name="REASON_NO" />
+    </Key>
+    <Property Name="REASON_NO" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENT_NO" Type="Int16" Nullable="false" />
+    <Property Name="REASON" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="SET_CLIENTS" Relationship="DBModel.FK_SET_REASONS_SET_CLIENTS" FromRole="SET_REASONS" ToRole="SET_CLIENTS" />
+    <NavigationProperty Name="TRN_TRANSMITTALS" Relationship="DBModel.FK_TRN_TRANSMITTALS_SET_REASONS" FromRole="SET_REASONS" ToRole="TRN_TRANSMITTALS" />
+  </EntityType>
+  <EntityType Name="SET_REQUESTERS">
+    <Key>
+      <PropertyRef Name="REQUESTER_NO" />
+    </Key>
+    <Property Name="REQUESTER_NO" Type="Int16" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DEPT_NO" Type="Int16" Nullable="false" />
+    <Property Name="REQ_NAME" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="REQ_ADDR" Type="Binary" MaxLength="500" FixedLength="false" />
+    <Property Name="CONTACT" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="EMAIL_ADDR" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="DESIGNATION" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="SET_CLIENT_DEPARTMENTS" Relationship="DBModel.FK_SET_REQUESTERS_SET_CLIENT_DEPARTMENTS" FromRole="SET_REQUESTERS" ToRole="SET_CLIENT_DEPARTMENTS" />
+    <NavigationProperty Name="TRN_TRANSMITTALS" Relationship="DBModel.FK_TRN_TRANSMITTALS_SET_REQUESTERS" FromRole="SET_REQUESTERS" ToRole="TRN_TRANSMITTALS" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TBL_TEST_01">
+    <Key>
+      <PropertyRef Name="ID_NO" />
+    </Key>
+    <Property Name="ID_NO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_NAME" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TRN_CHALLAN_DETAILS">
+    <Key>
+      <PropertyRef Name="CHAL_DET_NO" />
+    </Key>
+    <Property Name="CHAL_DET_NO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CHALLAN_NO" Type="Int32" Nullable="false" />
+    <Property Name="CLIENT_BOX_ID" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="BATCH_ID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="ACC_ID" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="IS_DATA_ENTRY" Type="Boolean" />
+    <Property Name="REMARKS" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+    <Property Name="CREATE_USER_NO" Type="Int32" />
+    <Property Name="CREATE_LOGON_NO" Type="Int64" />
+    <Property Name="CREATE_TIME" Type="DateTime" />
+    <Property Name="UPDATE_USER_NO" Type="Int32" />
+    <Property Name="UPDATE_LOGON_NO" Type="Int64" />
+    <Property Name="UPDATE_TIME" Type="DateTime" />
+    <NavigationProperty Name="TRN_CHALLANS" Relationship="DBModel.FK_TRN_CHALLAN_DETAILS_TRN_CHALLANS" FromRole="TRN_CHALLAN_DETAILS" ToRole="TRN_CHALLANS" />
+  </EntityType>
+  <EntityType Name="TRN_TRANSMIT_REQ_TYPES">
+    <Key>
+      <PropertyRef Name="TRN_REQ_TYPE_NO" />
+    </Key>
+    <Property Name="TRN_REQ_TYPE_NO" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TRANSMIT_NO" Type="Int64" Nullable="false" />
+    <Property Name="REQ_TYPE_NO" Type="Byte" Nullable="false" />
+    <NavigationProperty Name="TRN_TRANSMITTALS" Relationship="DBModel.FK_TRN_TRANSMIT_REQ_TYPES_TRN_TRANSMITTALS" FromRole="TRN_TRANSMIT_REQ_TYPES" ToRole="TRN_TRANSMITTALS" />
+  </EntityType>
+  <Association Name="FK_GEN_MENU_ACTIONS_GEN_CONTROL_ACTIONS">
+    <End Role="GEN_CONTROL_ACTIONS" Type="DBModel.GEN_CONTROL_ACTIONS" Multiplicity="1" />
+    <End Role="GEN_MENU_ACTIONS" Type="DBModel.GEN_MENU_ACTIONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_CONTROL_ACTIONS">
+        <PropertyRef Name="ACTION_NO" />
+      </Principal>
+      <Dependent Role="GEN_MENU_ACTIONS">
+        <PropertyRef Name="ACTION_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GEN_MENU_ACTIONS_GEN_MENUS">
+    <End Role="GEN_MENUS" Type="DBModel.GEN_MENUS" Multiplicity="1" />
+    <End Role="GEN_MENU_ACTIONS" Type="DBModel.GEN_MENU_ACTIONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_MENUS">
+        <PropertyRef Name="MENU_NO" />
+      </Principal>
+      <Dependent Role="GEN_MENU_ACTIONS">
+        <PropertyRef Name="MENU_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GEN_MENUS_GEN_MENU_TYPES">
+    <End Role="GEN_MENU_TYPES" Type="DBModel.GEN_MENU_TYPES" Multiplicity="1" />
+    <End Role="GEN_MENUS" Type="DBModel.GEN_MENUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_MENU_TYPES">
+        <PropertyRef Name="MENU_TYPE_NO" />
+      </Principal>
+      <Dependent Role="GEN_MENUS">
+        <PropertyRef Name="MENU_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GEN_MENUS_GEN_MENUS">
+    <End Role="GEN_MENUS" Type="DBModel.GEN_MENUS" Multiplicity="0..1" />
+    <End Role="GEN_MENUS1" Type="DBModel.GEN_MENUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_MENUS">
+        <PropertyRef Name="MENU_NO" />
+      </Principal>
+      <Dependent Role="GEN_MENUS1">
+        <PropertyRef Name="PARENT_MENU_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SEC_ROLE_MENUS_GEN_MENUS">
+    <End Role="GEN_MENUS" Type="DBModel.GEN_MENUS" Multiplicity="1" />
+    <End Role="SEC_ROLE_MENUS" Type="DBModel.SEC_ROLE_MENUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_MENUS">
+        <PropertyRef Name="MENU_NO" />
+      </Principal>
+      <Dependent Role="SEC_ROLE_MENUS">
+        <PropertyRef Name="MENU_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SEC_USERS_GEN_USER_TYPES">
+    <End Role="GEN_USER_TYPES" Type="DBModel.GEN_USER_TYPES" Multiplicity="1" />
+    <End Role="SEC_USERS" Type="DBModel.SEC_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_USER_TYPES">
+        <PropertyRef Name="USER_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SEC_USERS">
+        <PropertyRef Name="USER_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SEC_ROLE_MENUS_SEC_ROLES">
+    <End Role="SEC_ROLES" Type="DBModel.SEC_ROLES" Multiplicity="1" />
+    <End Role="SEC_ROLE_MENUS" Type="DBModel.SEC_ROLE_MENUS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_ROLES">
+        <PropertyRef Name="ROLE_NO" />
+      </Principal>
+      <Dependent Role="SEC_ROLE_MENUS">
+        <PropertyRef Name="ROLE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SEC_USER_ROLES_SEC_ROLES">
+    <End Role="SEC_ROLES" Type="DBModel.SEC_ROLES" Multiplicity="1" />
+    <End Role="SEC_USER_ROLES" Type="DBModel.SEC_USER_ROLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_ROLES">
+        <PropertyRef Name="ROLE_NO" />
+      </Principal>
+      <Dependent Role="SEC_USER_ROLES">
+        <PropertyRef Name="ROLE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SEC_USER_LOGONS_SEC_USERS">
+    <End Role="SEC_USERS" Type="DBModel.SEC_USERS" Multiplicity="1" />
+    <End Role="SEC_USER_LOGONS" Type="DBModel.SEC_USER_LOGONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_USERS">
+        <PropertyRef Name="USER_NO" />
+      </Principal>
+      <Dependent Role="SEC_USER_LOGONS">
+        <PropertyRef Name="USER_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SEC_USER_ROLES_SEC_USERS">
+    <End Role="SEC_USERS" Type="DBModel.SEC_USERS" Multiplicity="1" />
+    <End Role="SEC_USER_ROLES" Type="DBModel.SEC_USER_ROLES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_USERS">
+        <PropertyRef Name="USER_NO" />
+      </Principal>
+      <Dependent Role="SEC_USER_ROLES">
+        <PropertyRef Name="USER_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SEC_USERS_SET_CLIENTS">
+    <End Role="SET_CLIENTS" Type="DBModel.SET_CLIENTS" Multiplicity="0..1" />
+    <End Role="SEC_USERS" Type="DBModel.SEC_USERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENTS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Principal>
+      <Dependent Role="SEC_USERS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_ACC_DOCS_SET_CLIENT_ACCOUNTS">
+    <End Role="SET_CLIENT_ACCOUNTS" Type="DBModel.SET_CLIENT_ACCOUNTS" Multiplicity="1" />
+    <End Role="SET_CLIENT_ACC_DOCS" Type="DBModel.SET_CLIENT_ACC_DOCS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENT_ACCOUNTS">
+        <PropertyRef Name="ACC_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_ACC_DOCS">
+        <PropertyRef Name="ACC_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_ACC_DOCS_SET_DOCS_TYPES">
+    <End Role="SET_DOCS_TYPES" Type="DBModel.SET_DOCS_TYPES" Multiplicity="1" />
+    <End Role="SET_CLIENT_ACC_DOCS" Type="DBModel.SET_CLIENT_ACC_DOCS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_DOCS_TYPES">
+        <PropertyRef Name="DOC_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_ACC_DOCS">
+        <PropertyRef Name="DOC_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_ATTACHS_SET_CLIENT_ACC_DOCS">
+    <End Role="SET_CLIENT_ACC_DOCS" Type="DBModel.SET_CLIENT_ACC_DOCS" Multiplicity="1" />
+    <End Role="SET_CLIENT_ATTACHS" Type="DBModel.SET_CLIENT_ATTACHS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENT_ACC_DOCS">
+        <PropertyRef Name="DOC_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_ATTACHS">
+        <PropertyRef Name="DOC_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_ACCOUNTS_SET_CLIENT_BATCHES">
+    <End Role="SET_CLIENT_BATCHES" Type="DBModel.SET_CLIENT_BATCHES" Multiplicity="1" />
+    <End Role="SET_CLIENT_ACCOUNTS" Type="DBModel.SET_CLIENT_ACCOUNTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENT_BATCHES">
+        <PropertyRef Name="BATCH_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_ACCOUNTS">
+        <PropertyRef Name="BATCH_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_ACCOUNTS_SET_CLIENTS">
+    <End Role="SET_CLIENTS" Type="DBModel.SET_CLIENTS" Multiplicity="1" />
+    <End Role="SET_CLIENT_ACCOUNTS" Type="DBModel.SET_CLIENT_ACCOUNTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENTS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_ACCOUNTS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_BATCHES_SET_CLIENT_DEPT_BOXES">
+    <End Role="SET_CLIENT_DEPT_BOXES" Type="DBModel.SET_CLIENT_DEPT_BOXES" Multiplicity="1" />
+    <End Role="SET_CLIENT_BATCHES" Type="DBModel.SET_CLIENT_BATCHES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENT_DEPT_BOXES">
+        <PropertyRef Name="BOX_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_BATCHES">
+        <PropertyRef Name="BOX_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_BATCHES_SET_CLIENTS">
+    <End Role="SET_CLIENTS" Type="DBModel.SET_CLIENTS" Multiplicity="1" />
+    <End Role="SET_CLIENT_BATCHES" Type="DBModel.SET_CLIENT_BATCHES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENTS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_BATCHES">
+        <PropertyRef Name="CLIENT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_DEPARTMENTS_SET_CLIENTS">
+    <End Role="SET_CLIENTS" Type="DBModel.SET_CLIENTS" Multiplicity="1" />
+    <End Role="SET_CLIENT_DEPARTMENTS" Type="DBModel.SET_CLIENT_DEPARTMENTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENTS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_DEPARTMENTS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_DEPT_BOXES_SET_CLIENT_DEPARTMENTS">
+    <End Role="SET_CLIENT_DEPARTMENTS" Type="DBModel.SET_CLIENT_DEPARTMENTS" Multiplicity="1" />
+    <End Role="SET_CLIENT_DEPT_BOXES" Type="DBModel.SET_CLIENT_DEPT_BOXES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENT_DEPARTMENTS">
+        <PropertyRef Name="DEPT_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_DEPT_BOXES">
+        <PropertyRef Name="DEPT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_REQUESTERS_SET_CLIENT_DEPARTMENTS">
+    <End Role="SET_CLIENT_DEPARTMENTS" Type="DBModel.SET_CLIENT_DEPARTMENTS" Multiplicity="1" />
+    <End Role="SET_REQUESTERS" Type="DBModel.SET_REQUESTERS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENT_DEPARTMENTS">
+        <PropertyRef Name="DEPT_NO" />
+      </Principal>
+      <Dependent Role="SET_REQUESTERS">
+        <PropertyRef Name="DEPT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_DEPT_BOXES_SET_CLIENTS">
+    <End Role="SET_CLIENTS" Type="DBModel.SET_CLIENTS" Multiplicity="1" />
+    <End Role="SET_CLIENT_DEPT_BOXES" Type="DBModel.SET_CLIENT_DEPT_BOXES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENTS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_DEPT_BOXES">
+        <PropertyRef Name="CLIENT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_DEPT_BOXES_SET_PRODUCT_TYPES">
+    <End Role="SET_PRODUCT_TYPES" Type="DBModel.SET_PRODUCT_TYPES" Multiplicity="1" />
+    <End Role="SET_CLIENT_DEPT_BOXES" Type="DBModel.SET_CLIENT_DEPT_BOXES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_PRODUCT_TYPES">
+        <PropertyRef Name="PROD_TYPE_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_DEPT_BOXES">
+        <PropertyRef Name="PROD_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_REASONS_SET_CLIENTS">
+    <End Role="SET_CLIENTS" Type="DBModel.SET_CLIENTS" Multiplicity="1" />
+    <End Role="SET_REASONS" Type="DBModel.SET_REASONS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENTS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Principal>
+      <Dependent Role="SET_REASONS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="GEN_COMPANY_INFO_GET_Result">
+    <Property Type="Byte" Name="COMP_NO" Nullable="true" />
+    <Property Type="String" Name="COMP_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="KEY_FEATURE" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="ADDR" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="PHONE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MOBILE" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="FAX" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EMAIL_ADDR" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LAST_NEW_TRANS_ID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LAST_TRANS_IN_ID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LAST_TRANS_OUT_ID" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SET_CLIENTS_GET_Result">
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="CLIENT_ALIAS" MaxLength="50" Nullable="true" />
+    <Property Type="String" Name="CLIENT_ADDR" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="CLIENT_CONTACT" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="CONTACT_PERSON" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CONTACT_ADDR" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="DESIGNATION" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ATTENTION" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EMAIL_ADDR" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IS_ACIVE" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SET_CLIENT_DEPARTMENTS_GET_Result">
+    <Property Type="Int16" Name="DEPT_NO" Nullable="true" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="CLIENT_ALIAS" MaxLength="50" Nullable="true" />
+    <Property Type="String" Name="DEPT_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="DEPT_ADDR" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="DEPT_CONTACT" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="DEPT_EMAIL" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="DELIVERY_LOCATION" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="CONTACT_PERSON" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CONTACT_ADDR" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="DESIGNATION" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ATTENTION" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IS_NEW_TRANSMIT" Nullable="true" />
+    <Property Type="Boolean" Name="IS_AUTO_ID" Nullable="true" />
+    <Property Type="Int32" Name="NEXT_ID" Nullable="true" />
+    <Property Type="Byte" Name="ID_LENGHT" Nullable="true" />
+    <Property Type="String" Name="ID_PREFIX" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SET_PRODUCT_TYPES_GET_Result">
+    <Property Type="Byte" Name="PROD_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="PRODUCT_TYPE" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="SHORT_CODE" MaxLength="10" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GEN_TRANSMIT_TYPES_GET_Result">
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="TRN_TYPE_NAME" MaxLength="50" Nullable="true" />
+    <Property Type="String" Name="TRANSMIT_PREFIX" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GEN_TRANSMIT_REQUEST_TYPES_GET_Result">
+    <Property Type="Byte" Name="REQ_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="REQ_TYPE_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="REQ_TYPE_CODE" MaxLength="50" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="TRN_TRANSMITTALS">
+    <Key>
+      <PropertyRef Name="TRANSMIT_NO" />
+    </Key>
+    <Property Type="Int64" Name="TRANSMIT_NO" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="false" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="false" />
+    <Property Type="String" Name="TRANSMIT_ID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="TRN_DATE" Nullable="false" />
+    <Property Type="Byte" Name="PROD_TYPE_NO" Nullable="false" />
+    <Property Type="String" Name="REMARKS" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="REASON_NO" Nullable="false" />
+    <Property Type="Int16" Name="REQUESTER_NO" Nullable="false" />
+    <Property Type="Boolean" Name="IS_NEW_TRANSMIT" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" />
+    <Property Type="Int32" Name="CREATE_USER_NO" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" />
+    <Property Type="DateTime" Name="CREATE_TIME" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" />
+    <Property Type="DateTime" Name="UPDATE_TIME" />
+    <NavigationProperty Name="GEN_TRANSMIT_TYPES" Relationship="DBModel.FK_TRN_TRANSMITTALS_GEN_TRANSMIT_TYPES" FromRole="TRN_TRANSMITTALS" ToRole="GEN_TRANSMIT_TYPES" />
+    <NavigationProperty Name="SET_CLIENT_DEPARTMENTS" Relationship="DBModel.FK_TRN_TRANSMITTALS_SET_CLIENT_DEPARTMENTS" FromRole="TRN_TRANSMITTALS" ToRole="SET_CLIENT_DEPARTMENTS" />
+    <NavigationProperty Name="SET_CLIENTS" Relationship="DBModel.FK_TRN_TRANSMITTALS_SET_CLIENTS" FromRole="TRN_TRANSMITTALS" ToRole="SET_CLIENTS" />
+    <NavigationProperty Name="SET_PRODUCT_TYPES" Relationship="DBModel.FK_TRN_TRANSMITTALS_SET_PRODUCT_TYPES" FromRole="TRN_TRANSMITTALS" ToRole="SET_PRODUCT_TYPES" />
+    <NavigationProperty Name="SET_REASONS" Relationship="DBModel.FK_TRN_TRANSMITTALS_SET_REASONS" FromRole="TRN_TRANSMITTALS" ToRole="SET_REASONS" />
+    <NavigationProperty Name="SET_REQUESTERS" Relationship="DBModel.FK_TRN_TRANSMITTALS_SET_REQUESTERS" FromRole="TRN_TRANSMITTALS" ToRole="SET_REQUESTERS" />
+    <NavigationProperty Name="TRN_TRANSMIT_REQ_TYPES" Relationship="DBModel.FK_TRN_TRANSMIT_REQ_TYPES_TRN_TRANSMITTALS" FromRole="TRN_TRANSMITTALS" ToRole="TRN_TRANSMIT_REQ_TYPES" />
+  </EntityType>
+  <Association Name="FK_TRN_TRANSMITTALS_GEN_TRANSMIT_TYPES">
+    <End Type="DBModel.GEN_TRANSMIT_TYPES" Role="GEN_TRANSMIT_TYPES" Multiplicity="1" />
+    <End Type="DBModel.TRN_TRANSMITTALS" Role="TRN_TRANSMITTALS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_TRANSMIT_TYPES">
+        <PropertyRef Name="TRN_TYPE_NO" />
+      </Principal>
+      <Dependent Role="TRN_TRANSMITTALS">
+        <PropertyRef Name="TRN_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRN_TRANSMITTALS_SET_CLIENT_DEPARTMENTS">
+    <End Type="DBModel.SET_CLIENT_DEPARTMENTS" Role="SET_CLIENT_DEPARTMENTS" Multiplicity="1" />
+    <End Type="DBModel.TRN_TRANSMITTALS" Role="TRN_TRANSMITTALS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENT_DEPARTMENTS">
+        <PropertyRef Name="DEPT_NO" />
+      </Principal>
+      <Dependent Role="TRN_TRANSMITTALS">
+        <PropertyRef Name="DEPT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRN_TRANSMITTALS_SET_CLIENTS">
+    <End Type="DBModel.SET_CLIENTS" Role="SET_CLIENTS" Multiplicity="1" />
+    <End Type="DBModel.TRN_TRANSMITTALS" Role="TRN_TRANSMITTALS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENTS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Principal>
+      <Dependent Role="TRN_TRANSMITTALS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRN_TRANSMITTALS_SET_PRODUCT_TYPES">
+    <End Type="DBModel.SET_PRODUCT_TYPES" Role="SET_PRODUCT_TYPES" Multiplicity="1" />
+    <End Type="DBModel.TRN_TRANSMITTALS" Role="TRN_TRANSMITTALS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_PRODUCT_TYPES">
+        <PropertyRef Name="PROD_TYPE_NO" />
+      </Principal>
+      <Dependent Role="TRN_TRANSMITTALS">
+        <PropertyRef Name="PROD_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRN_TRANSMITTALS_SET_REASONS">
+    <End Type="DBModel.SET_REASONS" Role="SET_REASONS" Multiplicity="1" />
+    <End Type="DBModel.TRN_TRANSMITTALS" Role="TRN_TRANSMITTALS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_REASONS">
+        <PropertyRef Name="REASON_NO" />
+      </Principal>
+      <Dependent Role="TRN_TRANSMITTALS">
+        <PropertyRef Name="REASON_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRN_TRANSMITTALS_SET_REQUESTERS">
+    <End Type="DBModel.SET_REQUESTERS" Role="SET_REQUESTERS" Multiplicity="1" />
+    <End Type="DBModel.TRN_TRANSMITTALS" Role="TRN_TRANSMITTALS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_REQUESTERS">
+        <PropertyRef Name="REQUESTER_NO" />
+      </Principal>
+      <Dependent Role="TRN_TRANSMITTALS">
+        <PropertyRef Name="REQUESTER_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRN_TRANSMIT_REQ_TYPES_TRN_TRANSMITTALS">
+    <End Type="DBModel.TRN_TRANSMITTALS" Role="TRN_TRANSMITTALS" Multiplicity="1" />
+    <End Type="DBModel.TRN_TRANSMIT_REQ_TYPES" Role="TRN_TRANSMIT_REQ_TYPES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRN_TRANSMITTALS">
+        <PropertyRef Name="TRANSMIT_NO" />
+      </Principal>
+      <Dependent Role="TRN_TRANSMIT_REQ_TYPES">
+        <PropertyRef Name="TRANSMIT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="TRN_TRANSMITTALS_GET_Result">
+    <Property Type="Int64" Name="ROWNUM" Nullable="true" />
+    <Property Type="Int64" Name="TRANSMIT_NO" Nullable="true" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="true" />
+    <Property Type="String" Name="TRANSMIT_ID" MaxLength="50" Nullable="true" />
+    <Property Type="DateTime" Name="TRN_DATE" Nullable="true" />
+    <Property Type="Byte" Name="PROD_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="REMARKS" Nullable="true" MaxLength="500" />
+    <Property Type="Int16" Name="REASON_NO" Nullable="true" />
+    <Property Type="Int16" Name="REQUESTER_NO" Nullable="true" />
+    <Property Type="Boolean" Name="IS_NEW_TRANSMIT" Nullable="true" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="TRN_CHALLANS_GET_Result">
+    <Property Type="Int64" Name="ROWNUM" Nullable="true" />
+    <Property Type="Int32" Name="CHALLAN_NO" Nullable="true" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="CLIENT_ALIAS" MaxLength="50" Nullable="true" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="true" />
+    <Property Type="String" Name="DEPT_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="CHALLAN_ID" MaxLength="100" Nullable="true" />
+    <Property Type="DateTime" Name="REC_DATE" Nullable="true" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="Byte" Name="REQ_TYPE_NO" Nullable="true" />
+    <Property Type="Int64" Name="TRANSMIT_NO" Nullable="true" />
+    <Property Type="DateTime" Name="LAST_TRN_DATE" Nullable="true" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" Nullable="true" />
+    <Property Type="String" Name="UPLOAD_FILE_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FILE_EXT" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <EntityType Name="TRN_CHALLANS">
+    <Key>
+      <PropertyRef Name="CHALLAN_NO" />
+    </Key>
+    <Property Type="Int32" Name="CHALLAN_NO" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="false" />
+    <Property Type="String" Name="CHALLAN_ID" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="REC_DATE" Nullable="false" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="false" />
+    <Property Type="Byte" Name="REQ_TYPE_NO" />
+    <Property Type="Int64" Name="TRANSMIT_NO" />
+    <Property Type="DateTime" Name="LAST_TRN_DATE" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" />
+    <Property Type="String" Name="UPLOAD_FILE_NAME" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="FILE_EXT" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="CREATE_USER_NO" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" />
+    <Property Type="DateTime" Name="CREATE_TIME" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" />
+    <Property Type="DateTime" Name="UPDATE_TIME" />
+    <NavigationProperty Name="GEN_TRANSMIT_TYPES" Relationship="DBModel.FK_TRN_CHALLANS_GEN_TRANSMIT_TYPES" FromRole="TRN_CHALLANS" ToRole="GEN_TRANSMIT_TYPES" />
+    <NavigationProperty Name="SET_CLIENT_DEPARTMENTS" Relationship="DBModel.FK_TRN_CHALLANS_SET_CLIENT_DEPARTMENTS" FromRole="TRN_CHALLANS" ToRole="SET_CLIENT_DEPARTMENTS" />
+    <NavigationProperty Name="SET_CLIENT_DEPT_BOXES" Relationship="DBModel.FK_SET_CLIENT_DEPT_BOXES_TRN_CHALLANS" FromRole="TRN_CHALLANS" ToRole="SET_CLIENT_DEPT_BOXES" />
+    <NavigationProperty Name="SET_CLIENTS" Relationship="DBModel.FK_TRN_CHALLANS_SET_CLIENTS" FromRole="TRN_CHALLANS" ToRole="SET_CLIENTS" />
+    <NavigationProperty Name="TRN_CHALLAN_DETAILS" Relationship="DBModel.FK_TRN_CHALLAN_DETAILS_TRN_CHALLANS" FromRole="TRN_CHALLANS" ToRole="TRN_CHALLAN_DETAILS" />
+  </EntityType>
+  <Association Name="FK_TRN_CHALLANS_GEN_TRANSMIT_TYPES">
+    <End Type="DBModel.GEN_TRANSMIT_TYPES" Role="GEN_TRANSMIT_TYPES" Multiplicity="1" />
+    <End Type="DBModel.TRN_CHALLANS" Role="TRN_CHALLANS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN_TRANSMIT_TYPES">
+        <PropertyRef Name="TRN_TYPE_NO" />
+      </Principal>
+      <Dependent Role="TRN_CHALLANS">
+        <PropertyRef Name="TRN_TYPE_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRN_CHALLANS_SET_CLIENT_DEPARTMENTS">
+    <End Type="DBModel.SET_CLIENT_DEPARTMENTS" Role="SET_CLIENT_DEPARTMENTS" Multiplicity="1" />
+    <End Type="DBModel.TRN_CHALLANS" Role="TRN_CHALLANS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENT_DEPARTMENTS">
+        <PropertyRef Name="DEPT_NO" />
+      </Principal>
+      <Dependent Role="TRN_CHALLANS">
+        <PropertyRef Name="DEPT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_DEPT_BOXES_TRN_CHALLANS">
+    <End Type="DBModel.TRN_CHALLANS" Role="TRN_CHALLANS" Multiplicity="0..1" />
+    <End Type="DBModel.SET_CLIENT_DEPT_BOXES" Role="SET_CLIENT_DEPT_BOXES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRN_CHALLANS">
+        <PropertyRef Name="CHALLAN_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_DEPT_BOXES">
+        <PropertyRef Name="CHALLAN_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRN_CHALLANS_SET_CLIENTS">
+    <End Type="DBModel.SET_CLIENTS" Role="SET_CLIENTS" Multiplicity="1" />
+    <End Type="DBModel.TRN_CHALLANS" Role="TRN_CHALLANS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENTS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Principal>
+      <Dependent Role="TRN_CHALLANS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRN_CHALLAN_DETAILS_TRN_CHALLANS">
+    <End Type="DBModel.TRN_CHALLANS" Role="TRN_CHALLANS" Multiplicity="1" />
+    <End Type="DBModel.TRN_CHALLAN_DETAILS" Role="TRN_CHALLAN_DETAILS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TRN_CHALLANS">
+        <PropertyRef Name="CHALLAN_NO" />
+      </Principal>
+      <Dependent Role="TRN_CHALLAN_DETAILS">
+        <PropertyRef Name="CHALLAN_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SET_CLIENT_DEPT_BOXES_GET_Result">
+    <Property Type="Int64" Name="ROWNUM" Nullable="true" />
+    <Property Type="Int32" Name="BOX_NO" Nullable="true" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="CLIENT_ALIAS" MaxLength="50" Nullable="true" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="true" />
+    <Property Type="String" Name="DEPT_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="Byte" Name="PROD_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="PRODUCT_TYPE" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="SHORT_CODE" Nullable="true" MaxLength="10" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="true" />
+    <Property Type="String" Name="CLIENT_BOX_ID" MaxLength="50" Nullable="true" />
+    <Property Type="Int32" Name="CHALLAN_NO" Nullable="true" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="TRN_TYPE_NAME" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="REQ_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="REQ_TYPE_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="TRANSMIT_NO" Nullable="true" />
+    <Property Type="DateTime" Name="LAST_TRN_DATE" Nullable="true" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" Nullable="true" />
+    <Property Type="Int32" Name="RECALL_BOX_NO" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <EntityType Name="SET_RECALL_BOXES">
+    <Key>
+      <PropertyRef Name="RECALL_BOX_NO" />
+    </Key>
+    <Property Type="Int32" Name="RECALL_BOX_NO" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="false" />
+    <Property Type="String" Name="RECALL_BOX_ID" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LOC_CLIENT_ID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LOC_DEPT_ID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LOC_ARCH_ID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LOC_FLOOR_ID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LOC_CHAMBER_ID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LOC_ROW_ID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LOC_ROW_FACE_ID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LOC_BAY_ID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LOC_LEVEL_ID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="LOC_SEQ_ID" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="IS_DESTROYED" />
+    <Property Type="Boolean" Name="IS_SPLIT_BOX" />
+    <Property Type="Int32" Name="REF_RECALL_BOX_NO" />
+    <Property Type="Boolean" Name="IS_NEW_BOX" />
+    <Property Type="Boolean" Name="IS_MERGE_BOX" />
+    <Property Type="Int32" Name="CREATE_USER_NO" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" />
+    <Property Type="DateTime" Name="CREATE_TIME" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" />
+    <Property Type="DateTime" Name="UPDATE_TIME" />
+    <NavigationProperty Name="SET_BOX_MERGES" Relationship="DBModel.FK_SET_BOX_MERGES_SET_RECALL_BOXES" FromRole="SET_RECALL_BOXES" ToRole="SET_BOX_MERGES" />
+    <NavigationProperty Name="SET_BOX_MERGES1" Relationship="DBModel.FK_SET_BOX_MERGES_SET_RECALL_BOXES1" FromRole="SET_RECALL_BOXES" ToRole="SET_BOX_MERGES" />
+    <NavigationProperty Name="SET_CLIENT_DEPARTMENTS" Relationship="DBModel.FK_SET_RECALL_BOXES_SET_CLIENT_DEPARTMENTS" FromRole="SET_RECALL_BOXES" ToRole="SET_CLIENT_DEPARTMENTS" />
+    <NavigationProperty Name="SET_CLIENT_DEPT_BOXES" Relationship="DBModel.FK_SET_CLIENT_DEPT_BOXES_SET_RECALL_BOXES" FromRole="SET_RECALL_BOXES" ToRole="SET_CLIENT_DEPT_BOXES" />
+    <NavigationProperty Name="SET_CLIENTS" Relationship="DBModel.FK_SET_RECALL_BOXES_SET_CLIENTS" FromRole="SET_RECALL_BOXES" ToRole="SET_CLIENTS" />
+    <NavigationProperty Name="SET_RECALL_BOXES1" Relationship="DBModel.FK_SET_RECALL_BOXES_SET_RECALL_BOXES" FromRole="SET_RECALL_BOXES" ToRole="SET_RECALL_BOXES1" />
+    <NavigationProperty Name="SET_RECALL_BOXES2" Relationship="DBModel.FK_SET_RECALL_BOXES_SET_RECALL_BOXES" FromRole="SET_RECALL_BOXES1" ToRole="SET_RECALL_BOXES" />
+    <Property Type="String" Name="RECALL_LOCATION" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_SET_BOX_MERGES_SET_RECALL_BOXES">
+    <End Type="DBModel.SET_RECALL_BOXES" Role="SET_RECALL_BOXES" Multiplicity="1" />
+    <End Type="DBModel.SET_BOX_MERGES" Role="SET_BOX_MERGES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_RECALL_BOXES">
+        <PropertyRef Name="RECALL_BOX_NO" />
+      </Principal>
+      <Dependent Role="SET_BOX_MERGES">
+        <PropertyRef Name="RECALL_BOX_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_BOX_MERGES_SET_RECALL_BOXES1">
+    <End Type="DBModel.SET_RECALL_BOXES" Role="SET_RECALL_BOXES" Multiplicity="1" />
+    <End Type="DBModel.SET_BOX_MERGES" Role="SET_BOX_MERGES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_RECALL_BOXES">
+        <PropertyRef Name="RECALL_BOX_NO" />
+      </Principal>
+      <Dependent Role="SET_BOX_MERGES">
+        <PropertyRef Name="CHILD_RECALL_BOX_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_RECALL_BOXES_SET_CLIENT_DEPARTMENTS">
+    <End Type="DBModel.SET_CLIENT_DEPARTMENTS" Role="SET_CLIENT_DEPARTMENTS" Multiplicity="1" />
+    <End Type="DBModel.SET_RECALL_BOXES" Role="SET_RECALL_BOXES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENT_DEPARTMENTS">
+        <PropertyRef Name="DEPT_NO" />
+      </Principal>
+      <Dependent Role="SET_RECALL_BOXES">
+        <PropertyRef Name="DEPT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_CLIENT_DEPT_BOXES_SET_RECALL_BOXES">
+    <End Type="DBModel.SET_RECALL_BOXES" Role="SET_RECALL_BOXES" Multiplicity="0..1" />
+    <End Type="DBModel.SET_CLIENT_DEPT_BOXES" Role="SET_CLIENT_DEPT_BOXES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_RECALL_BOXES">
+        <PropertyRef Name="RECALL_BOX_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_DEPT_BOXES">
+        <PropertyRef Name="RECALL_BOX_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_RECALL_BOXES_SET_CLIENTS">
+    <End Type="DBModel.SET_CLIENTS" Role="SET_CLIENTS" Multiplicity="1" />
+    <End Type="DBModel.SET_RECALL_BOXES" Role="SET_RECALL_BOXES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENTS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Principal>
+      <Dependent Role="SET_RECALL_BOXES">
+        <PropertyRef Name="CLIENT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SET_RECALL_BOXES_SET_RECALL_BOXES">
+    <End Type="DBModel.SET_RECALL_BOXES" Role="SET_RECALL_BOXES" Multiplicity="0..1" />
+    <End Type="DBModel.SET_RECALL_BOXES" Role="SET_RECALL_BOXES1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_RECALL_BOXES">
+        <PropertyRef Name="RECALL_BOX_NO" />
+      </Principal>
+      <Dependent Role="SET_RECALL_BOXES1">
+        <PropertyRef Name="REF_RECALL_BOX_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SET_CLIENT_BATCHES_GET_Result">
+    <Property Type="Int64" Name="ROWNUM" Nullable="true" />
+    <Property Type="Int32" Name="BATCH_NO" Nullable="true" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="CLIENT_ALIAS" MaxLength="50" Nullable="true" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="true" />
+    <Property Type="String" Name="DEPT_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="Int32" Name="BOX_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_BOX_ID" MaxLength="50" Nullable="true" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="true" />
+    <Property Type="String" Name="BATCH_ID" MaxLength="10" Nullable="true" />
+    <Property Type="String" Name="BATCH_DETAILS" Nullable="true" MaxLength="500" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="TRN_TYPE_NAME" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="REQ_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="REQ_TYPE_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="Int64" Name="TRANSMIT_NO" Nullable="true" />
+    <Property Type="DateTime" Name="LAST_TRN_DATE" Nullable="true" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <Association Name="FK_SET_CLIENT_ACCOUNTS_SET_CLIENT_DEPARTMENTS">
+    <End Type="DBModel.SET_CLIENT_DEPARTMENTS" Role="SET_CLIENT_DEPARTMENTS" Multiplicity="1" />
+    <End Type="DBModel.SET_CLIENT_ACCOUNTS" Role="SET_CLIENT_ACCOUNTS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENT_DEPARTMENTS">
+        <PropertyRef Name="DEPT_NO" />
+      </Principal>
+      <Dependent Role="SET_CLIENT_ACCOUNTS">
+        <PropertyRef Name="DEPT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="SET_CLIENT_ACC_DOCS_GET_Result">
+    <Property Type="Int64" Name="ROWNUM" Nullable="true" />
+    <Property Type="Int64" Name="DOC_NO" Nullable="true" />
+    <Property Type="Int64" Name="ACC_NO" Nullable="true" />
+    <Property Type="Int16" Name="DOC_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="DOC_TYPE" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="DOC_TYPE_CODE" MaxLength="50" Nullable="true" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="true" />
+    <Property Type="String" Name="DOC_DETAILS" Nullable="true" MaxLength="100" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="Byte" Name="REQ_TYPE_NO" Nullable="true" />
+    <Property Type="Int64" Name="TRANSMIT_NO" Nullable="true" />
+    <Property Type="DateTime" Name="LAST_TRN_DATE" Nullable="true" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SET_DOCS_TYPES_GET_Result">
+    <Property Type="Int16" Name="DOC_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="DOC_TYPE" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="DOC_TYPE_CODE" MaxLength="50" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SET_CLIENT_ATTACHS_GET_Result">
+    <Property Type="Int64" Name="ROWNUM" Nullable="true" />
+    <Property Type="Int64" Name="ATTACH_NO" Nullable="true" />
+    <Property Type="Int64" Name="DOC_NO" Nullable="true" />
+    <Property Type="Int64" Name="ACC_NO" Nullable="true" />
+    <Property Type="Int16" Name="DOC_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="DOC_TYPE" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="DOC_TYPE_CODE" MaxLength="50" Nullable="true" />
+    <Property Type="String" Name="ATTACH_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FILE_LOCATION" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FILE_TYPE" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FILE_EXT" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SET_CLIENT_ACCOUNTS_GET_Result">
+    <Property Type="Int64" Name="ROWNUM" Nullable="true" />
+    <Property Type="Int64" Name="ACC_NO" Nullable="true" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="true" />
+    <Property Type="String" Name="DEPT_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="Int32" Name="BATCH_NO" Nullable="true" />
+    <Property Type="String" Name="BATCH_ID" MaxLength="10" Nullable="true" />
+    <Property Type="Int32" Name="BOX_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_BOX_ID" MaxLength="50" Nullable="true" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="true" />
+    <Property Type="String" Name="ACC_ID" MaxLength="50" Nullable="true" />
+    <Property Type="String" Name="ACC_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ACC_DETAILS" Nullable="true" MaxLength="500" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="Byte" Name="REQ_TYPE_NO" Nullable="true" />
+    <Property Type="Int64" Name="TRANSMIT_NO" Nullable="true" />
+    <Property Type="DateTime" Name="LAST_TRN_DATE" Nullable="true" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SET_CLIENT_ACCOUNTS_BULK_GET_Result">
+    <Property Type="Int64" Name="ROWNUM" Nullable="true" />
+    <Property Type="Int64" Name="ACC_NO" Nullable="true" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="true" />
+    <Property Type="String" Name="DEPT_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="Int32" Name="BATCH_NO" Nullable="true" />
+    <Property Type="String" Name="BATCH_ID" MaxLength="10" Nullable="true" />
+    <Property Type="Int32" Name="BOX_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_BOX_ID" MaxLength="50" Nullable="true" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="true" />
+    <Property Type="String" Name="ACC_ID" MaxLength="50" Nullable="true" />
+    <Property Type="String" Name="ACC_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ACC_DETAILS" Nullable="true" MaxLength="500" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="Byte" Name="REQ_TYPE_NO" Nullable="true" />
+    <Property Type="Int64" Name="TRANSMIT_NO" Nullable="true" />
+    <Property Type="DateTime" Name="LAST_TRN_DATE" Nullable="true" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SEC_USERS_GET_Result">
+    <Property Type="Int32" Name="USER_NO" Nullable="true" />
+    <Property Type="Int16" Name="USER_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="USER_TYPE" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="USER_TYPE_DESC" Nullable="true" MaxLength="500" />
+    <Property Type="String" Name="FIRST_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="MID_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LAST_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LOGIN_ID" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="PASS_SALT" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="LOGIN_PASSWORD" MaxLength="500" Nullable="true" />
+    <Property Type="Boolean" Name="IS_ACTIVE" Nullable="true" />
+    <Property Type="DateTime" Name="ACTIVE_FROM" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ACTIVE_TO" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IS_LOCKED" Nullable="true" />
+    <Property Type="String" Name="LOCK_REASON" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="LOCK_IP_ADDR" Nullable="true" MaxLength="100" />
+    <Property Type="DateTime" Name="LOCK_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CLIENT_ALIAS" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="CAN_VIEW_DATA" Nullable="true" />
+    <Property Type="Boolean" Name="CAN_VIEW_IMAGE" Nullable="true" />
+    <Property Type="Boolean" Name="CAN_DO_REQUEST" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GEN_USER_TYPES_GET_Result">
+    <Property Type="Int16" Name="USER_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="USER_TYPE" MaxLength="100" Nullable="true" />
+    <Property Type="String" Name="USER_TYPE_DESC" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="SET_RECALL_BOXES_GET_Result">
+    <Property Type="Int64" Name="ROWNUM" Nullable="true" />
+    <Property Type="Int32" Name="RECALL_BOX_NO" Nullable="true" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CLIENT_ALIAS" MaxLength="50" Nullable="true" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="true" />
+    <Property Type="String" Name="DEPT_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="RECALL_BOX_ID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RECALL_LOCATION" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SET_ACCOUNT_STATUS_CHECK_BULK_Result">
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="Int32" Name="cnt" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SET_ACCOUNT_STATUS_CHECK_BULK_BY_TRN_TYPE_NO_Result">
+    <Property Type="String" Name="ACC_ID" Nullable="true" MaxLength="8000" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="BATCH_ID" Nullable="true" MaxLength="10" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RECALL_BOX_ID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RECALL_LOCATION" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SET_CLIENT_DEPT_RECALL_BOXES_GET_DETAILS_Result">
+    <Property Type="Int64" Name="ROWNUM" Nullable="true" />
+    <Property Type="Int32" Name="RECALL_BOX_NO" Nullable="true" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CLIENT_ALIAS" Nullable="true" MaxLength="50" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="true" />
+    <Property Type="String" Name="DEPT_NAME" MaxLength="100" Nullable="true" />
+    <Property Type="Int32" Name="BOX_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RECALL_BOX_ID" MaxLength="50" Nullable="true" />
+    <Property Type="String" Name="RECALL_LOCATION" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IS_AUTO_ID" Nullable="true" />
+    <Property Type="Int32" Name="NEXT_ID" Nullable="true" />
+    <Property Type="String" Name="ID_PREFIX" Nullable="true" MaxLength="10" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GET_BOX_NO_BY_CLIENT_BOX_ID_Result">
+    <Property Type="Int32" Name="BOX_NO" Nullable="false" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="false" />
+    <Property Type="Byte" Name="PROD_TYPE_NO" Nullable="false" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="false" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="IS_BLACK_BOX" Nullable="false" />
+    <Property Type="Int32" Name="CHALLAN_NO" Nullable="true" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="false" />
+    <Property Type="Byte" Name="REQ_TYPE_NO" Nullable="true" />
+    <Property Type="Int64" Name="TRANSMIT_NO" Nullable="true" />
+    <Property Type="DateTime" Name="LAST_TRN_DATE" Nullable="true" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" Nullable="true" />
+    <Property Type="Int32" Name="RECALL_BOX_NO" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="String" Name="RECALL_BOX_ID" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GET_RECALL_BOX_NO_BY_CLIENT_BOX_ID_Result">
+    <Property Type="Int32" Name="BOX_NO" Nullable="false" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="false" />
+    <Property Type="Byte" Name="PROD_TYPE_NO" Nullable="false" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="false" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="false" MaxLength="50" />
+    <Property Type="Boolean" Name="IS_BLACK_BOX" Nullable="false" />
+    <Property Type="Int32" Name="CHALLAN_NO" Nullable="true" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="false" />
+    <Property Type="Byte" Name="REQ_TYPE_NO" Nullable="true" />
+    <Property Type="Int64" Name="TRANSMIT_NO" Nullable="true" />
+    <Property Type="DateTime" Name="LAST_TRN_DATE" Nullable="true" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" Nullable="true" />
+    <Property Type="Int32" Name="RECALL_BOX_NO" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="String" Name="RECALL_BOX_ID" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GET_ALL_IMAGE_URL_Result">
+    <Property Type="Int64" Name="ATTACH_NO" Nullable="true" />
+    <Property Type="Int64" Name="DOC_NO" Nullable="true" />
+    <Property Type="String" Name="IMAGE_URL" Nullable="true" MaxLength="183" />
+  </ComplexType>
+  <ComplexType Name="GET_IMAGE_BY_ATTACH_NO_Result">
+    <Property Type="Int64" Name="DOC_NO" Nullable="false" />
+    <Property Type="String" Name="ATTACH_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FILE_LOCATION" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FILE_TYPE" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="FILE_EXT" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SET_CLIENT_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_GET_DETAILS_Result">
+    <Property Type="Int64" Name="COMPILE_VIEW_NO" Nullable="false" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="Int16" Name="RPT_YEAR" Nullable="false" />
+    <Property Type="Byte" Name="RPT_MONTH" Nullable="false" />
+    <Property Type="Int32" Name="VIEW_QTY" Nullable="false" />
+    <Property Type="DateTime" Name="COMPILE_DATE" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="COMPILE_USER_NO" Nullable="false" />
+    <Property Type="Int64" Name="COMPILE_LOGON_NO" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="RPT_CLIENT_MONTHLY_IMAGE_VIEWS">
+    <Key>
+      <PropertyRef Name="COMPILE_VIEW_NO" />
+    </Key>
+    <Property Type="Int64" Name="COMPILE_VIEW_NO" Nullable="false" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="Int16" Name="RPT_YEAR" Nullable="false" />
+    <Property Type="Byte" Name="RPT_MONTH" Nullable="false" />
+    <Property Type="Int32" Name="VIEW_QTY" Nullable="false" />
+    <Property Type="DateTime" Name="COMPILE_DATE" Nullable="false" />
+    <Property Type="Int32" Name="COMPILE_USER_NO" Nullable="false" />
+    <Property Type="Int64" Name="COMPILE_LOGON_NO" Nullable="false" />
+    <NavigationProperty Name="SET_CLIENTS" Relationship="DBModel.FK_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_SET_CLIENTS" FromRole="RPT_CLIENT_MONTHLY_IMAGE_VIEWS" ToRole="SET_CLIENTS" />
+  </EntityType>
+  <EntityType Name="TRN_IMAGE_VIEWS">
+    <Key>
+      <PropertyRef Name="VIEW_NO" />
+    </Key>
+    <Property Type="Int64" Name="VIEW_NO" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="USER_NO" Nullable="false" />
+    <Property Type="Int64" Name="CLIENT_NO" />
+    <Property Type="Int64" Name="ATTACH_NO" Nullable="false" />
+    <Property Type="Int64" Name="DOC_NO" Nullable="false" />
+    <Property Type="DateTime" Name="VIEW_DATE" Nullable="false" />
+    <Property Type="DateTime" Name="VIEW_TIME" Nullable="false" />
+    <Property Type="Int64" Name="VIEW_LOGON_NO" Nullable="false" />
+    <Property Type="Boolean" Name="IS_COMPILED" Nullable="false" />
+    <NavigationProperty Name="SEC_USERS" Relationship="DBModel.FK_TRN_IMAGE_VIEWS_SEC_USERS" FromRole="TRN_IMAGE_VIEWS" ToRole="SEC_USERS" />
+  </EntityType>
+  <Association Name="FK_RPT_CLIENT_MONTHLY_IMAGE_VIEWS_SET_CLIENTS">
+    <End Type="DBModel.SET_CLIENTS" Role="SET_CLIENTS" Multiplicity="1" />
+    <End Type="DBModel.RPT_CLIENT_MONTHLY_IMAGE_VIEWS" Role="RPT_CLIENT_MONTHLY_IMAGE_VIEWS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SET_CLIENTS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Principal>
+      <Dependent Role="RPT_CLIENT_MONTHLY_IMAGE_VIEWS">
+        <PropertyRef Name="CLIENT_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TRN_IMAGE_VIEWS_SEC_USERS">
+    <End Type="DBModel.SEC_USERS" Role="SEC_USERS" Multiplicity="1" />
+    <End Type="DBModel.TRN_IMAGE_VIEWS" Role="TRN_IMAGE_VIEWS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SEC_USERS">
+        <PropertyRef Name="USER_NO" />
+      </Principal>
+      <Dependent Role="TRN_IMAGE_VIEWS">
+        <PropertyRef Name="USER_NO" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="CHECK_FOR_QTY_IN_TRN_IMAGE_VIEW_Result">
+    <Property Type="Int64" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="Int32" Name="QUANTITY" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GET_IMAGE_COMPILATION_HISTORY_Result">
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="String" Name="CLIENT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int16" Name="RPT_YEAR" Nullable="false" />
+    <Property Type="Byte" Name="RPT_MONTH" Nullable="false" />
+    <Property Type="Int32" Name="VIEW_QTY" Nullable="false" />
+    <Property Type="DateTime" Name="COMPILE_DATE" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GET_CLIENT_BOX_TRANSMIT_HISTORY_Result">
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="String" Name="CLIENT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="BOX_NO" Nullable="false" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="false" />
+    <Property Type="String" Name="DEPT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TRANSMIT_ID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="false" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="false" />
+    <Property Type="String" Name="TRN_TYPE_NAME" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GET_ACCOUNT_TRANSMIT_HISTORY_Result">
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="String" Name="CLIENT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DEPT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="ACC_NO" Nullable="false" />
+    <Property Type="String" Name="ACC_ID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ACC_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TRANSMIT_ID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="false" />
+    <Property Type="String" Name="TRN_TYPE_NAME" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="GET_ACCOUNT_DOC_TRANSMIT_HISTORY_Result">
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="String" Name="CLIENT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DEPT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int64" Name="ACC_NO" Nullable="false" />
+    <Property Type="String" Name="ACC_ID" Nullable="false" MaxLength="50" />
+    <Property Type="Int16" Name="DOC_TYPE_NO" Nullable="false" />
+    <Property Type="String" Name="DOC_TYPE" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TRANSMIT_ID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="false" />
+    <Property Type="String" Name="TRN_TYPE_NAME" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="SET_CLIENT_ACCOUNTS_GET_DETAILS_Result">
+    <Property Type="Int64" Name="ROWNUM" Nullable="true" />
+    <Property Type="Int64" Name="ACC_NO" Nullable="true" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="true" />
+    <Property Type="String" Name="DEPT_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="Int32" Name="BATCH_NO" Nullable="true" />
+    <Property Type="String" Name="BATCH_ID" MaxLength="10" Nullable="true" />
+    <Property Type="Int32" Name="BOX_NO" Nullable="true" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Precision="23" Nullable="true" />
+    <Property Type="String" Name="ACC_ID" MaxLength="50" Nullable="true" />
+    <Property Type="String" Name="ACC_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ACC_DETAILS" Nullable="true" MaxLength="500" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="TRN_TYPE_NAME" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TRANSMIT_PREFIX" Nullable="true" MaxLength="50" />
+    <Property Type="Byte" Name="REQ_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="REQ_TYPE_NAME" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="REQ_TYPE_CODE" Nullable="true" MaxLength="50" />
+    <Property Type="Int64" Name="TRANSMIT_NO" Nullable="true" />
+    <Property Type="String" Name="TRANSMIT_ID" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="TRN_DATE" Nullable="true" />
+    <Property Type="DateTime" Name="LAST_TRN_DATE" Nullable="true" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SET_CLIENT_ACC_DOCS_GET_DETAILS_Result">
+    <Property Type="Int64" Name="DOC_NO" Nullable="true" />
+    <Property Type="Int64" Name="ACC_NO" Nullable="true" />
+    <Property Type="String" Name="ACC_ID" Nullable="false" MaxLength="50" />
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="String" Name="CLIENT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="false" />
+    <Property Type="String" Name="DEPT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int16" Name="DOC_TYPE_NO" Nullable="false" />
+    <Property Type="String" Name="DOC_TYPE" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DOC_TYPE_CODE" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="false" />
+    <Property Type="String" Name="DOC_DETAILS" Nullable="true" MaxLength="100" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="false" />
+    <Property Type="String" Name="TRN_TYPE_NAME" Nullable="false" MaxLength="50" />
+    <Property Type="Byte" Name="REQ_TYPE_NO" Nullable="true" />
+    <Property Type="Int64" Name="TRANSMIT_NO" Nullable="true" />
+    <Property Type="String" Name="TRANSMIT_ID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="LAST_TRN_DATE" Nullable="true" />
+    <Property Type="Boolean" Name="IS_OLD_DATA" Nullable="true" />
+    <Property Type="Int32" Name="CREATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="CREATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="UPDATE_USER_NO" Nullable="true" />
+    <Property Type="Int64" Name="UPDATE_LOGON_NO" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GET_CLIENT_BOX_TRANSMIT_DETAIL_BY_TRANSMIT_ID_Result">
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="String" Name="CLIENT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="false" />
+    <Property Type="String" Name="TRANSMIT_ID" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="false" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="false" />
+    <Property Type="String" Name="TRN_TYPE_NAME" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="BOX_NO" Nullable="false" />
+    <Property Type="String" Name="DEPT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GET_CLIENT_ACCOUNT_DOC_TRANSMIT_DETAIL_BY_TRANSMIT_ID_Result">
+    <Property Type="Int16" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="String" Name="CLIENT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="false" />
+    <Property Type="Int64" Name="ACC_NO" Nullable="false" />
+    <Property Type="String" Name="ACC_ID" Nullable="false" MaxLength="50" />
+    <Property Type="Int16" Name="DOC_TYPE_NO" Nullable="false" />
+    <Property Type="String" Name="DOC_TYPE" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TRANSMIT_ID" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="false" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="false" />
+    <Property Type="String" Name="TRN_TYPE_NAME" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="BOX_NO" Nullable="false" />
+    <Property Type="String" Name="DEPT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="GET_CLIENT_ACCOUNT_TRANSMIT_DETAIL_BY_TRANSMIT_ID_Result">
+    <Property Type="Int32" Name="CLIENT_NO" Nullable="false" />
+    <Property Type="String" Name="CLIENT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="false" />
+    <Property Type="Int64" Name="ACC_NO" Nullable="false" />
+    <Property Type="String" Name="ACC_ID" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TRANSMIT_ID" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="false" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="false" />
+    <Property Type="String" Name="TRN_TYPE_NAME" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="BOX_NO" Nullable="false" />
+    <Property Type="String" Name="DEPT_NAME" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="SET_ACCOUNT_STATUS_CHECK_Manual_Result">
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="Int32" Name="cnt" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="SET_ACCOUNT_STATUS_CHECK_MANUAL_BY_TRN_TYPE_NO_Result">
+    <Property Type="String" Name="ACC_ID" Nullable="true" MaxLength="8000" />
+    <Property Type="DateTime" Name="CREATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="DateTime" Name="ARCHIVE_DATE" Nullable="true" />
+    <Property Type="DateTime" Name="UPDATE_TIME" Nullable="true" Precision="23" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="String" Name="BATCH_ID" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RECALL_BOX_ID" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RECALL_LOCATION" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GET_ACCOUNT_DOC_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result">
+    <Property Type="String" Name="ACC_ID" Nullable="false" MaxLength="50" />
+    <Property Type="Int64" Name="ACC_NO" Nullable="false" />
+    <Property Type="String" Name="TRN_TYPE_NAME" Nullable="false" MaxLength="50" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="false" />
+    <Property Type="Int16" Name="DOC_TYPE_NO" Nullable="false" />
+    <Property Type="String" Name="DOC_TYPE" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="SET_REQUESTERS_GET_Result">
+    <Property Type="Int16" Name="REQUESTER_NO" Nullable="false" />
+    <Property Type="Int16" Name="DEPT_NO" Nullable="false" />
+    <Property Type="String" Name="REQ_NAME" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GET_BOX_COUNT_FOR_REQUISITION_MISMATCH_CHECK_Result">
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="Int32" Name="TotalNo" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GET_BOX_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result">
+    <Property Type="String" Name="CLIENT_BOX_ID" Nullable="true" MaxLength="8000" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GET_ACCOUNT_COUNT_FOR_REQUISITION_MISMATCH_CHECK_Result">
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="Int32" Name="TotalNo" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GET_ACCOUNT_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result">
+    <Property Type="String" Name="ACC_ID" Nullable="true" MaxLength="8000" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GET_CHALLAN_COUNT_FOR_REQUISITION_MISMATCH_CHECK_Result">
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+    <Property Type="Int32" Name="TotalNo" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GET_CHALLAN_LIST_FOR_REQUISITION_MISMATCH_CHECK_Result">
+    <Property Type="String" Name="CHALLAN_ID" Nullable="true" MaxLength="8000" />
+    <Property Type="Byte" Name="TRN_TYPE_NO" Nullable="true" />
+  </ComplexType>
+</Schema>

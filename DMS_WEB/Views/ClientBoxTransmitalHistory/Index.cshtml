@@ -1,0 +1,16 @@
+﻿@model DMS_WEB.Models.ClientBoxTransmitalHistoryViewModel
+
+@{
+    ViewBag.Title = "Client Box Transmital History";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="entryform">
+    @Html.Partial("ClientBoxInfo", Model.client_box_info)
+</div>
+
+<div class="result">
+    @Html.Partial("TransmitalList", Model.transmit_history_list)
+</div>

@@ -1,0 +1,127 @@
+﻿@{    
+    DMS_WEB.Models.SEC_USERS_GET_Result user_info = null;
+    try
+    {
+        user_info = Session["sess_user_info"] as DMS_WEB.Models.SEC_USERS_GET_Result;
+    }
+    catch (Exception ex)
+    {
+
+    }
+    
+    
+    <nav role="navigation">
+        <ul id="menu">
+        @{
+            if (user_info != null)
+            {
+                if (user_info.USER_TYPE_NO != (short)DMS_WEB.Models.UserTypes.Client_User)
+                {
+                    <li><a href="#">Setup</a>
+                        <ul>
+                            <li>@Html.ActionLink("Company", "Index", "Company")</li>
+                            <li>@Html.ActionLink("Users", "Index", "User")</li>
+                            <li>@Html.ActionLink("Client", "Index", "Clients")</li>
+                            <li>@Html.ActionLink("Client Departments", "Index", "ClientDepartment")</li>
+                            <li>@Html.ActionLink("Document Types", "Index", "DocumentTypes")</li>
+                            <li>@Html.ActionLink("Product Types", "Index", "ProductTypes")</li>
+                            <li>@Html.ActionLink("Reason", "Index", "Reason")</li>
+                            <li>@Html.ActionLink("Client's Image View (Monthly)", "Index", "ClientImageViewMonthly")</li>
+                        </ul>
+                    </li> 
+            
+                    @*<li>@Html.ActionLink("Challan", "Index", "Challan")</li>*@
+                    <li><a href="#">Challan Entry Info</a>
+                            <ul>
+                                <li>@Html.ActionLink("Challan Single Entry", "Index", "Challan")</li>
+                                <li>@Html.ActionLink("Challan Bulk Entry", "FileUpload", "ChallanBulkEntry")</li>
+                            </ul>
+                     </li> 
+            
+                    <li><a href="#">Box Info</a>
+                        <ul>
+                            <li>@Html.ActionLink("Recall Boxes (Single)", "Index", "RecallBox")</li>
+                            <li>@Html.ActionLink("Recall Boxes (Bulk)", "FileUpload", "BulkRecallBoxes")</li>
+                            <li>@Html.ActionLink("Client Boxes (Single)", "Index", "ClientBoxes")</li>                      
+                            <li>@Html.ActionLink("Client Boxes(Bulk)", "FileUpload", "BulkClientBox")</li>
+                        </ul>
+                    </li> 
+                    <li>@Html.ActionLink("Batch Entry", "Index", "ClientBatch")</li>
+                    <li><a href="#">Account Entry Info</a>
+                            <ul>
+                                <li>@Html.ActionLink("Account Entry(Single)", "Index", "ClientAccount")</li>
+                                <li>@Html.ActionLink("Account Entry(Bulk)", "FileUpload", "AccountBulkEntry")</li>
+                            </ul>
+                     </li> 
+                     <li><a href="#">Account Status Check</a>
+                            <ul>
+                                <li>@Html.ActionLink("Manual Check", "Index", "AccountStatusManualCheck")</li>
+                                <li>@Html.ActionLink("By Excel Check", "FileUpload", "AccountStatusBulkCheck")</li>
+                            </ul>
+                     </li> 
+            
+                    @*<li>@Html.ActionLink("Transmittal Details", "Index", "TransmittalDetails")</li>*@
+                    <li>@Html.ActionLink("Requistion Details", "Index", "RequisitionDetails")</li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Account View", "Index", "PrivateAccountSearch")</li>
+                    <li>@Html.ActionLink("Bulk Account", "Index", "PrivateBulkAccountSearch")</li>
+                    <li>@Html.ActionLink("Requisition", "Index", "Requisition")</li>
+                }
+            }
+            else
+            {
+
+            }
+            }
+        </ul>           
+    </nav>
+
+    /*
+    if (user_info != null) {
+        if (user_info.USER_TYPE_NO == (byte)DMS_WEB.Models.UserTypes.Data_Entry) {
+            <nav role="navigation">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Data Entry", "Index", "DataEntry")</li>
+                </ul>
+            </nav>
+        } else if (user_info.USER_TYPE_NO == (byte)DMS_WEB.Models.UserTypes.QC) {
+            <nav role="navigation">
+                <ul id="menu">
+                    <li>@Html.ActionLink("QC", "Index", "DataEntry")</li>
+                </ul>
+            </nav>
+        } else if (user_info.USER_TYPE_NO == (byte)DMS_WEB.Models.UserTypes.Admin) {
+            <nav role="navigation">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Dashboard", "Index", "MonitorDataEntry")</li>
+                    <li>@Html.ActionLink("Excel Upload", "FileUpload", "MonitorDataEntry")</li>
+                    <li>@Html.ActionLink("KPI", "Index", "UserKPI")</li>
+                    <li>@Html.ActionLink("QC", "Index", "DataEntry")</li>                    
+                    <li>@Html.ActionLink("Export", "Index", "Export")</li>    
+                    <li><a href="#">Settings</a>
+                        <ul>
+                            <li>@Html.ActionLink("Users", "Index", "Users")</li>                            
+                            <li>@Html.ActionLink("Challan", "Index", "Challan")</li>
+                            <li>@Html.ActionLink("Box", "Index", "Box")</li>
+                        </ul>
+                    </li>   
+                    <li><a href="#">Setup</a>
+                        <ul>                            
+                            <li>@Html.ActionLink("Client", "Index", "Clients")</li>
+                            <li>@Html.ActionLink("Customer ID Type", "Index", "CustomerIDTypes")</li>
+                            <li>@Html.ActionLink("District", "Index", "Districts")</li>
+                            <li>@Html.ActionLink("Document Types", "Index", "DocTypes")</li>
+                            <li>@Html.ActionLink("Thana", "Index", "Thanas")</li>
+                            <li>@Html.ActionLink("Profession", "Index", "Professions")</li>
+                        </ul>
+                    </li>                    
+                </ul>
+            </nav>
+        }
+    }
+    */
+    
+    
+}

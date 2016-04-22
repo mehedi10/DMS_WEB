@@ -1,0 +1,147 @@
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\obj\Debug\ResolveAssemblyReference.cache
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DMS_WEB.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DMS_WEB.pdb
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\Antlr3.Runtime.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.AspNet.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.Core.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OAuth.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OpenId.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\EntityFramework.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\Microsoft.Web.Infrastructure.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\Newtonsoft.Json.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Net.Http.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Net.Http.Formatting.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Net.Http.WebRequest.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.Helpers.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.Http.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.Http.WebHost.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.Mvc.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.Optimization.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.Razor.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.Deployment.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.Razor.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\WebGrease.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\WebMatrix.Data.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\WebMatrix.WebData.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\EntityFramework.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\Newtonsoft.Json.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Net.Http.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Net.Http.Formatting.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Net.Http.WebRequest.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.Helpers.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.Http.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.Http.WebHost.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.Mvc.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.Razor.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.Deployment.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.Razor.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\WebMatrix.Data.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\WebMatrix.WebData.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.AspNet.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.Core.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OAuth.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OpenId.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\obj\Debug\DMS_WEB.dll
+E:\bijon\personal\work\DMS\solution\DMS_WEB\DMS_WEB\obj\Debug\DMS_WEB.pdb
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DMS_WEB.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DMS_WEB.pdb
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\Antlr3.Runtime.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.AspNet.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.Core.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OAuth.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OpenId.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\EntityFramework.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\Microsoft.Web.Infrastructure.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\Newtonsoft.Json.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Net.Http.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Net.Http.Formatting.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Net.Http.WebRequest.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.Helpers.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.Http.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.Http.WebHost.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.Mvc.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.Optimization.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.Razor.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.Deployment.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.Razor.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\WebGrease.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\WebMatrix.Data.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\WebMatrix.WebData.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.Helpers.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.Razor.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.Deployment.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.Razor.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\EntityFramework.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\Microsoft.Web.Infrastructure.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\Newtonsoft.Json.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\WebMatrix.Data.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\WebMatrix.WebData.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.AspNet.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.Core.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OAuth.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OpenId.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\obj\Debug\DMS_WEB.dll
+E:\Mehedi's Document\MaxproIt Office Document\DMS_2015_09_05\DMS_WEB\DMS_WEB\obj\Debug\DMS_WEB.pdb
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DMS_WEB.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DMS_WEB.pdb
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\Antlr3.Runtime.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.AspNet.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.Core.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OAuth.Consumer.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OAuth.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OpenId.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\EntityFramework.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\Microsoft.Web.Infrastructure.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\Microsoft.Web.WebPages.OAuth.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\Newtonsoft.Json.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Net.Http.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Net.Http.Formatting.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Net.Http.WebRequest.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.Helpers.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.Http.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.Http.WebHost.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.Mvc.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.Optimization.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.Razor.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.Deployment.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.Razor.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\WebGrease.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\WebMatrix.Data.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\WebMatrix.WebData.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.Helpers.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.Razor.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.Deployment.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\System.Web.WebPages.Razor.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\EntityFramework.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\Microsoft.Web.Infrastructure.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\Newtonsoft.Json.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\WebMatrix.Data.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\Microsoft.Web.WebPages.OAuth.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\WebMatrix.WebData.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.AspNet.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.Core.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OAuth.Consumer.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OAuth.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OpenId.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\obj\Debug\DMS_WEB.dll
+E:\MaxproIt Office Document\DMS_12_27_2015\DMS_WEB\DMS_WEB\obj\Debug\DMS_WEB.pdb

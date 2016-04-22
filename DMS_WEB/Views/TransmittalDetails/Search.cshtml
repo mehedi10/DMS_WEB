@@ -1,0 +1,29 @@
+﻿@using (Html.BeginForm("Search", "TransmittalDetails", FormMethod.Post, new { @id = "frmSearch" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <div class="search_row">
+            <div class="search_cell">
+                @Html.Label("Transmitall ID", new { @for = "TRANSMIT_ID" })
+            </div>
+            <div class="search_cell">
+                @Html.Editor("TRANSMIT_ID")
+            </div>
+        </div>
+
+        <div class="search_row">
+            <div class="search_cell">
+            </div>
+            <div class="search_cell">
+                <button type="button" id="btnSearch" name="btnSearch" class="btn btn-success">
+                    Search</button>
+                    
+                  <button type="button" id="btnClear" name="btnClear" class="btn btn-warning">
+                    Clear</button>
+            </div>
+        </div>
+    </fieldset>
+    
+}
+

@@ -1,0 +1,82 @@
+﻿@using (Html.BeginForm("Search", "RequisitionDetails", FormMethod.Post, new { @id = "frmSearch" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        @*<legend>Search</legend>*@
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Client", new { @for = "sr_CLIENT_NO" })
+            </div>
+            <div class="editor-field">
+                <select id="sr_CLIENT_NO" name="sr_CLIENT_NO" required="required">
+                </select>
+            </div>
+            
+            <div class="editor-label">
+                @Html.Label("Department", new { @for = "sr_DEPT_NO" })
+            </div>
+            <div class="editor-field">
+                <select id="sr_DEPT_NO" name="sr_DEPT_NO" required="required">
+                </select>
+            </div>
+        </div>
+      
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Request Type", new { @for = "sr_REQ_TYPE_NO" })
+            </div>
+            <div class="editor-field">
+                <select id="sr_REQ_TYPE_NO" name="sr_REQ_TYPE_NO" required="required">
+                </select>
+            </div>
+            
+            <div class="editor-label">
+                @Html.Label("Requisition No", new { @for = "sr_REQUISITION_NO" })
+            </div>
+            <div class="editor-field">
+                @Html.Editor("sr_REQUISITION_NO")
+            </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Date From", new { @for = "sr_DATE_FROM" })
+            </div>
+            <div class="editor-field">
+                @Html.Editor("sr_DATE_FROM")
+            </div>
+            
+            <div class="editor-label">
+                @Html.Label("To", new { @for = "sr_DATE_TO" })
+            </div>
+            <div class="editor-field">
+                @Html.Editor("sr_DATE_TO")
+            </div>
+        </div>
+        
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Delivary Status", new { @for = "sr_DELIVARY_STATUS" })
+            </div>
+            <div class="editor-field">
+                <select id="sr_DELIVARY_STATUS" name="sr_DELIVARY_STATUS" required="required">
+                    <option value="0">- Pending -</option>
+                    <option value="1">- Partial -</option>
+                     <option value="2">- Complete -</option>
+                </select>
+            </div>
+        </div>
+        <div class="entry_form">
+            <div class="editor-label">
+            </div>
+            <div class="editor-field">
+                <button type="button" id="btnSearch" name="btnSearch" class="btn btn-success">
+                    Search</button>
+                <button type="button" id="btnClear" name="btnClear" class="btn btn-warning">
+                    Clear</button>
+            </div>
+        </div>
+    </fieldset>
+    
+}

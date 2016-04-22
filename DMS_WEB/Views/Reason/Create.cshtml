@@ -1,0 +1,91 @@
+﻿@model DMS_WEB.Models.SET_REASONS
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SET_REASONS</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CLIENT_NO, "SET_CLIENTS")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("CLIENT_NO", String.Empty)
+            @Html.ValidationMessageFor(model => model.CLIENT_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.REASON)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.REASON)
+            @Html.ValidationMessageFor(model => model.REASON)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CREATE_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CREATE_USER_NO)
+            @Html.ValidationMessageFor(model => model.CREATE_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CREATE_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CREATE_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.CREATE_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CREATE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CREATE_TIME)
+            @Html.ValidationMessageFor(model => model.CREATE_TIME)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_USER_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_USER_NO)
+            @Html.ValidationMessageFor(model => model.UPDATE_USER_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_LOGON_NO)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_LOGON_NO)
+            @Html.ValidationMessageFor(model => model.UPDATE_LOGON_NO)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UPDATE_TIME)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UPDATE_TIME)
+            @Html.ValidationMessageFor(model => model.UPDATE_TIME)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

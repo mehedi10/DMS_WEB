@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "Bulk Client Boxes Upload";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3 class="message-error">@ViewBag.Error</h3>
+<div class="entryform">
+@using (Html.BeginForm("FileUpload", "BulkClientBox", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+    
+<fieldset>  
+    <div>
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Client", new { @for = "CLIENT_NO" })
+            </div>
+            <div class="editor-field">
+                @*@Html.DropDownList("CLIENT_NO", String.Empty)*@
+                @Html.DropDownList("CLIENT_NO")
+            </div>
+        </div>
+        
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("File", new { @for = "txtFile" })
+            </div>
+            <div class="editor-field">
+                <input type="file" id="txtFile" name="txtFile" required="required" autocomplete="off" />
+            </div>
+        </div>
+        <div class="entry_form">
+            <div class="editor-label">  &nbsp;                    
+            </div>
+            <div class="editor-field">                
+                <button type="submit" id="btnUpload" name="btnUpload">Upload</button>
+            </div>
+        </div>
+    </div>
+</fieldset>    
+    
+}
+</div>
+<script type="text/javascript">
+    jQuery(function ($) {
+        $('#btnUpload').click(function () {
+            if (confirm('Do you want to upload?')) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+    });    
+</script>

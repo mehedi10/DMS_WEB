@@ -1,0 +1,51 @@
+﻿@using (Html.BeginForm("Search", "User", FormMethod.Post, new { @id = "frmSearch" })) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <div class="search_row">
+        <div class="search_cell">
+            @Html.Label("User Type", new { @for = "sr_USER_TYPE_NO" })
+        </div>
+        <div class="search_cell">
+            <select id="sr_USER_TYPE_NO" name="sr_USER_TYPE_NO" required="required">                
+            </select>
+        </div>
+        <div class="search_cell">
+            @Html.Label("Client", new { @for = "sr_CLIENT_NO" })
+        </div>
+        <div class="search_cell">
+            <select id="sr_CLIENT_NO" name="sr_CLIENT_NO" required="required">                
+            </select>
+        </div>
+        </div>
+
+        <div class="search_row">
+        <div class="search_cell">
+            @Html.Label("Login Id", new { @for = "sr_LOGIN_ID" })
+        </div>
+        <div class="search_cell">
+            @Html.Editor("sr_LOGIN_ID")
+        </div>        
+        <div class="search_cell">
+            @Html.Label("Status", new { @for = "sr_STATUS" })
+        </div>
+            <div class="search_cell">
+                <select id="sr_STATUS" name="sr_STATUS" required="required">
+                    <option value="">All</option>                
+                    <option value="True">True</option>                
+                    <option value="False">False</option>                
+                </select>
+            </div>
+        </div>
+
+        <div class="search_row">
+            <div class="search_cell">                
+            </div>
+            <div class="search_cell">
+                <button type="button" id="btnSearch" name="btnSearch" class="btn btn-success">Search</button> 
+                <button type="button" id="btnClear" name="btnClear" class="btn btn-warning">Clear</button> 
+            </div>
+        </div>
+    </fieldset>   
+}
+

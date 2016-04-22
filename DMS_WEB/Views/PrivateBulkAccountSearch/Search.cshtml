@@ -1,0 +1,47 @@
+﻿@using (Html.BeginForm("Search", "PrivateBulkAccountSearch", FormMethod.Post, new { @id = "frmSearch" })) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        @*<legend>Search</legend>*@
+        <div class="search_row">        
+        <div class="search_cell">            
+            @Html.Label("Department", new { @for = "DEPT_NO" })
+        </div>
+        <div class="search_cell">
+            @Html.DropDownList("DEPT_NO", String.Empty)
+        </div>
+        <div class="search_cell">
+            @Html.Label("Account List", new { @for = "ACC_ID" })
+        </div>
+        <div class="search_cell">
+            @Html.TextArea("ACC_ID", new { @required="required"})
+
+            <p>(use comma separator for multiple accounts)</p>
+        </div>
+        </div>
+
+        <div class="search_row">
+        <div class="search_cell">
+            @Html.Label("Client Box ID", new { @for = "CLIENT_BOX_ID" })
+        </div>
+        <div class="search_cell">
+            @Html.Editor("CLIENT_BOX_ID")
+        </div>    
+        <div class="search_cell">
+            @Html.Label("Batch ID", new { @for = "BATCH_ID" })
+        </div>
+        <div class="search_cell">
+            @Html.Editor("BATCH_ID")
+        </div>            
+        </div>
+
+        <div class="search_row">   
+            <div class="search_cell"></div>             
+            <div class="search_cell">
+                <button type="button" id="btnSearch" name="btnSearch" class="btn btn-success">Search</button> 
+                <button type="button" id="btnClear" name="btnClear" class="btn btn-warning">Clear</button> 
+            </div>
+        </div>
+    </fieldset>
+    
+}

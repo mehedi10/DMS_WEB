@@ -1,0 +1,122 @@
+﻿@model DMS_WEB.Models.SET_CLIENTS
+
+@{
+    ViewBag.Title = "Client Details";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<fieldset>
+    <legend>@ViewBag.Title</legend>
+
+    <div class="entry_form">
+    <div class="display-label">
+         @Html.DisplayName("Client Name")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENT_NAME)
+    </div>
+    </div>
+
+    <div class="entry_form">
+    <div class="display-label">
+         @Html.DisplayName("Alias")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENT_ALIAS)
+    </div>
+    </div>
+
+    <div class="entry_form">
+    <div class="display-label">
+         @Html.DisplayName("Address")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENT_ADDR)
+    </div>
+    </div>
+
+    <div class="entry_form">
+    <div class="display-label">
+         @Html.DisplayName("Contact")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CLIENT_CONTACT)
+    </div>
+    </div>
+
+    <div class="entry_form">
+    <div class="display-label">
+         @Html.DisplayName("Contact Person")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CONTACT_PERSON)
+    </div>
+    </div>
+
+    <div class="entry_form">
+    <div class="display-label">
+         @Html.DisplayName("Contact Address")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CONTACT_ADDR)
+    </div>
+    </div>
+
+    <div class="entry_form">
+    <div class="display-label">
+         @Html.DisplayName("Designation")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DESIGNATION)
+    </div>
+    </div>
+
+    <div class="entry_form">
+    <div class="display-label">
+         @Html.DisplayName("Attention")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ATTENTION)
+    </div>
+    </div>
+
+    <div class="entry_form">
+    <div class="display-label">
+         @Html.DisplayName("Email Address")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.EMAIL_ADDR)
+    </div>
+    </div>
+
+    <div class="entry_form">
+    <div class="display-label">
+         @Html.DisplayName("Status")
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.IS_ACIVE)
+    </div>
+    </div>
+
+
+     <div class="entry_form">
+            <div class="editor-label">&nbsp;</div>
+            <div class="editor-field">
+                @Html.ActionLink("Edit", "Edit", new { id = Model.CLIENT_NO }, new { @class = "btn btn-success" }) |
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-primary" })
+            </div>
+        </div>
+
+</fieldset>
+
+
+@section Scripts {
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+        });
+
+    </script>
+}

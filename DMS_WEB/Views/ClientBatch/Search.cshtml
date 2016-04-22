@@ -1,0 +1,65 @@
+﻿@using (Html.BeginForm("Search", "ClientBatch", FormMethod.Post, new { @id = "frmSearch" })) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        @*<legend>Search</legend>*@
+        <div class="search_row">
+        <div class="search_cell">
+            @Html.Label("Client", new { @for = "sr_CLIENT_NO" })
+        </div>
+        <div class="search_cell">
+            <select id="sr_CLIENT_NO" name="sr_CLIENT_NO" required="required">                
+            </select>
+        </div>
+        <div class="search_cell">
+            @Html.Label("Department", new { @for = "sr_DEPT_NO" })
+        </div>
+        <div class="search_cell">
+            <select id="sr_DEPT_NO" name="sr_DEPT_NO" required="required">                
+            </select>
+        </div>
+        </div>
+
+        <div class="search_row">
+        <div class="search_cell">
+            @Html.Label("Client Box ID", new { @for = "sr_CLIENT_BOX_ID" })
+        </div>
+        <div class="search_cell">
+            @Html.Editor("sr_CLIENT_BOX_ID")
+        </div>        
+        <div class="search_cell">
+            @Html.Label("Transmittal Type", new { @for = "sr_TRN_TYPE_NO" })
+        </div>
+        <div class="search_cell">
+            <select id="sr_TRN_TYPE_NO" name="sr_TRN_TYPE_NO" required="required">                
+            </select>
+        </div>
+        </div>
+
+        <div class="search_row">
+        <div class="search_cell">
+            @Html.Label("Request Type", new { @for = "sr_REQ_TYPE_NO" })
+        </div>
+        <div class="search_cell">
+            <select id="sr_REQ_TYPE_NO" name="sr_REQ_TYPE_NO" required="required">                
+            </select>
+        </div>
+        <div class="search_cell">
+            @Html.Label("Batch ID", new { @for = "BATCH_ID" })
+        </div>
+        <div class="search_cell">
+            @Html.Editor("sr_BATCH_ID")
+        </div>
+        </div>
+
+        <div class="search_row">
+            <div class="search_cell">                
+            </div>
+            <div class="search_cell">
+                <button type="button" id="btnSearch" name="btnSearch" class="btn btn-success">Search</button> 
+                <button type="button" id="btnClear" name="btnClear" class="btn btn-warning">Clear</button> 
+            </div>
+        </div>
+    </fieldset>
+    
+}

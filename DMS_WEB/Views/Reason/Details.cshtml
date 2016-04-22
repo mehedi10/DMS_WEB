@@ -1,0 +1,71 @@
+﻿@model DMS_WEB.Models.SET_REASONS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SET_REASONS</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SET_CLIENTS.CLIENT_NAME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SET_CLIENTS.CLIENT_NAME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.REASON)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.REASON)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CREATE_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CREATE_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CREATE_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CREATE_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CREATE_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CREATE_TIME)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_USER_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_USER_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_LOGON_NO)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_LOGON_NO)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UPDATE_TIME)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UPDATE_TIME)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.REASON_NO }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

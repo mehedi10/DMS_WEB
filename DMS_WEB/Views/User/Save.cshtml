@@ -1,0 +1,211 @@
+﻿@using Microsoft.Ajax.Utilities
+@using Newtonsoft.Json
+@model DMS_WEB.Models.SEC_USERS_GET_Result
+@{
+    Layout = null;
+}
+@using (Html.BeginForm("Save", "User", FormMethod.Post, new { @id = "frmEntry" }))
+{
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        @Html.HiddenFor(model => model.USER_NO)
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("User Type", new { @for = "USER_TYPE_NO" })
+            </div>
+            <div class="editor-field">
+                <select id="USER_TYPE_NO" name="USER_TYPE_NO">
+                </select>
+                @Html.ValidationMessageFor(model => model.USER_TYPE_NO)
+                @Html.HiddenFor(model => model.USER_TYPE_NO)
+            </div>
+        </div>
+        @*<div class="entry_form">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.USER_TYPE, new { @for = "USER_TYPE" })
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.USER_TYPE)
+                @Html.ValidationMessageFor(model => model.USER_TYPE)
+            </div>
+        </div>*@
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("First Name", new { @for = "FIRST_NAME" })
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.FIRST_NAME)
+                @Html.ValidationMessageFor(model => model.FIRST_NAME)
+            </div>
+        </div>
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Middle Name", new { @for = "MID_NAME" })
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.MID_NAME)
+                @Html.ValidationMessageFor(model => model.MID_NAME)
+            </div>
+        </div>
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Last Name", new { @for = "LAST_NAME" })
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LAST_NAME)
+                @Html.ValidationMessageFor(model => model.LAST_NAME)
+            </div>
+        </div>
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Login ID", new { @for = "LOGIN_ID" })
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LOGIN_ID)
+                @Html.ValidationMessageFor(model => model.LOGIN_ID)
+            </div>
+        </div>
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Password", new { @for = "PASS_SALT" })
+            </div>
+            <div class="editor-field">
+                @*             @Html.EditorFor(model => model.PASS_SALT)*@
+                @Html.PasswordFor(model => model.PASS_SALT)
+                @Html.ValidationMessageFor(model => model.PASS_SALT)
+            </div>
+        </div>
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Confirm Password", new { @for = "LOGIN_PASSWORD" })
+            </div>
+            <div class="editor-field">
+                @*      @Html.EditorFor(model => model.LOGIN_PASSWORD)*@
+                @Html.PasswordFor(model => model.LOGIN_PASSWORD)
+                @Html.ValidationMessageFor(model => model.LOGIN_PASSWORD)
+            </div>
+        </div>
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("Active", new { @for = "IS_ACTIVE" })
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.IS_ACTIVE)
+                @Html.ValidationMessageFor(model => model.IS_ACTIVE)
+            </div>
+        </div>
+        @*<div class="entry_form">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ACTIVE_FROM, new { @for = "ACTIVE_FROM" })
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ACTIVE_FROM)
+                @Html.ValidationMessageFor(model => model.ACTIVE_FROM)
+            </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.ACTIVE_TO, new { @for = "ACTIVE_TO" })
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ACTIVE_TO)
+                @Html.ValidationMessageFor(model => model.ACTIVE_TO)
+            </div>
+        </div>*@
+        <div class="restoff">
+            <div class="entry_form">
+                <div class="editor-label">
+                    @Html.Label("Client", new { @for = "CLIENT_NO" })
+                </div>
+                <div class="editor-field">
+                    <select id="CLIENT_NO" name="CLIENT_NO">
+                    </select>
+                    @Html.ValidationMessageFor(model => model.CLIENT_NO)
+                </div>
+            </div>
+            <div class="entry_form">
+                <div class="editor-label">
+                    @Html.Label("Can View Data", new { @for = "CAN_VIEW_DATA" })
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.CAN_VIEW_DATA)
+                    @Html.ValidationMessageFor(model => model.CAN_VIEW_DATA)
+                </div>
+            </div>
+            <div class="entry_form">
+                <div class="editor-label">
+                    @Html.Label("Can View Image", new { @for = "CAN_VIEW_IMAGE" })
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.CAN_VIEW_IMAGE)
+                    @Html.ValidationMessageFor(model => model.CAN_VIEW_IMAGE)
+                </div>
+            </div>
+            <div class="entry_form">
+                <div class="editor-label">
+                    @Html.Label("Can Do Request", new { @for = "CAN_DO_REQUEST" })
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.CAN_DO_REQUEST)
+                    @Html.ValidationMessageFor(model => model.CAN_DO_REQUEST)
+                </div>
+            </div>
+        </div>
+        @*<div class="entry_form">
+            <div class="editor-label">
+                @Html.Label("CLIENT", new { @for = "CLIENT_NO" })
+            </div>
+            <div class="editor-field">
+                <select id="CLIENT_NO" name="CLIENT_NO">                
+                </select>
+                @Html.ValidationMessageFor(model => model.CLIENT_NO)
+            </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CAN_VIEW_DATA, new { @for = "CAN_VIEW_DATA" })
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CAN_VIEW_DATA)
+                @Html.ValidationMessageFor(model => model.CAN_VIEW_DATA)
+            </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CAN_VIEW_IMAGE, new { @for = "CAN_VIEW_IMAGE" })
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CAN_VIEW_IMAGE)
+                @Html.ValidationMessageFor(model => model.CAN_VIEW_IMAGE)
+            </div>
+        </div>
+
+        <div class="entry_form">
+            <div class="editor-label">
+                @Html.LabelFor(model => model.CAN_DO_REQUEST, new { @for = "CAN_DO_REQUEST" })
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.CAN_DO_REQUEST)
+                @Html.ValidationMessageFor(model => model.CAN_DO_REQUEST)
+            </div>
+        </div>*@
+        <div class="entry_form">
+            <div class="editor-label">
+            </div>
+            <div class="editor-field">
+                <button type="submit" id="btnSave" name="btnSave" class="confirm btn btn-primary">
+                    Save</button>
+                <button type="button" id="btnCancel" name="btnCancel" class="btn btn-warning">
+                    Cancel</button>
+            </div>
+        </div>
+    </fieldset>
+}
+<script type="text/javascript">
+    var USER_TYPE_NO = '@Model.USER_TYPE_NO';
+    var CLIENT_NO = '@Model.CLIENT_NO';
+</script>
